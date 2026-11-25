@@ -1,0 +1,12 @@
+{
+  "schema": "kestrel-closed-platform-probe-1",
+  "purpose": "closed-synthetic-platform-qa",
+  "owner_sid": "REPLACE_WITH_ACTUAL_OWNER_SID",
+  "service_sid": "REPLACE_WITH_ACTUAL_NONADMIN_APP_SID",
+  "proxy_sid": "REPLACE_WITH_ACTUAL_NONADMIN_PROXY_SID",
+  "proxy_token_file": "REPLACE_WITH_EXTERNAL_LOCAL_QA_TOKEN_PATH",
+  "issued_at": 0,
+  "expires_at": 0,
+  "release_hash": "REPLACE_AFTER_FINAL_FREEZE",
+  "test_suite_hash": "REPLACE_AFTER_FINAL_FREEZE"
+}

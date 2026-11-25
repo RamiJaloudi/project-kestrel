@@ -1,0 +1,7 @@
+{
+  "report_python": "C:/Kestrel/app/backend/.venv/Scripts/python.exe",
+  "ocr_engine": "native",
+  "tesseract": "C:/Program Files/Tesseract-OCR/tesseract.exe",
+  "pdftoppm": "C:/Kestrel/tools/poppler/Library/bin/pdftoppm.exe",
+  "ocr_models": "C:/Kestrel/app/.runtime/ocr-models"
+}

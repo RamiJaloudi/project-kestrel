@@ -1,0 +1,3 @@
+﻿example_status,decision_id,subject_type,subject_id,subject_version,author,reviewer,decision,rationale,decided_at
+SYNTHETIC,DEC-001,Report,REP-001,1,Reviewer A,Reviewer C,Pending,Independent review not yet recorded,
+SYNTHETIC,DEC-002,Playbook,PB-001,2,Editor A,SME B,Illustrative rejection,Example missed a scope exception,2026-11-23T15:00:00Z

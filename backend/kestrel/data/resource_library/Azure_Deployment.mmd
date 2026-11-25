@@ -1,0 +1,8 @@
+flowchart LR
+  S0["Five portal names<br/>portal.ramijaloudi.com<br/>firm / halden / castlegate<br/>admin under portal domain<br/>GoDaddy A records; TTL 600"]
+  S1["Azure Windows VM<br/>Static IP 52.162.140.174<br/>Windows Server runtime<br/>Shared proxy is controlled<br/>Existing RPlus route preserved"]
+  S0 --> S1
+  S2["Private app services<br/>Caddy to loopback FastAPI<br/>React screens and OpenAPI<br/>PostgreSQL and worker<br/>Separate service identities"]
+  S1 --> S2
+  S3["Activation still gated<br/>Check real restore and backup<br/>Validate exact HTTPS names<br/>Review effective access rules<br/>Obtain public acceptance"]
+  S2 --> S3

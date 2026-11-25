@@ -1,0 +1,58 @@
+# Review-only template. Does not approve deployment or open an Azure/Windows port.
+# Owner supplies KESTREL_PROXY_TOKEN from the same protected random token file
+# read by the application service. Do not put that token in source or logs.
+{
+    admin off
+    persist_config off
+    auto_https disable_redirects
+    servers {
+        protocols h1 h2
+        strict_sni_host on
+        max_header_size 16KB
+        timeouts {
+            read_header 10s
+            read_body 20s
+            idle 60s
+        }
+    }
+}
+
+(kestrel_backend) {
+    request_body {
+        max_size 4MiB
+    }
+    header {
+        -Server
+        Strict-Transport-Security "max-age=86400"
+    }
+    reverse_proxy 127.0.0.1:8000 {
+        # Strip assertions supplied by the network client, then overwrite the
+        # private protocol from Caddy's actual accepted connection.
+        header_up -Forwarded
+        header_up -X-Forwarded-*
+        header_up -X-Real-IP
+        header_up -X-Demo-User
+        header_up -X-Kestrel-*
+        header_up Host {host}
+        header_up X-Kestrel-Proxy-Token {$KESTREL_PROXY_TOKEN}
+        header_up X-Kestrel-Proto https
+        header_up X-Kestrel-Client-IP {remote_host}
+        transport http {
+            dial_timeout 3s
+            response_header_timeout 120s
+        }
+    }
+    # No access log or request/response-body logging is enabled.
+}
+
+portal.ramijaloudi.com, firm.portal.ramijaloudi.com, halden.portal.ramijaloudi.com, castlegate.portal.ramijaloudi.com, admin.portal.ramijaloudi.com {
+    import kestrel_backend
+}
+
+http://portal.ramijaloudi.com, http://firm.portal.ramijaloudi.com, http://halden.portal.ramijaloudi.com, http://castlegate.portal.ramijaloudi.com, http://admin.portal.ramijaloudi.com {
+    redir https://{host}{uri} 308
+}
+
+http:// {
+    respond "Unknown host" 421
+}

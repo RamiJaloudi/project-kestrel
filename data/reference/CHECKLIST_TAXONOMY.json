@@ -1,0 +1,333 @@
+{
+  "document": "M&A Due Diligence Checklist",
+  "publisher": "Bloomberg Law / Bloomberg Industry Group",
+  "original_pdf_pages": 21,
+  "purpose": "checklist coverage and specialized workstream orchestration; not a due diligence report template",
+  "transaction": "Fictional Project Kestrel UK-listed buyer / German private GmbH target",
+  "policy": "Do not infer legal applicability from language; do not auto-approve N/A; source-specific restrictions apply",
+  "sections": [
+    {
+      "section_code": "A",
+      "title": "Organizational and Corporate Documents",
+      "pdf_page_start": 1,
+      "pdf_page_end": 3,
+      "agent_ids": [
+        "corporate"
+      ],
+      "scope_note": "Corporate and ownership records, articles, approvals and securities",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "B",
+      "title": "Financial and Accounting Records",
+      "pdf_page_start": 4,
+      "pdf_page_end": 4,
+      "agent_ids": [
+        "financial_tax"
+      ],
+      "scope_note": "Accounts, budgets, liabilities and accounting practices",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "C",
+      "title": "Tax Matters",
+      "pdf_page_start": 5,
+      "pdf_page_end": 6,
+      "agent_ids": [
+        "financial_tax"
+      ],
+      "scope_note": "Tax filings, audits, assessments and correspondence; U.S. requests conditional",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "D",
+      "title": "Loans and Obligations",
+      "pdf_page_start": 6,
+      "pdf_page_end": 7,
+      "agent_ids": [
+        "financial_tax"
+      ],
+      "scope_note": "Borrowing facilities, guarantees, security and covenants",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "E",
+      "title": "Property and Equipment",
+      "pdf_page_start": 8,
+      "pdf_page_end": 8,
+      "agent_ids": [
+        "property"
+      ],
+      "scope_note": "Assets, leases, titles and associated obligations",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "F",
+      "title": "Intellectual Property",
+      "pdf_page_start": 9,
+      "pdf_page_end": 9,
+      "agent_ids": [
+        "ip_software"
+      ],
+      "scope_note": "IP registries, licensing, software, domain names and claims",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "G",
+      "title": "Material Contracts",
+      "pdf_page_start": 10,
+      "pdf_page_end": 11,
+      "agent_ids": [
+        "material_contracts"
+      ],
+      "scope_note": "Customer/supplier contracts, consents, insurance, JV and material obligations",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "H",
+      "title": "Operational Matters",
+      "pdf_page_start": 12,
+      "pdf_page_end": 13,
+      "agent_ids": [
+        "material_contracts",
+        "operations"
+      ],
+      "scope_note": "Customers/suppliers, supply agreements, business plans and operational risks",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "I",
+      "title": "Litigation",
+      "pdf_page_start": 13,
+      "pdf_page_end": 13,
+      "agent_ids": [
+        "litigation"
+      ],
+      "scope_note": "Disputes, claims, proceedings, judgments and settlements",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "J",
+      "title": "Regulatory Matters",
+      "pdf_page_start": 14,
+      "pdf_page_end": 14,
+      "agent_ids": [
+        "regulatory_antitrust"
+      ],
+      "scope_note": "Licenses, approvals, compliance, filings and antitrust issues",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "K",
+      "title": "Employment and Compensation Matters",
+      "pdf_page_start": 14,
+      "pdf_page_end": 16,
+      "agent_ids": [
+        "employment"
+      ],
+      "scope_note": "Employment and benefits, disputes, contracts and labor representation",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "L",
+      "title": "Data Privacy & Security",
+      "pdf_page_start": 16,
+      "pdf_page_end": 18,
+      "agent_ids": [
+        "privacy_security"
+      ],
+      "scope_note": "Privacy policies, security controls, incidents, data processing and transfers",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "M",
+      "title": "Environmental, Social, Governance (ESG) Matters",
+      "pdf_page_start": 18,
+      "pdf_page_end": 21,
+      "agent_ids": [
+        "esg"
+      ],
+      "scope_note": "Environmental, workforce, supplier and ESG disclosures and controls",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    },
+    {
+      "section_code": "N",
+      "title": "Other Specific Request Categories",
+      "pdf_page_start": 21,
+      "pdf_page_end": 21,
+      "agent_ids": [
+        "custom"
+      ],
+      "scope_note": "Matter-specific requests separately approved by legal SMEs",
+      "source_kind": "BLOOMBERG_LAW_REQUEST_CHECKLIST",
+      "applicability": "requires_legal_sme_review",
+      "copyright": "summarized taxonomy only; do not embed full checklist text",
+      "status_values": [
+        "NOT_REQUESTED",
+        "REQUESTED",
+        "RECEIVED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "GAP",
+        "NEEDS_CLARIFICATION",
+        "N_A_APPROVED_BY_HUMAN"
+      ]
+    }
+  ]
+}

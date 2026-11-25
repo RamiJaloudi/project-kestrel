@@ -1,0 +1,17 @@
+﻿column,csv_type,description
+group,text,"Functional documentation group copied from Entity_Catalog.Domain. It is not a database namespace, user group, ABAC grant or clean-team membership."
+group_description,text,Candidate explanation of the functional scope of the group.
+entity_description,text,Entity purpose copied from the source Entity_Catalog.
+Entity,text,Proposed relation or entity name. Not a claim that an identical live table exists.
+Field,text,Proposed field name within Entity. Entity plus Field identifies a dictionary row.
+PostgreSQL type,text,"Proposed PostgreSQL storage type, including declared precision or length where specified."
+Nullability,text,Proposed null constraint. NULL and absent data must not be treated as the same as an approved negative finding.
+Key,text,"Proposed PK, FK or key annotation. Consult FK_Relationships for target and cardinality; the FK list is not necessarily exhaustive."
+Origin,text,"Source provenance category as supplied, such as VDR, WORKFLOW or SYSTEM. Not a permission."
+Sensitivity,text,Proposed confidentiality metadata. Actual access requires current deterministic policy and source lineage.
+Priority,text,"Proposal implementation priority as supplied, such as P1. Not risk rating, matter urgency or legal approval."
+Definition / constraint notes,text,Unchanged source definition or constraint note. Blank means the workbook did not supply a note.
+Authority,text,Source authority label. PROPOSED SCHEMA does not mean firm-approved or implemented.
+schema_status,text,Explicit target-design status for every row. No DDL is executed by these files.
+field_description,text,"Readable definition from a source note or FK mapping, otherwise an explicitly identified candidate gloss."
+description_basis,text,Identifies whether the description was copied from source evidence or inferred for explanation.

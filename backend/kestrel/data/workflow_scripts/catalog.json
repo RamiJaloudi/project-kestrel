@@ -1,0 +1,3022 @@
+{
+  "schema": "kestrel-workflow-scripts-1",
+  "guides": [
+    {
+      "id": "reader-comparison",
+      "variant": "default",
+      "title": "Compare documents and retained versions",
+      "audience": [
+        "Permitted firm users",
+        "Audience-authorized external readers"
+      ],
+      "prerequisites": [
+        "Sign in to your organization portal and select a permitted matter."
+      ],
+      "status": "Implemented: independently authorized two-to-four-pane reading.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "No automatic line alignment, semantic redline or access to an original through a transcript."
+      ],
+      "steps": [
+        {
+          "action": "Open the comparison picker.",
+          "control": "Compare documents or versions",
+          "expected": "The picker lists only resources permitted to you.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Choose originals or transcripts and select two to four resources.",
+          "control": "Permitted original sources / Permitted sanitized transcripts",
+          "expected": "Your selections remain subject to separate permission checks.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "Choose permitted transcripts externally; a named Halden original grant is a separate entitlement.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Open the selected resources.",
+          "control": "Compare 2 selected documents",
+          "expected": "Each pane opens independently or reports unavailable.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "The number in the button changes with the selection; at most four panes.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Inspect each pane's evidence and location controls.",
+          "control": "Evidence text / Document / Document + evidence",
+          "expected": "Each reader keeps its own source version, location and search.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "Some formats have evidence text only. Unsupported legacy formats are refused.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Close the comparison when finished.",
+          "control": "Close comparison ×",
+          "expected": "The comparison closes without changing source records.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "financial",
+      "variant": "firm",
+      "title": "Financial facts, verification and comparisons",
+      "audience": [
+        "Source-cleared firm legal users",
+        "Root Admin for separate technical feature gates"
+      ],
+      "prerequisites": [
+        "Firm capture needs confirmed evidence; external reads need both bank gates and released fact entitlement."
+      ],
+      "status": "Implemented: exact human capture, typed comparison and internal context staging.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Unknown dimensions stay unknown; no FX inference, automatic fact approval or automatic candidate promotion."
+      ],
+      "steps": [
+        {
+          "action": "Firm only: choose evidence and the exact amount.",
+          "control": "Capture a financial fact",
+          "expected": "Literal amount and dimensional evidence can be reviewed before saving.",
+          "view": "Financial Evidence",
+          "portal": "firm",
+          "notes": "Use a confirmed source or approved transcript; formulas and caches are not evaluated.",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Firm only: enter literal dimensions and supporting header evidence.",
+          "control": "Additional header / dimension evidence",
+          "expected": "The proposal identifies exact source ranges and declared scale/period.",
+          "view": "Financial Evidence",
+          "portal": "firm",
+          "notes": "Check dates, currency, scale, decimal convention and notation; do not guess.",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Firm only: retain the unapproved fact.",
+          "control": "Save candidate fact",
+          "expected": "A new immutable proposed fact awaits independent verification.",
+          "view": "Financial Evidence",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "A different cleared reviewer checks every dimension.",
+          "control": "Verify all dimensions",
+          "expected": "The exact fact becomes verified; it is not externally released.",
+          "view": "Financial Evidence",
+          "portal": "firm",
+          "notes": "Enter Independent review / release rationale. Use Reject if unsupported.",
+          "role": "Different cleared reviewer"
+        },
+        {
+          "action": "An independent SME releases an eligible transcript-bound fact.",
+          "control": "Release fact",
+          "expected": "Only the separately approved derivative fact can become externally eligible.",
+          "view": "Financial Evidence",
+          "portal": "firm",
+          "notes": "The underlying transcript needs its own release; originals remain internal.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "If authorized, configure the two independent bank feature switches.",
+          "control": "Enable organization feature switch / Enable matter feature switch",
+          "expected": "Both switches are necessary for bank facts; neither grants a document.",
+          "view": "Financial access",
+          "portal": "admin",
+          "notes": "Use Configuration rationale; source and fact releases remain separate.",
+          "role": "Root Admin"
+        },
+        {
+          "action": "Filter the facts you are currently permitted to read.",
+          "control": "Search permitted facts",
+          "expected": "The table shows authorized rows and counts.",
+          "view": "Financial Evidence",
+          "portal": "current",
+          "notes": "External readers perform this step on their own portal. A minimum amount requires currency.",
+          "role": "Permitted fact reader"
+        },
+        {
+          "action": "Select two verified facts and compare their declared dimensions.",
+          "control": "Compare two verified facts",
+          "expected": "Exact Decimal differences preserve both facts and flag conflicts.",
+          "view": "Financial Evidence",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted fact reader"
+        },
+        {
+          "action": "Firm only: inspect richer context and explicit staging if needed.",
+          "control": "Internal financial context and extraction staging",
+          "expected": "Additional context remains internal and independently reviewed.",
+          "view": "Financial Evidence",
+          "portal": "firm",
+          "notes": "Unknown/incompatible context suppresses context-aware arithmetic; staging does not create approved facts.",
+          "role": "Source-cleared firm lawyer"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "variant": "firm",
+      "title": "Search modes and cited evidence",
+      "audience": [
+        "Source-cleared firm legal users"
+      ],
+      "prerequisites": [
+        "Use your organization portal; source and release permissions are checked on every request."
+      ],
+      "status": "Implemented: BM25, typed financial retrieval and governed internal semantic modes.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Ranking is not complete diligence; internal provider modes need approved processing and budget."
+      ],
+      "steps": [
+        {
+          "action": "Choose a permitted matter and enter an evidence question.",
+          "control": "Matter / Question",
+          "expected": "The request stays within your current matter scope.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Use Automatic or Lexical BM25 for a no-provider evidence search.",
+          "control": "Find cited evidence",
+          "expected": "Authorized passages appear with citations and route information.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Inspect the cited source location.",
+          "control": "Open evidence reader",
+          "expected": "The exact permitted source or derivative opens.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Internal only: choose Semantic or Hybrid when permitted.",
+          "control": "Search with embeddings · maximum $2",
+          "expected": "The app checks processing, visibility evidence and budget before sending.",
+          "view": "Questions",
+          "portal": "firm",
+          "notes": "External semantic indexing is unavailable. Legacy unscanned workbooks cannot reach the provider.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Review the route and scope rather than assuming completeness.",
+          "control": "Search route, ranking and scope",
+          "expected": "Ranking and bounded coverage are visible for the retained answer.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "After an uncertain provider result, do not treat retry as automatic.",
+          "control": "Start a new explicit provider request",
+          "expected": "A new provider request is an explicit user choice.",
+          "view": "Questions",
+          "portal": "firm",
+          "notes": "Inspect the failure first; unknown completion is not automatically resent.",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "disclosures",
+      "variant": "firm",
+      "title": "Sanitized document disclosures",
+      "audience": [
+        "Source-cleared firm authors and independent approvers"
+      ],
+      "prerequisites": [
+        "Firm authors need complete source review; external readers need an approved artifact for their organization."
+      ],
+      "status": "Implemented: rebuilt text-only PDF with separate plan and output approvals.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Native Office/original images are not released. Legacy unsafe workbook artifacts fail closed."
+      ],
+      "steps": [
+        {
+          "action": "Firm only: open the source reader and select exact removals.",
+          "control": "Redaction & sanitized disclosure / Add removal range",
+          "expected": "The draft previews ranges without changing original bytes.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm author"
+        },
+        {
+          "action": "Firm only: enter audience, safe title, purpose, expiry and rationale.",
+          "control": "Submit redaction proposal",
+          "expected": "An immutable removal plan awaits another cleared reviewer.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm author"
+        },
+        {
+          "action": "Another cleared reviewer examines the exact ranges.",
+          "control": "Independently accept removals",
+          "expected": "The plan is accepted; output release has not occurred.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Different cleared plan reviewer"
+        },
+        {
+          "action": "Build the physically reconstructed transcript after full source review.",
+          "control": "Build & validate transcript",
+          "expected": "A separate validated PDF artifact is retained.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Hidden/opaque/formula-cache workbook content is excluded or refused; original records are retained.",
+          "role": "Source-cleared firm builder"
+        },
+        {
+          "action": "Inspect the artifact and retained validation evidence.",
+          "control": "Read sanitized transcript / Validation manifest and retained decisions",
+          "expected": "The reviewer can inspect the exact output before deciding.",
+          "view": "Disclosures",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent output reviewer"
+        },
+        {
+          "action": "Use independent senior and, when required, separate counsel decisions.",
+          "control": "Senior lawyer: approve exact output / Antitrust: approve declassification",
+          "expected": "The exact artifact becomes eligible only after every required decision.",
+          "view": "Disclosures",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Legal SME and separate antitrust counsel"
+        },
+        {
+          "action": "Inspect or download the current artifact for authorized internal review.",
+          "control": "Read sanitized transcript / Download sanitized PDF",
+          "expected": "Only current audience-authorized transcript bytes are returned.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "Internal review does not publish it; separate audience approvals, expiry and source safety still govern release.",
+          "role": "Source-cleared firm reviewer"
+        }
+      ]
+    },
+    {
+      "id": "content-labels",
+      "variant": "default",
+      "title": "Document and passage classification",
+      "audience": [
+        "Source-cleared firm legal users",
+        "Independent source-cleared Legal SMEs"
+      ],
+      "prerequisites": [
+        "Open an accessible current original; sensitive labels require the exact active named scope."
+      ],
+      "status": "Implemented: human overlapping labels and protective whole-original inheritance.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Labels do not redact bytes or grant access. No automatic classifier or jurisdiction inference is supplied."
+      ],
+      "steps": [
+        {
+          "action": "Open the existing source reader's classification panel.",
+          "control": "Content labels & passage classification",
+          "expected": "The retained assertions and current revision are displayed.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Select a whole document or exact current-unit range and labels.",
+          "control": "Whole document (otherwise current evidence location) / Independent labels",
+          "expected": "The proposal identifies source-bound evidence.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Provide rationale and the required scope, then submit.",
+          "control": "Propose content labels",
+          "expected": "Proposed restrictions apply protectively immediately.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm proposer"
+        },
+        {
+          "action": "A different cleared SME reviews the exact assertion.",
+          "control": "Independently confirm",
+          "expected": "Confirmation is retained without replacing original evidence.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Contest an uncertain assertion while retaining protection.",
+          "control": "Contest; keep restrictions",
+          "expected": "The contest does not relax source access.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Use the separately approved disclosure workflow for sanitized output; language is not governing law.",
+          "role": "Source-cleared firm lawyer"
+        }
+      ]
+    },
+    {
+      "id": "sla-alerts",
+      "variant": "default",
+      "title": "Scoped operational escalation",
+      "audience": [
+        "Task creators",
+        "Source-cleared Legal SMEs",
+        "Named alert recipients"
+      ],
+      "prerequisites": [
+        "A current task must already have an independently approved published SLA binding."
+      ],
+      "status": "Implemented: approved scoped plans and bounded worker-generated in-app alerts.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "No email, legal approval, automatic reassignment or audience release is performed."
+      ],
+      "steps": [
+        {
+          "action": "Open the source task and bind the intended exact SLA version.",
+          "control": "Attach approved SLA prospectively",
+          "expected": "The current task receives a prospective operational binding.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Task creator or scoped SME"
+        },
+        {
+          "action": "Select cleared named recipients and a warning threshold.",
+          "control": "Scoped escalation plans / Propose escalation plan",
+          "expected": "An immutable plan awaits independent SME review.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Plan proposer"
+        },
+        {
+          "action": "A different cleared SME reviews and decides the exact plan.",
+          "control": "Independently approve plan",
+          "expected": "Only an approved current plan is eligible for worker scanning.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Reject plan retains the rejected decision. The worker scans bounded batches.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Open your recipient-only operational alert inbox.",
+          "control": "My operational SLA alerts / Refresh my alerts",
+          "expected": "Only currently permitted alerts appear.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Named alert recipient"
+        },
+        {
+          "action": "Keep notification reading, acknowledgement and closure separate.",
+          "control": "Mark read / Acknowledge / Close (creator / SME)",
+          "expected": "Each permitted action records its own receipt or disposition.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Acknowledgement and closure need rationale; reading is not approval.",
+          "role": "Recipient; creator/SME for closure"
+        }
+      ]
+    },
+    {
+      "id": "review-clocks",
+      "variant": "default",
+      "title": "Reader timing and operational SLA",
+      "audience": [
+        "Assigned firm reviewers",
+        "Scoped Root Admin or Legal SME policy authors"
+      ],
+      "prerequisites": [
+        "Start your own coordination task; calendar/policy changes require their separate roles."
+      ],
+      "status": "Implemented: bounded interaction estimates and prospective versioned business SLA.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Unobserved reading is not fabricated work. Imported dates do not backfill task clocks."
+      ],
+      "steps": [
+        {
+          "action": "Accept and start your assigned task, then open its evidence.",
+          "control": "Accept / Start review / View evidence & record opening",
+          "expected": "Your own task moves through actual server-time activity states.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Use the current task's displayed activity button; another person cannot record your activity.",
+          "role": "Current task assignee"
+        },
+        {
+          "action": "Opt in while actively reviewing the source.",
+          "control": "Enable interaction timing",
+          "expected": "Gesture-supported intervals are recorded as estimates.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Current task assignee"
+        },
+        {
+          "action": "Stop timing explicitly before leaving or signing.",
+          "control": "Stop timing",
+          "expected": "The interaction session stops; unobserved time remains separate.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Current task assignee"
+        },
+        {
+          "action": "A permitted policy author creates a calendar and draft budget.",
+          "control": "Save immutable calendar version / Create draft, apply to no tasks",
+          "expected": "The recorded calendar and draft do not bind tasks automatically.",
+          "view": "Review SLA",
+          "portal": "admin",
+          "notes": "",
+          "role": "Root Admin or scoped SME policy author"
+        },
+        {
+          "action": "The policy author submits the exact draft.",
+          "control": "Submit",
+          "expected": "The draft awaits an independent SME decision.",
+          "view": "Review SLA",
+          "portal": "admin",
+          "notes": "A draft applies to no task merely because it was saved.",
+          "role": "SLA policy author"
+        },
+        {
+          "action": "A different scoped SME reviews the exact calendar and budget.",
+          "control": "Independently approve",
+          "expected": "The independent exact-version decision is retained.",
+          "view": "Review SLA",
+          "portal": "admin",
+          "notes": "The author cannot approve their own policy.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Publish only the exact approved SLA version.",
+          "control": "Publish",
+          "expected": "The published version can be selected for prospective binding.",
+          "view": "Review SLA",
+          "portal": "admin",
+          "notes": "Publication does not attach the policy to any task.",
+          "role": "Authorized Root Admin or SME publisher"
+        },
+        {
+          "action": "Explicitly attach the selected version to the current task.",
+          "control": "Attach approved SLA prospectively",
+          "expected": "The task receives a prospective binding without backdating activity.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "A new assignment cycle needs a new binding.",
+          "role": "Task creator or scoped SME"
+        }
+      ]
+    },
+    {
+      "id": "review-work",
+      "variant": "default",
+      "title": "Custodians, parties and parallel review tasks",
+      "audience": [
+        "Source-cleared firm legal users"
+      ],
+      "prerequisites": [
+        "Select an exact accessible document version; assignment targets must be currently eligible."
+      ],
+      "status": "Implemented: source-bound custody and parallel coordination tasks.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Task completion is not legal review, AI authorization or external release. Legacy VDR fields remain proposals."
+      ],
+      "steps": [
+        {
+          "action": "Find the current task in Tasks & assignments, then open its exact source work.",
+          "control": "Tasks & assignments / Manage source work",
+          "expected": "The server-paged task row opens the existing source-specific custody and task controls.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Read evidence opens the source reader without recording task activity. A task does not grant source access.",
+          "role": "Source-cleared firm user"
+        },
+        {
+          "action": "Record an origin custodian with provenance and known custody dates.",
+          "control": "Save source custodian",
+          "expected": "A source-bound custody link is retained separately from reviewers.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Never infer custody from assignment; reusing an ID also requires its original-source access.",
+          "role": "Source-cleared firm user"
+        },
+        {
+          "action": "Record contracting parties separately when needed.",
+          "control": "Save contracting party",
+          "expected": "The party assertion does not create a legal finding.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm user"
+        },
+        {
+          "action": "Choose a cleared firm identity and independent stage.",
+          "control": "Create another review stage / Create independent task",
+          "expected": "A separate task and notification are created; no access is granted.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared task creator"
+        },
+        {
+          "action": "Only the assignee records their actual activity.",
+          "control": "Complete coordination task",
+          "expected": "Coordination status changes through the permitted task transition.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Accept/start/pause/resume precede completion; use the button appropriate to the current state.",
+          "role": "Current task assignee"
+        },
+        {
+          "action": "Use explicit manager controls for later changes.",
+          "control": "History, reassignment and deadline / Reassign with history",
+          "expected": "Changes append history rather than overwrite it.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Cancel task, Reopen task and Record deadline change remain separate authorized actions. Tasks & assignments also offers bounded reassignment for up to 25 eligible current tasks; selection does not approve legal work.",
+          "role": "Task creator or scoped SME"
+        }
+      ]
+    },
+    {
+      "id": "vdr-import",
+      "variant": "default",
+      "title": "VDR CSV mapping and folder ingestion",
+      "audience": [
+        "Assigned source-cleared firm legal users"
+      ],
+      "prerequisites": [
+        "Use synthetic CSV metadata and matching supported files in the selected matter."
+      ],
+      "status": "Implemented: private retained metadata staging and explicit folder intake.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Reviewer, QC, risk and date fields remain unapproved proposals; staging does not apply legacy workflow."
+      ],
+      "steps": [
+        {
+          "action": "Choose the optional CSV and map the required identity fields.",
+          "control": "VDR metadata import",
+          "expected": "The source/index/folder/file mapping can be inspected.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Review optional mappings without treating them as approvals.",
+          "control": "Optional title, dates, workstream and tracker columns",
+          "expected": "Vendor extras and workflow values remain retained proposals.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Confirm synthetic data and retain the mapping and row checks.",
+          "control": "Save mapping & check rows",
+          "expected": "Ready and quarantined rows are shown in a retained batch.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Only the uploader can retrieve the staged batch with current source authority.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Choose the matching folder and inspect IDs, handling and version matches.",
+          "control": "Choose folder / File details",
+          "expected": "Each selected file is linked to the intended source identity.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Confirm synthetic files and any proposed version matches.",
+          "control": "Import N selected documents",
+          "expected": "Files are ingested separately; prior versions remain retained.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "N is the displayed selection count. Quarantined rows and unsupported formats cannot ingest.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Review classification after intake; do not assume analysis started.",
+          "control": "Confirm intake classification",
+          "expected": "The current evidence can proceed only through its later authorized workflow.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "checklists",
+      "variant": "default",
+      "title": "DD checklist scope and coverage",
+      "audience": [
+        "Firm legal users",
+        "Root technical authors and independent Legal SMEs"
+      ],
+      "prerequisites": [
+        "Select a permitted matter and an exact checklist version; published scope requires independent review."
+      ],
+      "status": "Implemented: original scoped requests, linked coverage, waivers and retained request history.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Replacement publication is currently blocked pending its impact adapter; coverage is not a legal finding."
+      ],
+      "steps": [
+        {
+          "action": "Author an original request in a new scoped draft.",
+          "control": "Create draft with request",
+          "expected": "The A–N taxonomy anchors an original request; no scope is published.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "",
+          "role": "Root Admin or Legal SME author"
+        },
+        {
+          "action": "The checklist author submits the exact scoped draft.",
+          "control": "Submit for legal review",
+          "expected": "The scope awaits a different cleared SME decision.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "Submitting does not publish the scope.",
+          "role": "Checklist author"
+        },
+        {
+          "action": "A different scoped SME inspects and decides the exact scope.",
+          "control": "Independently approve scope / Reject scope",
+          "expected": "The independent decision is retained.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "The author cannot approve their own scoped definition.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Publish only the exact approved scope.",
+          "control": "Publish exact approved scope",
+          "expected": "The immutable request scope becomes available for coverage decisions.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "",
+          "role": "Authorized scope publisher"
+        },
+        {
+          "action": "Link actual responsive evidence and explain partial or missing support.",
+          "control": "Record coverage decision",
+          "expected": "Coverage history is retained without inventing a legal conclusion.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Request separate decisions for applicability or waiver.",
+          "control": "Request human N/A review / Request scoped waiver",
+          "expected": "The request awaits independent SME decision.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "",
+          "role": "Requester, then independent Legal SME"
+        },
+        {
+          "action": "Record follow-up and references in the retained item history.",
+          "control": "Request log & recorded coverage history / Append log entry",
+          "expected": "The log entry does not itself change coverage.",
+          "view": "DD Checklist",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted item participant"
+        }
+      ]
+    },
+    {
+      "id": "released-trackers",
+      "variant": "default",
+      "title": "Your released Excel trackers",
+      "audience": [
+        "Named Halden or Castlegate workbook recipients"
+      ],
+      "prerequisites": [
+        "Sign in on your own organization portal and select a permitted matter."
+      ],
+      "status": "Implemented: independently approved named-recipient workbook downloads.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Another person in the same organization has no automatic right to your workbook."
+      ],
+      "steps": [
+        {
+          "action": "Load the permitted recipient packages.",
+          "control": "Refresh packages",
+          "expected": "Only currently approved workbooks for your account appear.",
+          "view": "Trackers",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Inspect the released rows before using the workbook.",
+          "control": "Inspect workbook rows",
+          "expected": "The permitted audience wording is displayed.",
+          "view": "Trackers",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Download the approved artifact.",
+          "control": "Download approved XLSX",
+          "expected": "The exact recipient workbook is downloaded.",
+          "view": "Trackers",
+          "portal": "current",
+          "notes": "Revocation or changed source permissions can block later downloads; saved copies cannot be recalled.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Ask about the released material through the app.",
+          "control": "Collaboration",
+          "expected": "Discussion remains tied to an approved package.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "trackers",
+      "variant": "default",
+      "title": "Tracker import and recipient release",
+      "audience": [
+        "Source-cleared firm legal users",
+        "Independent audience and antitrust approvers"
+      ],
+      "prerequisites": [
+        "Use the app's register template and current source/finding revisions."
+      ],
+      "status": "Implemented: strict XLSX proposals, retained register changes and separate recipient releases.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Importing a workbook does not approve legal reasoning or grant external access."
+      ],
+      "steps": [
+        {
+          "action": "Open the existing exchange and download the correct register template.",
+          "control": "Excel exchange / Get a template",
+          "expected": "The template includes RecordID and ExpectedRevision.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Edit only allowed fields, confirm synthetic content and preview.",
+          "control": "Preview workbook",
+          "expected": "Each row is checked against current source and revision authority.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "Keep RecordID and ExpectedRevision unchanged; no formulas or hidden content.",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Inspect selected valid rows and attest the source-context review.",
+          "control": "I reviewed every selected proposal and its source context",
+          "expected": "The selected changes are ready for explicit application.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Apply the displayed reviewed selection with a rationale.",
+          "control": "Apply N reviewed rows",
+          "expected": "The app atomically retains the permitted register revisions.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "N is the selected-row count; conflict requires a fresh preview.",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Choose reviewed records and a named audience recipient.",
+          "control": "Create export draft",
+          "expected": "An immutable audience workbook awaits independent approval.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared workbook author"
+        },
+        {
+          "action": "Independent approvers inspect and approve the exact workbook.",
+          "control": "Approve sanitized clean-team content / Approve audience release",
+          "expected": "Required separate decisions make the named workbook eligible.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "Use the antitrust control when required; the author cannot approve the draft.",
+          "role": "Independent audience approver and separate counsel"
+        }
+      ]
+    },
+    {
+      "id": "action-center",
+      "variant": "default",
+      "title": "Legal SME change-impact workflow",
+      "audience": [
+        "Source-cleared firm reviewers",
+        "Independent Legal SMEs"
+      ],
+      "prerequisites": [
+        "Use an exact material replacement and current source-scoped impact task."
+      ],
+      "status": "Implemented: protected change impacts, explicit rerun authority and lawyer reconciliation.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Publication and notification acknowledgement do not authorize or release a rerun."
+      ],
+      "steps": [
+        {
+          "action": "Create, test and independently publish the intended replacement.",
+          "control": "Create replacement draft",
+          "expected": "Material publication creates an impact assessment request.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "Use test, submit, approve and publish for their separate authorized roles.",
+          "role": "Playbook author and independent approver"
+        },
+        {
+          "action": "Open the permitted task and inspect its exact change and source.",
+          "control": "Open task / Exact playbook field changes / Open source reader",
+          "expected": "The immutable impact scope can be reviewed.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Assigned source-cleared reviewer"
+        },
+        {
+          "action": "Claim the task or reassess a changed scope before deciding.",
+          "control": "Claim task / Reassess current impact",
+          "expected": "The current claim/snapshot is retained.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Assigned source-cleared reviewer"
+        },
+        {
+          "action": "An eligible independent SME approves or rejects the document rerun.",
+          "control": "Approve this document rerun / Reject rerun",
+          "expected": "Only the exact approved snapshot can authorize the queued candidate work.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent eligible Legal SME"
+        },
+        {
+          "action": "Review new candidates against the retained findings.",
+          "control": "Confirm candidate / Reject candidate",
+          "expected": "Prior reviewed and released history remains intact.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared lawyer"
+        },
+        {
+          "action": "Record reconciliation and close the lawyer task with rationale.",
+          "control": "Close after lawyer review",
+          "expected": "Closure does not automatically publish new findings.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared lawyer"
+        }
+      ]
+    },
+    {
+      "id": "profile",
+      "variant": "default",
+      "title": "Your profile and password",
+      "audience": [
+        "Signed-in organization users"
+      ],
+      "prerequisites": [
+        "Use your own authenticated profile; never enter account secrets into this workbook."
+      ],
+      "status": "Implemented: profile display, password change and session actions.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Browser tabs on one portal share a cookie; independent users need separate browser profiles."
+      ],
+      "steps": [
+        {
+          "action": "Open the upper-right profile control.",
+          "control": "Your profile",
+          "expected": "Your authenticated organization, roles and account metadata are displayed.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Copy your own UPN only when needed inside the authorized workflow.",
+          "control": "Copy UPN",
+          "expected": "The current account identifier is copied.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "Do not paste personal identifiers into the public/shared workbook notes.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Enter your current and new passwords only in the app dialog.",
+          "control": "Change password",
+          "expected": "The password form opens without recording secrets here.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Save the matching new password.",
+          "control": "Save password",
+          "expected": "The current session rotates and other sessions are signed out.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "End this session when finished.",
+          "control": "Sign out",
+          "expected": "The host-bound authenticated session ends.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "report-qa",
+      "variant": "firm",
+      "title": "Report drafting and cited questions",
+      "audience": [
+        "Source-cleared firm legal users",
+        "Independent full-package approvers"
+      ],
+      "prerequisites": [
+        "Complete finding review first; select a permitted matter and report audience."
+      ],
+      "status": "Implemented: versioned drafts, cited questions and separate package approval.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "AI output remains an unapproved candidate. Edited or DDR-origin reports may require new internal review."
+      ],
+      "steps": [
+        {
+          "action": "Select reviewed findings, output and audience.",
+          "control": "Create a draft from reviewed findings / Generate draft",
+          "expected": "A saved unapproved report version is created.",
+          "view": "Reports & Board Pack",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm author"
+        },
+        {
+          "action": "Inspect text, evidence and annexes before making edits.",
+          "control": "Open cited source passage",
+          "expected": "The exact currently permitted evidence opens.",
+          "view": "Reports & Board Pack",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm reviewer"
+        },
+        {
+          "action": "Retain edits as a separate version.",
+          "control": "Save edits as a new version",
+          "expected": "The previous saved report stays in history.",
+          "view": "Reports & Board Pack",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm author"
+        },
+        {
+          "action": "If permitted, explicitly request optional provider drafting.",
+          "control": "Draft a new version with AI",
+          "expected": "A new unapproved version is subject to processing and budget checks.",
+          "view": "Reports & Board Pack",
+          "portal": "firm",
+          "notes": "",
+          "role": "Explicitly authorized firm requester"
+        },
+        {
+          "action": "A different cleared approver reviews the complete saved package.",
+          "control": "Approve the complete saved package / Independently approve saved version",
+          "expected": "Audience release still requires every applicable approval.",
+          "view": "Reports & Board Pack",
+          "portal": "firm",
+          "notes": "DDR-origin versions require exact independent internal review first; antitrust sanitization is separate.",
+          "role": "Independent package approver; separate counsel if required"
+        },
+        {
+          "action": "Ask evidence questions and inspect their citations.",
+          "control": "Find cited evidence / Open evidence reader",
+          "expected": "The answer remains within current source/release permissions.",
+          "view": "Questions",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted firm reader"
+        }
+      ]
+    },
+    {
+      "id": "collaboration",
+      "variant": "firm",
+      "title": "Client collaboration and intake",
+      "audience": [
+        "Source-cleared firm discussion authors and independent approvers"
+      ],
+      "prerequisites": [
+        "Choose an approved package for your organization; firm replies need independent publication."
+      ],
+      "status": "Implemented: package-bound discussion and separate Halden submission/intake.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "A comment, reply draft or upload does not approve evidence or release it."
+      ],
+      "steps": [
+        {
+          "action": "Open the permitted package discussion and inspect the question.",
+          "control": "Collaboration",
+          "expected": "Only the current permitted discussion is displayed.",
+          "view": "Collaboration",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm participant"
+        },
+        {
+          "action": "Write a response as an unapproved draft.",
+          "control": "Reply / Save draft for independent approval",
+          "expected": "The response stays internal until independently approved.",
+          "view": "Collaboration",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm reply author"
+        },
+        {
+          "action": "A different cleared lawyer inspects the exact proposed response.",
+          "control": "Review exact reply for publication",
+          "expected": "The retained draft and publication scope are reviewed.",
+          "view": "Collaboration",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent cleared reply approver"
+        },
+        {
+          "action": "Record the separate required publication decisions.",
+          "control": "Antitrust approval / Approve reply for audience",
+          "expected": "The exact reply becomes visible only after every required decision.",
+          "view": "Collaboration",
+          "portal": "firm",
+          "notes": "A read receipt, draft save or Excel tick is not approval.",
+          "role": "Independent reply approver; separate counsel if required"
+        },
+        {
+          "action": "For a Halden submission, inspect it before separate source acceptance.",
+          "control": "Extracted upload preview / Accept into firm Documents",
+          "expected": "Acceptance creates a distinct controlled firm source.",
+          "view": "Uploads",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm intake lawyer"
+        }
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "variant": "default",
+      "title": "Signing, closing and record custody",
+      "audience": [
+        "Scoped firm legal participants",
+        "Independent Legal SME or Security approvers"
+      ],
+      "prerequisites": [
+        "Review the exact matter state; signing, closing and copy deletion are distinct controlled actions."
+      ],
+      "status": "Implemented: retained signing freeze, holds, external closure and client-copy deletion.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Freeze/closure cannot be reversed here. Firm records are retained; legal holds block copy deletion."
+      ],
+      "steps": [
+        {
+          "action": "Choose the intended matter and controlled action.",
+          "control": "Action",
+          "expected": "The proposed action is explicit; selecting it performs nothing.",
+          "view": "Signing & Retention",
+          "portal": "firm",
+          "notes": "",
+          "role": "Scoped legal or Security proposer"
+        },
+        {
+          "action": "Provide rationale and submit the proposal.",
+          "control": "Submit for independent approval",
+          "expected": "A pending exact-hash decision is retained.",
+          "view": "Signing & Retention",
+          "portal": "firm",
+          "notes": "",
+          "role": "Scoped legal or Security proposer"
+        },
+        {
+          "action": "The independent approver inspects the exact record.",
+          "control": "Inspect exact manifest",
+          "expected": "The approver can review the controlled scope and hash.",
+          "view": "Signing & Retention",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent action-specific approver"
+        },
+        {
+          "action": "The appropriate independent role records its exact decision.",
+          "control": "approve exact action / reject exact action",
+          "expected": "Only the matching legal or Security authority can decide.",
+          "view": "Signing & Retention",
+          "portal": "firm",
+          "notes": "SME handles signing/holds; Security handles closing/client-copy deletion. Authors cannot approve themselves.",
+          "role": "Independent Legal SME or Security approver"
+        },
+        {
+          "action": "Verify the resulting record status.",
+          "control": "Record status",
+          "expected": "Freeze, external closure and legal-hold state are shown separately.",
+          "view": "Signing & Retention",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted scoped participant"
+        }
+      ]
+    },
+    {
+      "id": "wall-checker",
+      "variant": "default",
+      "title": "Person and document ethical-wall checks",
+      "audience": [
+        "Root administrative operators",
+        "Independent Conflicts approvers"
+      ],
+      "prerequisites": [
+        "Choose a permitted matter/person; diagnostic checks do not grant rights."
+      ],
+      "status": "Implemented: current person checks, document PDP diagnostics and governed restrictions.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "A successful check is a current decision receipt, not a persistent access grant."
+      ],
+      "steps": [
+        {
+          "action": "Open the checker and select the intended person/scope.",
+          "control": "Person / Person + documents",
+          "expected": "The requested check type is explicit.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Permitted diagnostic operator"
+        },
+        {
+          "action": "Add only intended source or policy references for a document check.",
+          "control": "Document / artifact policy references",
+          "expected": "Each supplied reference remains subject to its own policy.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Permitted diagnostic operator"
+        },
+        {
+          "action": "Run the current check.",
+          "control": "Check person / Check person + documents",
+          "expected": "Allowed/denied explanations reflect current database authority.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Permitted diagnostic operator"
+        },
+        {
+          "action": "Retain a diagnostic receipt if needed.",
+          "control": "Download decision receipt",
+          "expected": "A scoped receipt downloads without changing permissions.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Permitted diagnostic operator"
+        },
+        {
+          "action": "Submit a relationship/restriction proposal for separate review.",
+          "control": "Submit for independent Conflicts approval",
+          "expected": "No wall change occurs merely by submitting.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Relationship/restriction proposer"
+        },
+        {
+          "action": "A different Conflicts approver reviews the exact record.",
+          "control": "Approve exact record / Reject proposal",
+          "expected": "The independent decision is retained.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "Never remove your own wall; use Request retirement as a separate governed action.",
+          "role": "Independent Conflicts approver"
+        }
+      ]
+    },
+    {
+      "id": "account",
+      "variant": "default",
+      "title": "Account and portal access",
+      "audience": [
+        "Organization account holders"
+      ],
+      "prerequisites": [
+        "Use the HTTPS portal matching your verified organization and your own provisioned account."
+      ],
+      "status": "Implemented: server sessions, host-bound cookies and current role/matter checks.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "A portal hostname or remembered username grants no role, source access or legal authority."
+      ],
+      "steps": [
+        {
+          "action": "Open your organization portal and enter credentials only in its sign-in form.",
+          "control": "Username / Password",
+          "expected": "Credentials are sent to the same-origin authentication service.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "Do not put credentials in this workbook or share a browser session with another approver.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Sign in with your own account.",
+          "control": "Sign in",
+          "expected": "The app loads your current verified identity.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Optionally choose the remember feature on your own trusted device.",
+          "control": "Remember username and stay signed in (30 days)",
+          "expected": "The host-specific preference/session follows the displayed duration.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Check the current account before taking a governed action.",
+          "control": "Your profile",
+          "expected": "Organization and roles reflect the server identity.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Sign out or remove a saved username when needed.",
+          "control": "Sign out / Forget saved username",
+          "expected": "The requested session or username preference is cleared.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "Forget saved username is on the sign-in screen; it does not reset a password.",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "lawyer",
+      "variant": "default",
+      "title": "Lawyer review and release",
+      "audience": [
+        "Assigned source-cleared firm lawyers"
+      ],
+      "prerequisites": [
+        "Use current confirmed evidence; a task assignment alone does not grant source access."
+      ],
+      "status": "Implemented: original evidence, lawyer corrections and independent audience release.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Coordination completion and workbook ticks do not approve findings or declassify content."
+      ],
+      "steps": [
+        {
+          "action": "Inspect the permitted source version and confirm its declared handling.",
+          "control": "Open document reader / Confirm intake classification",
+          "expected": "The exact source and handling are retained.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Search the findings grid and open the exact finding revision beside its original evidence.",
+          "control": "Open review / Read source",
+          "expected": "A fresh authorized finding and source profile load; stale revisions are refused.",
+          "view": "Risk Review",
+          "portal": "firm",
+          "notes": "Filters and paging do not certify review. Historical sources remain read-only.",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Record a justified finding correction or rejection.",
+          "control": "Confirm / save corrected finding / Reject with rationale",
+          "expected": "A retained lawyer decision replaces no original evidence.",
+          "view": "Risk Review",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Open a current contract or licence from the Contract register and record whole-source review separately.",
+          "control": "Contract register / Open review / Save contract review version",
+          "expected": "A fresh source profile supplies the new review form. Prior metadata remains withheld where its historical handling is unavailable.",
+          "view": "Diligence Trackers",
+          "portal": "firm",
+          "notes": "Read the entire source and decide every current candidate before attesting completion. Do not infer prior coverage from withheld metadata or imported dates.",
+          "role": "Source-cleared firm lawyer"
+        },
+        {
+          "action": "Draft an audience package and obtain independent release.",
+          "control": "Create package for independent approval",
+          "expected": "The draft awaits another authorized approver and any required counsel.",
+          "view": "Release Desk",
+          "portal": "firm",
+          "notes": "",
+          "role": "Author, then independent release approver"
+        },
+        {
+          "action": "Use sanitized transcripts for restricted document disclosure.",
+          "control": "Redaction & sanitized disclosure",
+          "expected": "Original restrictions remain unchanged.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm author"
+        }
+      ]
+    },
+    {
+      "id": "sme",
+      "variant": "default",
+      "title": "Legal SME governance",
+      "audience": [
+        "Assigned source-cleared Legal SMEs"
+      ],
+      "prerequisites": [
+        "Use your own separate session; independence and source clearance are checked for each decision."
+      ],
+      "status": "Implemented: exact-version governance, source analysis and independent review.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "SME approval is specific to its object; it does not grant source rights or release another object."
+      ],
+      "steps": [
+        {
+          "action": "Inspect the submitted playbook definition and test evidence.",
+          "control": "Load versions / Open",
+          "expected": "The exact retained version can be independently reviewed.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Record a reasoned independent policy decision.",
+          "control": "approve / reject",
+          "expected": "The author cannot approve their own legal change.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Authorize only intended current source analysis with a published playbook.",
+          "control": "SME authorize & queue",
+          "expected": "The worker receives a scoped authorized job.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Provider/processing and visibility checks still apply; no automatic paid retry.",
+          "role": "Scoped Legal SME"
+        },
+        {
+          "action": "Review submitted contracts, drafter and quality profiles separately.",
+          "control": "Legal SME: approve exact version",
+          "expected": "Each profile needs its own exact-version independent decision.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Follow the Agent profiles guide, including the exact review checkbox; do not approve by merely reading Excel.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Review complete DDR report bodies, citations, Word and annexes.",
+          "control": "Approve exact internal report",
+          "expected": "Internal approval remains separate from audience release.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent full-report Legal SME"
+        },
+        {
+          "action": "Inspect current impact tasks before any new reanalysis decision.",
+          "control": "Approve this document rerun",
+          "expected": "The approved snapshot authorizes candidate work only.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent eligible Legal SME"
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "variant": "default",
+      "title": "Administrative operations",
+      "audience": [
+        "Authorized Root administrative operators"
+      ],
+      "prerequisites": [
+        "Use the approved local launcher or authorized deployment operations; legal source rights are separate."
+      ],
+      "status": "Implemented local administration; public/cloud operations require separate acceptance.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Root technical control cannot override walls, source permissions, independent SME decisions or release gates."
+      ],
+      "steps": [
+        {
+          "action": "For the local workstation only, start the existing owned services.",
+          "control": "START_KESTREL.bat",
+          "expected": "Portal Home and the configured local components start.",
+          "view": "Resources",
+          "portal": "admin",
+          "notes": "This is a local file operation, not an Excel macro or a public deployment step.",
+          "role": "Authorized local operator"
+        },
+        {
+          "action": "Search or page Accounts, then load a fresh exact account revision before editing identity metadata.",
+          "control": "Accounts / Edit metadata / Save account details",
+          "expected": "Only display name and employer-specific employee ID change; leading zeros remain text.",
+          "view": "Accounts",
+          "portal": "admin",
+          "notes": "Roles, activation and source access are separate. If a write result is uncertain, reload the current account before another save.",
+          "role": "Root Admin"
+        },
+        {
+          "action": "Select a permitted Registry matter and inspect the access and decision-history grids before preparing a command.",
+          "control": "Registry / Look up target / Record validation decision / Save assignment",
+          "expected": "The form retains its loaded administration revision. Direct and effective walls are distinct read-only states.",
+          "view": "Registry",
+          "portal": "admin",
+          "notes": "Pending and rejected matters remain administrable within Root management scope. Preserve walls and use the separate Conflicts workflow. Resolve unknown outcomes through read-only inspection; never resend automatically.",
+          "role": "Root Admin"
+        },
+        {
+          "action": "Prepare technical profiles and submit them for independent legal review.",
+          "control": "Save new draft profile / Run static manifest checks",
+          "expected": "A tested technical draft remains unapproved until an independent SME decides.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Root profile author"
+        },
+        {
+          "action": "Publish only the already approved exact profile revision.",
+          "control": "Publish exact approved version",
+          "expected": "Publication does not itself start a report or rerun.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Root publisher after independent SME approval"
+        },
+        {
+          "action": "Stop owned local components when appropriate.",
+          "control": "STOP_KESTREL.bat",
+          "expected": "The owned local service tree stops while retained data/logs remain.",
+          "view": "Resources",
+          "portal": "admin",
+          "notes": "Do not use these local steps as cloud provisioning or disaster-recovery evidence.",
+          "role": "Authorized local operator"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "variant": "default",
+      "title": "Security/privacy approval",
+      "audience": [
+        "Explicit Security approvers"
+      ],
+      "prerequisites": [
+        "Review the exact submitted environment policy independently from its author."
+      ],
+      "status": "Implemented: independent environment-policy decisions and replacement controls.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Enabling a provider does not approve external processing; source and workbook safety gates still apply."
+      ],
+      "steps": [
+        {
+          "action": "Open the environment-policy version on the firm policy screen.",
+          "control": "Load versions / Open",
+          "expected": "The current exact definition is visible to the permitted reviewer.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Security approver"
+        },
+        {
+          "action": "Check region, cloud/external blocks and the intended processing scope.",
+          "control": "Environment / Security-Privacy approval",
+          "expected": "The definition type and restrictions are explicit.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Security approver"
+        },
+        {
+          "action": "Enter rationale and independently decide the submitted version.",
+          "control": "Decision rationale / approve / reject",
+          "expected": "The server enforces Security authority and no self-approval.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Security approver"
+        },
+        {
+          "action": "If replacing a stricter policy, inspect the separate replacement request.",
+          "control": "Replace an approved processing policy / Security approve",
+          "expected": "A published permissive draft alone does not retire the older restrictions.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "The separate request uses Request replacement; an independent Security approver decides it.",
+          "role": "Independent Security approver"
+        },
+        {
+          "action": "Handle closing or client-copy deletion only as its own exact action.",
+          "control": "approve exact action",
+          "expected": "The lifecycle decision remains subject to independent authority and legal holds.",
+          "view": "Signing & Retention",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Security approver"
+        }
+      ]
+    },
+    {
+      "id": "conflicts",
+      "variant": "default",
+      "title": "Conflicts approval",
+      "audience": [
+        "Explicit independent Conflicts approvers"
+      ],
+      "prerequisites": [
+        "Use a separate approving identity and a currently permitted matter scope."
+      ],
+      "status": "Implemented: independently governed person/relationship/wall changes.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Explicit denies override assignments; diagnostic receipts and acknowledgements do not remove a wall."
+      ],
+      "steps": [
+        {
+          "action": "Inspect the proposed relationship or restriction and its exact scope.",
+          "control": "Manage relationships, restrictions and independent approvals",
+          "expected": "The pending record can be reviewed without granting access.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent Conflicts approver"
+        },
+        {
+          "action": "Check the intended person and references against current policy.",
+          "control": "Check person / Check person + documents",
+          "expected": "Current denies and policy reasons remain visible only as permitted.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent Conflicts approver"
+        },
+        {
+          "action": "Review rationale and decide the exact proposal independently.",
+          "control": "Approve exact record / Reject proposal",
+          "expected": "The author cannot approve their own record.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent Conflicts approver"
+        },
+        {
+          "action": "Use a separate request to retire an existing restriction.",
+          "control": "Request retirement",
+          "expected": "Retirement still awaits the required independent decision.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent Conflicts approver"
+        },
+        {
+          "action": "Recheck current rights after an approved change.",
+          "control": "Check person",
+          "expected": "The decision receipt reflects current state rather than an assumed grant.",
+          "view": "Wall checker",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent Conflicts approver"
+        }
+      ]
+    },
+    {
+      "id": "clean-team",
+      "variant": "firm",
+      "title": "Named clean-team workflow — firm",
+      "audience": [
+        "Named source-cleared firm lawyers",
+        "Independent Legal SME and antitrust approvers"
+      ],
+      "prerequisites": [
+        "Every participant needs the exact active matter/scope membership and current source clearance."
+      ],
+      "status": "Implemented: protective source handling and separate output declassification/release.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Membership is not publication. No real approval can be replaced by a shared account or workbook tick."
+      ],
+      "steps": [
+        {
+          "action": "Ingest the original with its explicit restrictive handling.",
+          "control": "Access restriction: Clean team — pricing",
+          "expected": "The server checks the named source scope before intake.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Named source-cleared firm lawyer"
+        },
+        {
+          "action": "Review the current original and whole-source coverage.",
+          "control": "Open document reader / Save whole-document review",
+          "expected": "The original remains restricted and unchanged.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Named source-cleared firm lawyer"
+        },
+        {
+          "action": "If needed, propose a physically rebuilt sanitized transcript.",
+          "control": "Submit redaction proposal",
+          "expected": "The selected removal plan awaits a different cleared reviewer.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Named source-cleared firm author"
+        },
+        {
+          "action": "Obtain independent plan review and inspect the rebuilt output.",
+          "control": "Independently accept removals / Build & validate transcript",
+          "expected": "A distinct validated transcript and manifest are retained.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Different cleared plan reviewer and builder"
+        },
+        {
+          "action": "A cleared senior reviewer and separate antitrust counsel decide.",
+          "control": "Senior lawyer: approve exact output / Antitrust: approve declassification",
+          "expected": "Every required decision binds the exact output bundle.",
+          "view": "Disclosures",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent Legal SME and separate antitrust counsel"
+        },
+        {
+          "action": "For a Halden original exception, use a named source-version grant.",
+          "control": "Propose for independent antitrust approval",
+          "expected": "An original grant needs its own outside-business attestation and counsel decision.",
+          "view": "Clean Team",
+          "portal": "firm",
+          "notes": "A transcript release is not an original-source grant. Bank originals remain unavailable.",
+          "role": "Source-cleared firm grant proposer"
+        }
+      ]
+    },
+    {
+      "id": "clean-team",
+      "variant": "halden",
+      "title": "Named Halden clean-team originals",
+      "audience": [
+        "Individually named Halden clean-team recipients"
+      ],
+      "prerequisites": [
+        "Use your own Halden account with a recorded outside-business designation, active named matter/scope membership and an independent antitrust source-version grant."
+      ],
+      "status": "Implemented: named, independently approved Halden source-version grants.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Grants need active scope, independent counsel, exact source version and unexpired entitlement."
+      ],
+      "steps": [
+        {
+          "action": "Verify your own Halden identity and active named source entitlement.",
+          "control": "Your profile",
+          "expected": "The app shows your current organization and scopes.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "Membership alone is not a source grant. Use your own independent account.",
+          "role": "Individually named Halden recipient"
+        },
+        {
+          "action": "Open the named original-source workspace.",
+          "control": "Clean Team",
+          "expected": "Only individually approved source versions appear.",
+          "view": "Clean Team",
+          "portal": "current",
+          "notes": "",
+          "role": "Individually named Halden recipient"
+        },
+        {
+          "action": "Open the specifically granted source version.",
+          "control": "Source-version open reader button",
+          "expected": "The original reader rechecks your exact grant and current source safety.",
+          "view": "Clean Team",
+          "portal": "current",
+          "notes": "The button contains the permitted document key, version and name.",
+          "role": "Individually named Halden recipient"
+        },
+        {
+          "action": "Inspect only while the grant and named scope remain current.",
+          "control": "Evidence text / Document",
+          "expected": "Expired, revoked or legacy-unscanned originals are withheld.",
+          "view": "Clean Team",
+          "portal": "current",
+          "notes": "",
+          "role": "Individually named Halden recipient"
+        },
+        {
+          "action": "Use a separate artifact where only a transcript was released.",
+          "control": "Read sanitized transcript",
+          "expected": "A transcript does not grant its original.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Ask a question through a permitted package discussion.",
+          "control": "Send to deal team",
+          "expected": "The discussion stays within the approved audience.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        }
+      ]
+    },
+    {
+      "id": "external",
+      "variant": "default",
+      "title": "Released client and bank views",
+      "audience": [
+        "Halden client users",
+        "Castlegate bank users"
+      ],
+      "prerequisites": [
+        "Sign in to your own organization portal and select a permitted matter."
+      ],
+      "status": "Implemented: audience-approved findings, reports, trackers and transcripts.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Bank privilege exclusions and current release permissions apply; downloads already saved cannot be recalled."
+      ],
+      "steps": [
+        {
+          "action": "Choose the matter and open the audience's findings screen.",
+          "control": "Released Findings / Commercial Findings",
+          "expected": "Only material released for your organization appears.",
+          "view": "Overview",
+          "portal": "current",
+          "notes": "Halden uses Released Findings; Castlegate uses Commercial Findings.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Read a permitted report version and its approved downloads.",
+          "control": "Saved versions and history",
+          "expected": "The report and available files remain audience-bound.",
+          "view": "Reports",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Inspect a released transcript without requesting its original.",
+          "control": "Read sanitized transcript",
+          "expected": "Only approved artifact evidence is returned.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Open workbooks naming your account.",
+          "control": "Refresh packages / Download approved XLSX",
+          "expected": "A same-organization account does not inherit recipient entitlement.",
+          "view": "Trackers",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Search approved evidence and open exact citations.",
+          "control": "Find cited evidence / Open evidence reader",
+          "expected": "The search excludes private originals and revoked releases.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Discuss a permitted package with the deal team.",
+          "control": "Send to deal team",
+          "expected": "Your question/comment is retained for the permitted audience.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "audit",
+      "variant": "default",
+      "title": "Audit reports and retention",
+      "audience": [
+        "Permitted account holders",
+        "Designated matter auditors"
+      ],
+      "prerequisites": [
+        "Use only your permitted own or explicitly granted audit scope."
+      ],
+      "status": "Implemented: server-paged scoped audit metadata and matching all-filtered ZIP exports.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Hashes verify integrity, not WORM storage; no automatic deletion or unrestricted administrator source audit."
+      ],
+      "steps": [
+        {
+          "action": "Open the audit screen on your organization portal.",
+          "control": "Audit",
+          "expected": "The permitted audit filters are displayed.",
+          "view": "Audit",
+          "portal": "current",
+          "notes": "Administration calls this view Audit reports; use that section there.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Choose category and optional matter and local-time bounds.",
+          "control": "Category / Matter ID (optional) / From (local time) / To (local time)",
+          "expected": "Draft scope edits clear the prior grid and export readiness.",
+          "view": "Audit",
+          "portal": "current",
+          "notes": "Only own or explicitly granted events are eligible. The permitted baseline is limited to 1,000 events before search.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Apply the audit scope, then search, filter columns, sort and page the permitted events.",
+          "control": "Apply audit scope / Column filters / Apply column filters",
+          "expected": "A successful current draw enables export. Denied source-linked history is excluded before totals.",
+          "view": "Audit",
+          "portal": "current",
+          "notes": "Narrow the category, matter or time window after a 1,000-event limit refusal. Search cannot bypass that baseline ceiling.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Export the successful searched query using a displayed format button.",
+          "control": "Export JSONL + manifest / Export CSV + manifest / Export HTML + manifest / Export PDF + manifest",
+          "expected": "The ZIP includes every filtered event across all pages, with exact event IDs and a file hash in its manifest.",
+          "view": "Audit",
+          "portal": "current",
+          "notes": "Scope or search changes invalidate export readiness. Automatic refresh pauses during rendering; the server still rechecks permissions. No raw diagnostic-log access is granted.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Retain downloaded evidence according to the approved handling process.",
+          "control": "Downloaded export manifest",
+          "expected": "Local hash validation does not establish external immutable storage.",
+          "view": "Audit",
+          "portal": "current",
+          "notes": "Inspect the manifest inside the downloaded ZIP; it is not an application approval control.",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "ddr-runs",
+      "variant": "default",
+      "title": "Governed report drafting",
+      "audience": [
+        "Source-cleared firm requesters",
+        "Independent full-report Legal SMEs"
+      ],
+      "prerequisites": [
+        "Select a current published playbook and reviewed findings; live mode also needs approved stage profiles/settings."
+      ],
+      "status": "Implemented: bounded contracts graph with offline and governed live modes.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Offline results are deterministic demo behavior. No graph, checkbox or Excel tick authorizes audience release."
+      ],
+      "steps": [
+        {
+          "action": "Choose the permitted matter, reviewed findings and published playbook.",
+          "control": "New DDR draft run",
+          "expected": "The run is pinned to the selected current evidence/configuration.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm requester"
+        },
+        {
+          "action": "Use offline mode for a no-provider workflow demonstration.",
+          "control": "Offline deterministic baseline / Start offline DDR draft",
+          "expected": "An unapproved draft run begins under current source authority.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "",
+          "role": "Source-cleared firm requester"
+        },
+        {
+          "action": "For controlled live use, select the published contracts, drafter and quality profiles.",
+          "control": "Published specialist profiles (optional, maximum 14)",
+          "expected": "Live validation requires all three exact approved stage profiles.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "Use Start controlled live draft only when enabled and explicitly intended; provider/processing/budget gates still apply.",
+          "role": "Explicitly authorized live requester"
+        },
+        {
+          "action": "Wait for the human-review interruption and open the full report.",
+          "control": "Read complete saved report, citations and annexes / Download exact Word report",
+          "expected": "The draft remains internally unapproved until a different eligible SME decides.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "Open the linked report in Reports & Board Pack; read its complete body, Word document, citations and both annexes.",
+          "role": "Independent full-report Legal SME"
+        },
+        {
+          "action": "The independent SME attests review of the exact saved package.",
+          "control": "I reviewed this complete saved report, original citations and both annexes, including the Word document. I am recording an independent internal review of this exact version.",
+          "expected": "The checkbox is a prerequisite, not the approval decision.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent full-report Legal SME"
+        },
+        {
+          "action": "Record the exact internal report decision with rationale.",
+          "control": "Approve exact internal report / Reject exact internal report",
+          "expected": "The retained internal decision does not release the report externally.",
+          "view": "DDR Runs",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent full-report Legal SME"
+        },
+        {
+          "action": "Obtain separate audience and counsel approvals where needed.",
+          "control": "Independently approve saved version / Antitrust approve sanitization",
+          "expected": "Only the exact separately approved report becomes audience-eligible.",
+          "view": "Reports & Board Pack",
+          "portal": "firm",
+          "notes": "Edits require fresh internal review; unknown provider completion is not automatically resent.",
+          "role": "Independent audience approver and separate counsel"
+        }
+      ]
+    },
+    {
+      "id": "agent-registry",
+      "variant": "default",
+      "title": "Agent profiles and approved reruns",
+      "audience": [
+        "Root technical profile authors/publishers",
+        "Independent source-cleared Legal SMEs"
+      ],
+      "prerequisites": [
+        "Use your own separate identity and permitted matter; author and approver must differ."
+      ],
+      "status": "Implemented: exact immutable profile governance; current live graph needs contracts, drafter and quality.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Static checks are not legal/model accuracy tests. Profile publication does not start a run or release content."
+      ],
+      "steps": [
+        {
+          "action": "Root: create the intended role/model/prompt/tools and bounded limits.",
+          "control": "Save new draft profile",
+          "expected": "A private immutable profile draft is retained.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Root Admin"
+        },
+        {
+          "action": "Root author: test and submit that exact retained revision.",
+          "control": "Run static manifest checks / Submit exact version to Legal SME",
+          "expected": "The selected revision reaches submitted state without legal approval.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Root profile author"
+        },
+        {
+          "action": "Independent SME: choose the submitted contracts profile revision.",
+          "control": "Retained profile revision",
+          "expected": "The submitted exact contracts configuration and hash appear.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "For the primary fixture, select submitted Contract findings synthesis; do not choose New private draft.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Inspect every retained instruction, model, tool and execution limit.",
+          "control": "Exact retained configuration for review / Test and decision history",
+          "expected": "You are reviewing the actual retained revision and static check evidence.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "The editor is separate from the retained configuration; inspect the retained JSON and hash.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Enter a decision rationale and tick the exact independent-review affirmation.",
+          "control": "I independently reviewed the exact retained prompt, model, tool manifest, limits and test evidence shown above.",
+          "expected": "The checkbox enables the independent approval control when other conditions pass.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Use Draft / governance rationale. A missing control can mean wrong identity, state, independence or scope.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Independently approve or reject the exact submitted revision.",
+          "control": "Legal SME: approve exact version / Reject exact version",
+          "expected": "The decision binds that profile hash only.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Repeat the same independent inspection and decision for drafter and quality.",
+          "control": "Retained profile revision / Legal SME: approve exact version",
+          "expected": "All three live-stage profiles have their own independent decisions.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Repeat for Reviewed-findings report drafter and Independent draft support checker; each needs its own review.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Root: publish each already approved exact profile revision.",
+          "control": "Publish exact approved version",
+          "expected": "The profiles become available only while their approval remains current.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Root publisher"
+        },
+        {
+          "action": "For a material replacement, inspect the exact protected impact scope.",
+          "control": "Source-restricted SME impact inbox / Exact change and frozen scope hashes",
+          "expected": "Read or acknowledge alone creates no rerun authority.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Named source-cleared impact reviewer"
+        },
+        {
+          "action": "Independent SME: review the full scope and authorize the exact new rerun.",
+          "control": "I reviewed the exact changes and complete affected source scope. / Authorize scoped new rerun",
+          "expected": "A separate retained impact decision authorizes a scoped future run.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "",
+          "role": "Independent eligible Legal SME"
+        },
+        {
+          "action": "Explicitly start the separately authorized rerun.",
+          "control": "Start separately authorized DDR rerun",
+          "expected": "A new governed draft run is created; prior reports/approvals remain.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Review the new report independently. No automatic publication or audience release occurs.",
+          "role": "Separately authorized source-cleared requester"
+        }
+      ]
+    },
+    {
+      "id": "tables",
+      "variant": "default",
+      "title": "Inventory filters and saved queries",
+      "audience": [
+        "Source-cleared firm table users"
+      ],
+      "prerequisites": [
+        "Select a permitted matter; independent named sharing needs cleared recipients and reviewed evidence bindings."
+      ],
+      "status": "Implemented: inventory, financial, task, finding and current contract/licence grids. Saved queries retain inventory or financial evidence only.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Column visibility is presentation. Saved filters and metadata exports grant no source access."
+      ],
+      "steps": [
+        {
+          "action": "Search, sort and page the authorized grid.",
+          "control": "Columns / Column filters / Apply column filters",
+          "expected": "Rows and counts are computed under current server authorization.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Tasks & assignments and Risk Review use their own protected datasets. The Contract register reuses inventory with current contract/licence filters. Other screens are not all migrated.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Select only intended rows for a bounded metadata export.",
+          "control": "Export selected CSV / Export selected Excel",
+          "expected": "Each selected row is rechecked before export.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "At most 100 selected IDs; unavailable rows are not identified. Finding exports pin selected assessment revisions. Contract exports use the existing authorized inventory export contract.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Retain the current query as a private immutable configuration.",
+          "control": "Save new private query",
+          "expected": "The query starts private; source-derived content needs explicit evidence bindings.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Request an expiring share to named eligible recipients.",
+          "control": "Request independent named sharing",
+          "expected": "The request awaits exact independent SME review.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "The independent reviewer inspects the exact configuration and evidence.",
+          "control": "Approve exact named share / Reject request",
+          "expected": "Only the exact approved version is shared to the named recipients.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "The review checkbox and rationale are mandatory for approval.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Load only the currently authorized saved version.",
+          "control": "Load query / Refresh permissions",
+          "expected": "Current source permissions still govern every resulting row.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "The Contract register accepts only a saved current contract-only query. Task/finding saved views are not supplied. Use Revoke future sharing for containment; prior exports cannot be recalled.",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "intelligence",
+      "variant": "default",
+      "title": "Clusters, signals and follow-up alerts",
+      "audience": [
+        "Source-cleared firm reviewers",
+        "Castlegate readers of released financial facts"
+      ],
+      "prerequisites": [
+        "Choose a permitted matter; bank financial view needs both feature gates and each released fact entitlement."
+      ],
+      "status": "Implemented: bounded progressive groups, separate signals and governed manual alert scans.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "UNKNOWN inputs are not zero. No calibrated risk probability or automatic intelligence alert scheduling."
+      ],
+      "steps": [
+        {
+          "action": "Select the permitted view and refresh current scope.",
+          "control": "Refresh authorized scope",
+          "expected": "The wheel/groups contain only authorized records.",
+          "view": "Review Intelligence",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Expand a group and inspect a row's evidence.",
+          "control": "Cluster wheel / Open cited document",
+          "expected": "Progressive detail preserves the underlying source permissions.",
+          "view": "Review Intelligence",
+          "portal": "current",
+          "notes": "Counts may overlap across groups; do not add them as distinct-document totals.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Firm only: inspect separate delay, legal and financial components.",
+          "control": "Why this signal",
+          "expected": "Observed weights and UNKNOWN components remain explicit.",
+          "view": "Review Intelligence",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "A permitted author drafts weights and named alert recipients.",
+          "control": "Save new draft version",
+          "expected": "The profile requires a different SME's exact approval before publication.",
+          "view": "Review Intelligence",
+          "portal": "firm",
+          "notes": "Profile decision buttons display approve/publish only in their valid states.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Explicitly scan your current authorized sources under a published profile.",
+          "control": "Scan my authorized sources for follow-up tasks",
+          "expected": "Eligible threshold crossings create deduplicated tasks and alerts.",
+          "view": "Review Intelligence",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Handle the recipient timeline as separate operational actions.",
+          "control": "My permitted operational alert timeline / Mark read only",
+          "expected": "Reading is not acknowledgement, closure or legal approval.",
+          "view": "Review Intelligence",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "structured-intake",
+      "variant": "default",
+      "title": "Structured financial and email intake",
+      "audience": [
+        "Assigned source-cleared firm legal users"
+      ],
+      "prerequisites": [
+        "Use synthetic supported files and review declared handling before explicit intake."
+      ],
+      "status": "Implemented: bounded PDF/DOCX/XLSX/XLSM/CSV/text/XBRL/iXBRL/EML intake.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "No macro/formula execution or automatic attachment ingestion; legacy XLS/MSG/PST/OST are unsupported."
+      ],
+      "steps": [
+        {
+          "action": "Choose the folder and inspect the proposed files.",
+          "control": "Choose folder / File details",
+          "expected": "Supported file details and version matches are shown.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Declare restrictive handling for hidden or opaque contents.",
+          "control": "Access restriction",
+          "expected": "The server requires the correct active named scope.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "New workbook safety evidence is retained; old unscanned workbooks cannot reach providers.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Confirm synthetic material and any version matches, then import.",
+          "control": "Import N selected documents",
+          "expected": "Original bytes are retained under separate per-file checks.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "N is the displayed selected count. Successful prior files are retained if another file fails.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Confirm handling and inspect any OCR requirement.",
+          "control": "Confirm intake classification / Run offline OCR",
+          "expected": "Analysis remains separate and OCR needs human verification.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "For EML, inspect the source-restricted attachment stage in the reader.",
+          "control": "N staged email attachments — not ingested",
+          "expected": "Supported children remain inside the parent; no child source is created.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "The reader summary shows the actual attachment count; one attachment uses the singular label.",
+          "role": "Permitted signed-in user"
+        },
+        {
+          "action": "Download a permitted attachment only for a later explicit separate intake.",
+          "control": "Download staged attachment",
+          "expected": "The download inherits source authorization and does not approve/ingest the child.",
+          "view": "Documents",
+          "portal": "firm",
+          "notes": "Use the actual attachment download link shown in the reader; unsafe children are refused.",
+          "role": "Permitted signed-in user"
+        }
+      ]
+    },
+    {
+      "id": "mfn",
+      "variant": "default",
+      "title": "Most-Favored-Nation playbook draft",
+      "audience": [
+        "Root playbook authors",
+        "Independent Legal SMEs and relevant competition counsel"
+      ],
+      "prerequisites": [
+        "Use the original unpublished synthetic MFN draft and the current published legal-playbook base."
+      ],
+      "status": "Draft available; no real legal publication or applicability decision is supplied.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "MFN means contractual parity clauses. Literal examples are not legal accuracy or entitlement."
+      ],
+      "steps": [
+        {
+          "action": "Download the unpublished candidate definition from its Resources link.",
+          "control": "Download unpublished MFN draft JSON",
+          "expected": "The file is an unapproved candidate, not an active legal rule.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Root or Legal SME"
+        },
+        {
+          "action": "Root: select the current published base and create its replacement draft.",
+          "control": "Create replacement draft / Create new draft",
+          "expected": "The new draft retains explicit playbook lineage.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Root playbook author"
+        },
+        {
+          "action": "Inspect parity, discounts/rebates, comparators and exceptions; run the examples.",
+          "control": "test",
+          "expected": "The exact-definition synthetic baseline result is recorded.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "Competition counsel must assess actual facts and applicability; no mandatory-law claim follows from a hit.",
+          "role": "Independent substantive reviewer / counsel"
+        },
+        {
+          "action": "Submit for a different scoped SME's reasoned decision.",
+          "control": "submit / approve / reject",
+          "expected": "The author cannot approve their own legal definition.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Author, then independent Legal SME"
+        },
+        {
+          "action": "Publish only the exact approved definition.",
+          "control": "publish",
+          "expected": "A material replacement creates protected impacts rather than automatic reanalysis.",
+          "view": "Playbook Management",
+          "portal": "firm",
+          "notes": "",
+          "role": "Authorized publisher"
+        },
+        {
+          "action": "Review any affected-source task and authorize reruns separately.",
+          "control": "Approve this document rerun",
+          "expected": "New analysis remains candidate work with separate lawyer review and release.",
+          "view": "Action Center",
+          "portal": "firm",
+          "notes": "",
+          "role": "Independent source-cleared Legal SME"
+        }
+      ]
+    },
+    {
+      "id": "financial",
+      "variant": "external",
+      "title": "Read and compare released financial facts",
+      "audience": [
+        "Halden and Castlegate released-fact readers"
+      ],
+      "prerequisites": [
+        "Use your own organization portal and individually released fact entitlement; Castlegate also needs both feature gates."
+      ],
+      "status": "Implemented: audience-scoped released facts and typed comparisons.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "No original-source fact or internal context access is inherited. Currency is required for amount ranges."
+      ],
+      "steps": [
+        {
+          "action": "Select your permitted matter and enter exact filters.",
+          "control": "Search permitted facts",
+          "expected": "Only currently authorized released facts and counts appear.",
+          "view": "Financial Evidence",
+          "portal": "current",
+          "notes": "",
+          "role": "Released-fact recipient"
+        },
+        {
+          "action": "Inspect the exact amount and supporting labels.",
+          "control": "Read amount / Dimension citations",
+          "expected": "Citations open the separately approved artifact you may read.",
+          "view": "Financial Evidence",
+          "portal": "current",
+          "notes": "",
+          "role": "Released-fact recipient"
+        },
+        {
+          "action": "Select two compatible verified/released facts.",
+          "control": "Compare two verified facts",
+          "expected": "The app computes exact differences only under its current fact rules.",
+          "view": "Financial Evidence",
+          "portal": "current",
+          "notes": "No FX or authoritative-source inference; internal reconciliation assessments remain private.",
+          "role": "Released-fact recipient"
+        },
+        {
+          "action": "Use your deal-team channel to resolve missing evidence.",
+          "control": "Send to deal team",
+          "expected": "The question stays tied to an approved package.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted package participant"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "variant": "external",
+      "title": "Search your released evidence",
+      "audience": [
+        "Halden and Castlegate recipients"
+      ],
+      "prerequisites": [
+        "Use your own organization account and a permitted matter."
+      ],
+      "status": "Implemented: lexical evidence and released-fact financial search.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "External semantic/hybrid provider modes are unavailable; ranking is not complete diligence."
+      ],
+      "steps": [
+        {
+          "action": "Select the intended matter and enter your question.",
+          "control": "Matter / Search mode",
+          "expected": "The request stays within your current released-material scope.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Choose Automatic or Lexical BM25 and search.",
+          "control": "Find cited evidence",
+          "expected": "The answer cites currently permitted released evidence.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Inspect the exact released passage.",
+          "control": "Open evidence reader",
+          "expected": "The citation opens its artifact, not its private original.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "For financial evidence, choose the structured mode and typed fields.",
+          "control": "Financial / structured · verified facts",
+          "expected": "The app applies current fact release rules and any required bank gates.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "Amount ranges require currency; unavailable facts are excluded.",
+          "role": "Released-fact recipient"
+        },
+        {
+          "action": "Use the approved package discussion for an interpretation question.",
+          "control": "Ask the deal team or comment on released material",
+          "expected": "The discussion remains audience-bound.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted package participant"
+        }
+      ]
+    },
+    {
+      "id": "disclosures",
+      "variant": "external",
+      "title": "Read your released sanitized transcripts",
+      "audience": [
+        "Halden and Castlegate recipients"
+      ],
+      "prerequisites": [
+        "A current validated artifact must be independently released to your organization."
+      ],
+      "status": "Implemented: audience-bound transcript reading and download.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "A transcript never grants its original. Expiry/revocation can deny future reads; saved copies cannot be recalled."
+      ],
+      "steps": [
+        {
+          "action": "Select your permitted matter and refresh the artifact list.",
+          "control": "Refresh permitted artifacts",
+          "expected": "Only currently permitted artifacts appear.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Read a released transcript.",
+          "control": "Read sanitized transcript",
+          "expected": "The reader shows only the approved sanitized artifact coordinates.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Download the approved rebuilt artifact when needed.",
+          "control": "Download sanitized PDF",
+          "expected": "The app returns only the currently authorized transcript bytes.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Compare two to four permitted transcripts if useful.",
+          "control": "Compare documents or versions",
+          "expected": "Each selected artifact is authorized independently.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Ask follow-up questions through an approved package discussion.",
+          "control": "Send to deal team",
+          "expected": "The question remains within the package audience.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Permitted package participant"
+        }
+      ]
+    },
+    {
+      "id": "sme-profile-approval",
+      "variant": "default",
+      "title": "Approve AI stage profiles",
+      "audience": [
+        "Independent Legal SMEs"
+      ],
+      "prerequisites": [
+        "Use your own SME account, different from each profile author.",
+        "Submitted contracts, drafter and quality revisions must exist for primary matter 012345-789012."
+      ],
+      "status": "Independent SME decision walkthrough; ends before Root publication.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Each exact revision needs its own review. Static checks and profile approval do not release a report or activate a provider."
+      ],
+      "steps": [
+        {
+          "action": "Sign in to Administration with your own independent SME account.",
+          "control": "Sign in",
+          "expected": "The app authenticates your account; no decision has been recorded.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Enter credentials only in the app. Use a separate browser profile from the profile author.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Verify the current identity and Legal SME role before reviewing.",
+          "control": "Your profile",
+          "expected": "The displayed authenticated account has the required role and is not the profile author.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Do not use shared credentials as proof of independence. Excel stores no identity secret.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Select Synthetic role testing — Project Kestrel (012345-789012).",
+          "control": "Matter",
+          "expected": "The registry loads profiles only in the selected permitted matter.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "The primary fixture is Synthetic role testing — Project Kestrel; the matter selector currently displays its name.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Select the submitted Contract findings synthesis revision.",
+          "control": "Retained profile revision",
+          "expected": "The selected contracts revision shows submitted state and its exact hash.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Choose Contract findings synthesis in submitted state, not New private draft. This is the contracts stage profile.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Inspect its retained prompt, model, tools, limits and exact hash.",
+          "control": "Exact retained configuration for review",
+          "expected": "You are reading the saved revision rather than unsaved editor text.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Use Compare with prior retained version when a prior/base revision exists.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Inspect the exact static test report and decision history.",
+          "control": "Test and decision history",
+          "expected": "The retained test evidence is available for your independent assessment.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Static manifest checks do not establish legal accuracy or provider approval.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Enter your own reasoned decision rationale, at least 10 characters.",
+          "control": "Draft / governance rationale",
+          "expected": "The rationale supports the exact retained version decision.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Record what you actually reviewed; do not paste protected material into this workbook.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "After actual review, tick the app's exact independent-review affirmation.",
+          "control": "I independently reviewed the exact retained prompt, model, tool manifest, limits and test evidence shown above.",
+          "expected": "The app can enable approval if identity, scope and state checks also pass.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "The Excel Done box is separate and cannot tick or submit this application affirmation.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Approve or reject the exact submitted profile version.",
+          "control": "Legal SME: approve exact version / Reject exact version",
+          "expected": "The exact hash receives a retained independent decision.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "If approval is unavailable, check state, authorship, role and matter clearance; do not create a replacement draft.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Repeat the same review steps for submitted drafter and quality profiles.",
+          "control": "Retained profile revision",
+          "expected": "Each of the three stage profiles has its own exact-version decision.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Repeat steps 4–9 for Reviewed-findings report drafter and Independent draft support checker.",
+          "role": "Independent Legal SME"
+        },
+        {
+          "action": "Verify the decision history and finish this SME walkthrough.",
+          "control": "Test and decision history",
+          "expected": "Your decision is retained; publication remains a separate Root Admin action.",
+          "view": "Agent Registry",
+          "portal": "admin",
+          "notes": "Stop before Root publication. Do not use Save new draft profile or Append draft revision to approve a profile.",
+          "role": "Independent Legal SME"
+        }
+      ]
+    },
+    {
+      "id": "clean-team",
+      "variant": "castlegate",
+      "title": "Castlegate restricted-content boundary",
+      "audience": [
+        "Castlegate bank recipients"
+      ],
+      "prerequisites": [
+        "Use your own Castlegate account and a permitted audience-released artifact."
+      ],
+      "status": "Released sanitized artifacts are supported; original clean-team source access is unavailable.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "Clean-team membership does not grant bank originals. No Halden navigation or account is part of this workflow."
+      ],
+      "steps": [
+        {
+          "action": "Verify your own Castlegate account before reading released material.",
+          "control": "Your profile",
+          "expected": "The authenticated organization is Castlegate.",
+          "view": "Resources",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Load your permitted sanitized artifacts.",
+          "control": "Refresh permitted artifacts",
+          "expected": "Only current Castlegate-approved transcripts appear.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Read or download the exact approved transcript.",
+          "control": "Read sanitized transcript / Download sanitized PDF",
+          "expected": "The app serves the derivative only; its original remains restricted.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "For financial facts, use your own released-fact view.",
+          "control": "Search permitted facts / Read amount",
+          "expected": "Both bank gates and each fact's release/PDP checks still apply.",
+          "view": "Financial Evidence",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Ask about an approved package through its discussion.",
+          "control": "Send to deal team",
+          "expected": "The question stays within Castlegate's approved package scope.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        }
+      ]
+    },
+    {
+      "id": "collaboration",
+      "variant": "halden",
+      "title": "Halden questions, comments and file submissions",
+      "audience": [
+        "Halden client users"
+      ],
+      "prerequisites": [
+        "Use your own Halden account and an approved package in a permitted matter."
+      ],
+      "status": "Implemented: audience discussion and separate synthetic submissions.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "A submission is not firm intake, source classification, legal review or audience release."
+      ],
+      "steps": [
+        {
+          "action": "Select the audience-approved package.",
+          "control": "Collaboration",
+          "expected": "Only its permitted discussion is displayed.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Choose a question or comment and submit it.",
+          "control": "Send to deal team",
+          "expected": "The message is retained for the approved package audience.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Read a firm reply only after its independent publication.",
+          "control": "Refresh discussion",
+          "expected": "Unapproved firm drafts remain unavailable externally.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "For separate source submission, choose synthetic files in Uploads.",
+          "control": "File input / Selected files",
+          "expected": "The selected submission files can be inspected.",
+          "view": "Uploads",
+          "portal": "current",
+          "notes": "The browser-native file chooser label varies; no automated child ingestion occurs.",
+          "role": "Halden uploader"
+        },
+        {
+          "action": "Confirm synthetic content and explicitly submit the selected files.",
+          "control": "Submit folder to firm intake",
+          "expected": "Files await a separate authorized firm acceptance.",
+          "view": "Uploads",
+          "portal": "current",
+          "notes": "",
+          "role": "Halden uploader"
+        }
+      ]
+    },
+    {
+      "id": "collaboration",
+      "variant": "castlegate",
+      "title": "Castlegate package questions and comments",
+      "audience": [
+        "Castlegate bank recipients"
+      ],
+      "prerequisites": [
+        "Use your own Castlegate account and an audience-approved package."
+      ],
+      "status": "Implemented: package-bound questions/comments and approved firm replies.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "This bank workflow does not include Halden uploads, original-source grants or private firm drafts."
+      ],
+      "steps": [
+        {
+          "action": "Choose the current approved package.",
+          "control": "Collaboration",
+          "expected": "Only the permitted package discussion is displayed.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Choose Question or Comment and submit your message.",
+          "control": "Send to deal team",
+          "expected": "The message is retained within the Castlegate package audience.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Refresh to read independently published firm replies.",
+          "control": "Refresh discussion",
+          "expected": "Internal response drafts remain unavailable externally.",
+          "view": "Collaboration",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Open released evidence only through its permitted citation or artifact.",
+          "control": "Read sanitized transcript",
+          "expected": "The approved artifact grants no access to a private original.",
+          "view": "Disclosures",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        }
+      ]
+    },
+    {
+      "id": "report-qa",
+      "variant": "external",
+      "title": "Read released reports and cited answers",
+      "audience": [
+        "Halden and Castlegate recipients"
+      ],
+      "prerequisites": [
+        "Use your own organization portal and a report approved for your audience."
+      ],
+      "status": "Implemented: released saved versions, downloads and evidence questions.",
+      "limitations": [
+        "Excel completion does not approve an app action. Do not record credentials or protected source text in this workbook.",
+        "External recipients do not edit drafts, run internal AI synthesis or approve report versions."
+      ],
+      "steps": [
+        {
+          "action": "Select your permitted matter and released report version.",
+          "control": "Saved versions and history",
+          "expected": "Only report versions approved for your audience appear.",
+          "view": "Reports",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Inspect the saved body and available approved downloads.",
+          "control": "Download DOCX / Download PDF / Download Excel annexes",
+          "expected": "The selected artifact stays bound to the exact saved version.",
+          "view": "Reports",
+          "portal": "current",
+          "notes": "Use the displayed available format link; current source/release checks still apply.",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Search for evidence within your released corpus.",
+          "control": "Find cited evidence",
+          "expected": "Only permitted released passages/facts enter the answer.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Open a permitted citation rather than its private original.",
+          "control": "Open evidence reader",
+          "expected": "The exact authorized evidence location opens.",
+          "view": "Questions",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        },
+        {
+          "action": "Use the approved report discussion for follow-up.",
+          "control": "Discuss this released version",
+          "expected": "The package-bound discussion opens for your audience.",
+          "view": "Reports",
+          "portal": "current",
+          "notes": "",
+          "role": "Audience-authorized recipient"
+        }
+      ]
+    }
+  ]
+}

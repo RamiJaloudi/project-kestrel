@@ -1,0 +1,810 @@
+﻿Entity,Field,PostgreSQL type,Nullability,Key,Origin,Sensitivity,Priority,Definition / constraint notes,Authority
+organizations,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+organizations,name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+organizations,org_type,varchar(30),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+organizations,active,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+organizations,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+matters,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matters,client_organization_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+matters,matter_number,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matters,name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matters,status,varchar(40),NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+matters,signing_freeze_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matters,close_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matters,retention_policy_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+matters,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+matters,updated_at,timestamptz,NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+users,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+users,organization_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+users,upn,varchar(320),NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+users,email,varchar(320),NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+users,display_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+users,identity_provider_subject,text,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+users,account_status,varchar(30),NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+users,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+users,updated_at,timestamptz,NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+user_role_grants,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+user_role_grants,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+user_role_grants,matter_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+user_role_grants,role_code,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+user_role_grants,granted_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+user_role_grants,granted_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+user_role_grants,expires_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+user_role_grants,revoked_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+user_role_grants,grant_reason,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+matter_memberships,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matter_memberships,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+matter_memberships,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+matter_memberships,membership_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+matter_memberships,wall_decision,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matter_memberships,source_system,text,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+matter_memberships,last_verified_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+matter_memberships,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+policy_versions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+policy_versions,policy_family,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+policy_versions,version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+policy_versions,effective_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+policy_versions,state,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+policy_versions,approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+policy_versions,sha256,char(64),NOT NULL,,SYSTEM,Internal,P1,SHA-256 hex over immutable binary version; validate against stored object,PROPOSED SCHEMA
+policy_versions,config_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+policy_versions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_sources,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_sources,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+document_sources,source_system,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_sources,vdr_index_number,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_sources,folder_path,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_sources,source_external_id,text,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_sources,vdr_added_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_sources,vdr_last_modified_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_sources,batch_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_sources,import_row_number,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_sources,source_metadata_json,jsonb,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_sources,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+vdr_import_batches,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+vdr_import_batches,source_system,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+vdr_import_batches,original_filename,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,mapping_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,source_sha256,char(64),NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+vdr_import_batches,idempotency_key,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,wave_no,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,imported_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,processing_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+vdr_import_batches,totals_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_import_batches,error_report_uri,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,source_vendor,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,version,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,field_mapping_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,delimiter,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,timezone,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,is_active,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+vdr_mapping_profiles,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+documents,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+documents,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+documents,primary_source_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+documents,external_tracker_id,text,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+documents,canonical_title,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+documents,document_kind,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+documents,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+documents,updated_at,timestamptz,NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+documents,current_version_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+documents,lifecycle_state,varchar(40),NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+documents,is_deleted,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_versions,version_no,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,binary_object_uri,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,original_filename,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,mime_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,file_size_bytes,bigint,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,sha256,char(64),NOT NULL,,SYSTEM,Internal,P1,SHA-256 hex over immutable binary version; validate against stored object,PROPOSED SCHEMA
+document_versions,normalized_text_sha256,char(64),NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+document_versions,doc_date,date,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,language_code,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,page_count,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_versions,ingestion_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+document_versions,source_uploaded_at,timestamptz,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_versions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_versions,supersedes_version_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_versions,classification_revision,bigint,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_relationships,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_relationships,source_document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_relationships,target_document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_relationships,relationship_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_relationships,evidence_citation_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_relationships,assigned_by,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_relationships,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+record_custodians,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+record_custodians,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+record_custodians,custodian_type,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+record_custodians,display_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+record_custodians,organization_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+record_custodians,upn,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+record_custodians,email,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+record_custodians,department,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+record_custodians,legal_entity,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+record_custodians,source_identifier,text,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+record_custodians,active,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+record_custodians,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_custodians,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_custodians,document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_custodians,custodian_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_custodians,custody_role,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_custodians,start_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_custodians,end_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_custodians,provenance_source,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_custodians,verified_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_custodians,confidence,"numeric(5,4)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_custodians,evidence_ref_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_custodians,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_parties,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_parties,document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_parties,organization_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_parties,party_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_parties,party_role,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_parties,source,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_parties,verified_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_tags,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_tags,document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_tags,tag_family,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_tags,tag_value,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_tags,source,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_tags,confidence,"numeric(5,4)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_tags,approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_tags,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_segments,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_segments,segment_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,page_index,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,paragraph_ref,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,sheet_name,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,sheet_id,text,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_segments,range_a1,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,csv_row_no,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,email_part_id,text,NULL,FK / lookup,SYSTEM,Restricted,P1,,PROPOSED SCHEMA
+document_segments,attachment_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_segments,bounding_boxes,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,text_fingerprint,char(64),NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+document_segments,storage_pointer,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_segments,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_checklist_links,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_checklist_links,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_checklist_links,checklist_item_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_checklist_links,match_source,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_checklist_links,coverage_assessment,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_checklist_links,evidence_citation_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_checklist_links,validated_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_checklist_links,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+checklist_items,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_items,checklist_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+checklist_items,section_code,char(1),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_items,item_code,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_items,short_description,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_items,applicability_rule_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_items,owner_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+checklist_items,priority,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_items,source_page,integer,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+checklist_items,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+checklist_versions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_versions,title,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_versions,version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_versions,jurisdiction_scope,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_versions,published_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_versions,approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+checklist_versions,source_reference,text,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+checklist_versions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+checklist_coverage,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_coverage,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+checklist_coverage,checklist_item_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+checklist_coverage,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+checklist_coverage,applicable,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_coverage,applicability_rationale,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+checklist_coverage,missing_information,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_coverage,responsible_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+checklist_coverage,verified_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+checklist_coverage,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+checklist_coverage,updated_at,timestamptz,NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+review_tasks,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+review_tasks,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_tasks,assignment_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_tasks,priority,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,queue_name,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,created_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_tasks,assigned_to_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_tasks,assigned_to_team_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_tasks,assigned_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+review_tasks,accepted_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,started_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+review_tasks,due_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,completed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+review_tasks,cancelled_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_tasks,sla_policy_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_tasks,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+review_task_events,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_task_events,task_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_task_events,event_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_task_events,from_state,text,NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+review_task_events,to_state,text,NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+review_task_events,actor_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_task_events,delegated_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_task_events,reason,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+review_task_events,event_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_task_events,correlation_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_task_events,details_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,task_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_sessions,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_sessions,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_sessions,opened_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,active_started_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,idle_started_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,resumed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,closed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,source_reader,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+review_sessions,total_active_seconds,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,total_idle_seconds,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sessions,session_state,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+review_decisions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_decisions,task_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_decisions,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_decisions,reviewer_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_decisions,review_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_decisions,review_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+review_decisions,reviewed_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_decisions,summary,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_decisions,review_notes,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_decisions,source_playbook_version_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_decisions,supersedes_decision_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_decisions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+review_clause_answers,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_clause_answers,review_decision_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_clause_answers,clause_code,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_clause_answers,answer,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_clause_answers,evidence_citation_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_clause_answers,comment,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_clause_answers,entered_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_clause_answers,updated_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+sla_calendars,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+sla_calendars,calendar_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,time_zone,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,working_weekdays_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,business_start_time,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,business_end_time,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,holidays_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sla_calendars,version,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+review_sla_policies,assignment_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,workstream,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,document_kind,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,priority,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,calendar_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,max_business_seconds,bigint,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,warning_fraction,"numeric(5,4)",NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+review_sla_policies,escalation_policy_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+review_sla_policies,active,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,signal_code,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,signal_family,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,calculated_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,metric_value,"numeric(24,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,threshold_value,"numeric(24,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,evidence_ref_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,derived_policy_version_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_hot_signals,weight,"numeric(8,4)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_hot_signals,reason_text,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+document_hot_signals,resolved_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_saved_views,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_saved_views,owner_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+dashboard_saved_views,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+dashboard_saved_views,view_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_saved_views,config_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_saved_views,audience,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_saved_views,share_scope,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_saved_views,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+dashboard_saved_views,updated_at,timestamptz,NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+dashboard_aggregates,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_aggregates,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+dashboard_aggregates,audience_scope,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_aggregates,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+dashboard_aggregates,query_signature,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_aggregates,snapshot_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+dashboard_aggregates,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+dashboard_aggregates,expires_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+governance_notifications,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+governance_notifications,notification_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,state,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,subject_ref_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+governance_notifications,permitted_summary,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+governance_notifications,read_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,acknowledged_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,resolved_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,escalated_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_notifications,expires_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_tasks,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_tasks,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+governance_tasks,task_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_tasks,owner_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+governance_tasks,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+governance_tasks,priority,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_tasks,due_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+governance_tasks,related_resource_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+governance_tasks,resolution_reason,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+governance_tasks,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+governance_tasks,closed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+audit_events,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+audit_events,matter_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+audit_events,subject_type,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+audit_events,subject_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+audit_events,actor_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+audit_events,action,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+audit_events,outcome,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+audit_events,policy_revision,bigint,NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+audit_events,correlation_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+audit_events,occurred_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+audit_events,metadata_sanitized_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+audit_events,previous_event_hash,char(64),NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+audit_events,event_hash,char(64),NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,attribute_code,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,value_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,scope_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,allowed_values_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,default_behavior,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+security_attributes,source_priority_json,jsonb,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+security_attributes,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_attribute_assertions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,segment_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,attribute_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,asserted_value_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,assertion_source,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_attribute_assertions,assertion_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+document_attribute_assertions,classification_confidence,"numeric(5,4)",NULL,,WORKFLOW,Controlled,P1,"Model score is evidence, not authorization",PROPOSED SCHEMA
+document_attribute_assertions,model_run_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,asserted_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_attribute_assertions,effective_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_attribute_assertions,superseded_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,evidence_citation_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_attribute_assertions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+attribute_downgrade_approvals,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,assertion_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,proposed_value_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,requested_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,rationale,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,policy_snapshot_hash,char(64),NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,decided_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+attribute_downgrade_approvals,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+access_policy_decisions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+access_policy_decisions,user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+access_policy_decisions,service_principal_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,resource_type,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+access_policy_decisions,resource_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+access_policy_decisions,requested_action,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,audience,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,decision,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,deny_reason_codes_json,jsonb,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+access_policy_decisions,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+access_policy_decisions,attributes_revision,bigint,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,correlation_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+access_policy_decisions,evaluated_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ethical_wall_rules,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ethical_wall_rules,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+ethical_wall_rules,principal_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+ethical_wall_rules,effect,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ethical_wall_rules,reason_code,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+ethical_wall_rules,source_system,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+ethical_wall_rules,effective_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+ethical_wall_rules,expires_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ethical_wall_rules,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+clean_team_grants,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+clean_team_grants,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+clean_team_grants,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+clean_team_grants,allowed_scope_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+clean_team_grants,approved_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+clean_team_grants,effective_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+clean_team_grants,expires_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+clean_team_grants,revoked_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+clean_team_grants,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+service_authorizations,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+service_authorizations,service_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+service_authorizations,subject_id,text,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+service_authorizations,scopes_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+service_authorizations,audience,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+service_authorizations,matter_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+service_authorizations,expires_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+service_authorizations,revoked_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+service_authorizations,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+content_classification_runs,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+content_classification_runs,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,classifier_version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,model_provider,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,model_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+content_classification_runs,started_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+content_classification_runs,completed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+content_classification_runs,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,output_hash,char(64),NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+content_classification_runs,quality_flags_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+ai_runs,graph_version_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+ai_runs,agent_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+ai_runs,provider,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,model_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,prompt_version_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+ai_runs,purpose,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+ai_runs,request_scope_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,token_usage_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,cost_amount,"numeric(18,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+ai_runs,started_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+ai_runs,completed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+playbook_versions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_versions,playbook_key,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_versions,version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_versions,state,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_versions,author_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+playbook_versions,legal_approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+playbook_versions,published_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_versions,content_hash,char(64),NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+playbook_versions,applicable_rules_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_versions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+agent_config_versions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+agent_config_versions,agent_key,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+agent_config_versions,version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+agent_config_versions,config_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+agent_config_versions,is_legal_substantive,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+agent_config_versions,author_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+agent_config_versions,legal_approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+agent_config_versions,published_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+agent_config_versions,sha256,char(64),NOT NULL,,SYSTEM,Internal,P1,SHA-256 hex over immutable binary version; validate against stored object,PROPOSED SCHEMA
+document_findings,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_findings,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+document_findings,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_findings,finding_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_findings,risk_rating,text,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_findings,materiality_status,text,NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+document_findings,candidate_text,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+document_findings,approved_text,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+document_findings,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_findings,evidence_citation_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_findings,playbook_version_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_findings,ai_run_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_findings,reviewed_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_findings,reviewed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_findings,supersedes_finding_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_findings,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+finding_reviews,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+finding_reviews,finding_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+finding_reviews,reviewer_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+finding_reviews,decision,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+finding_reviews,rationale,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+finding_reviews,revision_no,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+finding_reviews,decided_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+finding_reviews,source_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,"Exact immutable source document version, never latest alias",PROPOSED SCHEMA
+issue_register,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+issue_register,source_issue_id,text,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+issue_register,finding_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+issue_register,document_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+issue_register,workstream,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,description,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,risk_rating,text,NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+issue_register,proposed_mitigation,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,mitigation_type,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,raised_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+issue_register,date_raised,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,seller_request_sent_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+issue_register,seller_response_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+issue_register,issue_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+issue_register,owner_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+issue_register,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+seller_qa_items,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+seller_qa_items,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+seller_qa_items,issue_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+seller_qa_items,external_question_id,text,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+seller_qa_items,question_text,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+seller_qa_items,requested_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+seller_qa_items,requested_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+seller_qa_items,response_text,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+seller_qa_items,response_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+seller_qa_items,response_document_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+seller_qa_items,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+redaction_projects,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_projects,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+redaction_projects,source_document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+redaction_projects,requested_audience,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_projects,initiated_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+redaction_projects,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+redaction_projects,reason,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+redaction_projects,requested_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_projects,completed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+redaction_projects,source_policy_revision,bigint,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+redaction_marks,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,redaction_project_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,source_segment_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+redaction_marks,redaction_kind,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,selector_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,reason_code,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+redaction_marks,ai_proposed,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,ai_confidence,"numeric(5,4)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,decision,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,reviewed_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+redaction_marks,decided_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+redaction_marks,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+sanitization_validation_runs,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,artifact_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,validator_version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,validation_checks_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,hidden_sheet_check,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,formulas_check,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,metadata_check,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,embedded_object_check,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,text_extraction_check,boolean,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,result,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+sanitization_validation_runs,validated_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifacts,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifacts,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+release_artifacts,source_document_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+release_artifacts,audience,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifacts,artifact_kind,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifacts,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+release_artifacts,created_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+release_artifacts,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+release_artifacts,latest_version_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+release_artifacts,revoked_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifact_versions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifact_versions,artifact_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+release_artifact_versions,version_no,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifact_versions,binary_object_uri,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifact_versions,mime_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_artifact_versions,sha256,char(64),NOT NULL,,SYSTEM,Internal,P1,SHA-256 hex over immutable binary version; validate against stored object,PROPOSED SCHEMA
+release_artifact_versions,content_manifest_json,jsonb,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+release_artifact_versions,source_snapshot_hash,char(64),NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+release_artifact_versions,sanitized_text_hash,char(64),NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+release_artifact_versions,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+derivation_lineage,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+derivation_lineage,source_resource_type,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+derivation_lineage,source_resource_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+derivation_lineage,target_resource_type,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+derivation_lineage,target_resource_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+derivation_lineage,derivation_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+derivation_lineage,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+derivation_lineage,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+release_approvals,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_approvals,artifact_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+release_approvals,approval_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_approvals,approver_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+release_approvals,decision,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_approvals,rationale,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+release_approvals,snapshot_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_approvals,decided_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_approvals,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+release_grants,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_grants,artifact_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+release_grants,recipient_organization_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+release_grants,permitted_actions_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_grants,granted_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+release_grants,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+release_grants,granted_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_grants,expires_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+release_grants,revoked_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+disclosure_incidents,artifact_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,triggered_by_event_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,reason_code,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+disclosure_incidents,severity,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,initial_containment_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,counsel_notified_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,prior_downloads_assessed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+disclosure_incidents,owner_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+disclosure_incidents,closed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+indexed_corpus_records,corpus_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,source_resource_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+indexed_corpus_records,segment_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,audience,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,index_version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+indexed_corpus_records,security_labels_json,jsonb,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+indexed_corpus_records,searchable_text_uri,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+indexed_corpus_records,indexed_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+indexed_corpus_records,revoked_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+search_queries,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+search_queries,query_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,mode,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,routed_strategies_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+search_queries,effective_corpus_scope_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+search_queries,latency_ms,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_queries,result_count,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,search_query_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,resource_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+search_result_evidence,citation_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,retrieval_mode,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,rank,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,lexical_score,"numeric(14,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,vector_score,"numeric(14,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,rerank_score,"numeric(14,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+search_result_evidence,authorized,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_citations,segment_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_citations,anchor_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,page_index,integer,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,paragraph_ref,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,sheet_name,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,sheet_id,text,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_citations,cell_range,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,csv_row_start,bigint,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,csv_row_end,bigint,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,email_message_id,text,NULL,FK / lookup,SYSTEM,Restricted,P1,,PROPOSED SCHEMA
+document_citations,email_part_id,text,NULL,FK / lookup,SYSTEM,Restricted,P1,,PROPOSED SCHEMA
+document_citations,attachment_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_citations,image_bbox_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,quote_hash,char(64),NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,verified_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_citations,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_reader_sessions,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_reader_sessions,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+document_reader_sessions,document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,view_mode,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,comparison_set_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,session_started_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,session_closed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,last_anchor_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+document_reader_sessions,policy_revision,bigint,NOT NULL,,SYSTEM,Controlled,P1,Evaluate on current consistent policy and attribute revision,PROPOSED SCHEMA
+document_comparison_sets,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_comparison_sets,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+document_comparison_sets,created_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+document_comparison_sets,resource_refs_json,jsonb,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+document_comparison_sets,compare_mode,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_comparison_sets,state,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+document_comparison_sets,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+document_comparison_sets,updated_at,timestamptz,NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_entities,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_entities,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+financial_entities,legal_name,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_entities,reporting_identifier,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_entities,parent_entity_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_entities,functional_currency,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_entities,organization_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_entities,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_periods,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_periods,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+financial_periods,fiscal_year,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_periods,period_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_periods,start_date,date,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_periods,end_date,date,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_periods,fiscal_calendar,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_periods,as_of_date,date,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,metric_code,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,metric_label,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,unit_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,accounting_definition,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,allowed_dimensions_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_metrics,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_facts,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+financial_facts,reporting_entity_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_facts,period_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_facts,metric_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_facts,source_document_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+financial_facts,citation_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_facts,raw_value,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+financial_facts,numeric_value,"numeric(30,10)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,unit_multiplier,"numeric(30,10)",NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,currency_code,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,accounting_basis,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,scenario,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,fact_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+financial_facts,restatement_status,text,NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+financial_facts,extraction_method,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_facts,verified_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+financial_facts,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_statement_lines,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,financial_fact_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,source_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,"Exact immutable source document version, never latest alias",PROPOSED SCHEMA
+financial_statement_lines,sheet_name,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,cell_address,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+financial_statement_lines,row_label,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,column_label,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,formula_text,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+financial_statement_lines,cached_value,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,display_format,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,hidden_sheet,boolean,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,pivot_cache_ref,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_statement_lines,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_instruments,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,instrument_type,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,ticker_symbol,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,exchange_mic,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,isin,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,cusip,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,currency,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,issuer_entity_id,uuid,NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_instruments,validation_status,text,NOT NULL,,WORKFLOW,Internal,P1,Constrained state machine with auditable transition,PROPOSED SCHEMA
+financial_reconciliations,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+financial_reconciliations,metric_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,entity_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,period_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,competing_fact_ids_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,variance_amount,"numeric(30,10)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,variance_pct,"numeric(12,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_reconciliations,reviewer_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+financial_reconciliations,decision_rationale,text,NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+financial_reconciliations,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_reconciliations,decided_at,timestamptz,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+financial_analysis_runs,operation,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,code_version,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,source_snapshot_hash,char(64),NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+financial_analysis_runs,input_facts_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,results_json,jsonb,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_analysis_runs,created_by_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+financial_analysis_runs,started_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_analysis_runs,completed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+financial_materiality_policies,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_materiality_policies,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+financial_materiality_policies,policy_version,text,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+financial_materiality_policies,metric_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+financial_materiality_policies,min_abs_value,"numeric(30,10)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_materiality_policies,min_pct_of_revenue,"numeric(12,6)",NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_materiality_policies,currency_code,text,NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+financial_materiality_policies,approved_by_user_id,uuid,NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+financial_materiality_policies,effective_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+playbook_change_assessments,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,matter_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,Tenant/matter scoping required in all queries and policies,PROPOSED SCHEMA
+playbook_change_assessments,from_playbook_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,to_playbook_version_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,snapshot_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,affected_document_count,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,approved_findings_count,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,released_findings_count,integer,NOT NULL,,WORKFLOW,Controlled,P1,,PROPOSED SCHEMA
+playbook_change_assessments,restricted_subset_count,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+playbook_change_assessments,assessment_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_approvals,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_approvals,impact_assessment_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+reanalysis_approvals,approver_user_id,uuid,NOT NULL,FK / lookup,SYSTEM,Controlled,P1,,PROPOSED SCHEMA
+reanalysis_approvals,decision,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_approvals,rationale,text,NOT NULL,,WORKFLOW,Restricted,P1,,PROPOSED SCHEMA
+reanalysis_approvals,selected_scope_json,jsonb,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_approvals,idempotency_key,text,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_approvals,decided_at,timestamptz,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,id,uuid,NOT NULL,PK,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,impact_assessment_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,approval_id,uuid,NOT NULL,FK / lookup,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,job_scope_hash,char(64),NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,status,text,NOT NULL,,SYSTEM,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,attempts,integer,NOT NULL,,WORKFLOW,Internal,P1,,PROPOSED SCHEMA
+reanalysis_jobs,started_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+reanalysis_jobs,completed_at,timestamptz,NULL,,WORKFLOW,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA
+reanalysis_jobs,created_at,timestamptz,NOT NULL,,SYSTEM,Internal,P1,UTC timestamptz; immutable event history where relevant,PROPOSED SCHEMA

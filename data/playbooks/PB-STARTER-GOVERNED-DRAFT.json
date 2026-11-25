@@ -1,0 +1,72 @@
+{
+  "languages": [
+    "en",
+    "de"
+  ],
+  "governing_laws": [
+    "unknown — counsel to confirm"
+  ],
+  "rules": [
+    {
+      "id": "COC-01",
+      "description": "Locate express control-change wording; no automatic legal conclusion",
+      "triggers": [
+        "change of control",
+        "Kontrollwechsel"
+      ]
+    },
+    {
+      "id": "ASG-01",
+      "description": "Locate assignment/consent wording; distinguish receivables from whole-contract transfer",
+      "triggers": [
+        "assign this Agreement",
+        "Abtretung"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "text": "Supplier change of control requires customer consent.",
+      "expected_rule_ids": [
+        "COC-01"
+      ]
+    },
+    {
+      "text": "Kontrollwechsel requires specialist review.",
+      "expected_rule_ids": [
+        "COC-01"
+      ]
+    },
+    {
+      "text": "Supplier must not assign this Agreement without consent.",
+      "expected_rule_ids": [
+        "ASG-01"
+      ]
+    },
+    {
+      "text": "Invoices fall due after thirty days.",
+      "expected_rule_ids": []
+    }
+  ],
+  "authorities": [
+    {
+      "title": "BGB section 398",
+      "url": "https://www.gesetze-im-internet.de/bgb/__398.html",
+      "jurisdiction": "Germany",
+      "consulted_at": "2026-11-20",
+      "status": "official text consulted; applicability requires SME review",
+      "notes": "Receivables assignment reference; not a universal change-of-control rule"
+    },
+    {
+      "title": "BGB section 399",
+      "url": "https://www.gesetze-im-internet.de/bgb/__399.html",
+      "status": "official section identified; full-text retrieval timed out; verification pending"
+    },
+    {
+      "title": "GmbHG section 15",
+      "url": "https://www.gesetze-im-internet.de/gmbhg/__15.html",
+      "status": "official section identified; full-text retrieval timed out; verification pending"
+    }
+  ],
+  "disclaimer": "SYNTHETIC DRAFT: literal detection examples, not legal advice or complete diligence. No asserted applicability; independent legal review required."
+}

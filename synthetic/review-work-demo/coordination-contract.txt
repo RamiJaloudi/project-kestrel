@@ -1,0 +1,11 @@
+SYNTHETIC WORKFLOW EXAMPLE ONLY — NOT A REAL CONTRACT.
+
+Halden Example Holdings Ltd is the buyer. Vireo Example Services GmbH is the supplier.
+Assignment requires the supplier's prior written consent. Governing law: England and Wales.
+
+The synthetic vendor inventory lists the Seller Legal Department and the
+Transaction Records shared mailbox as origin/copy custodians. These custodians
+are distinct from the firm lawyers assigned to review this example.
+
+This fixture supports workflow testing only. Recording or completing a task
+does not constitute a legal finding, lawyer sign-off or audience release.

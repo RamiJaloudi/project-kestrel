@@ -1,0 +1,4 @@
+SYNTHETIC TRAINING MATERIAL ONLY
+Entity: Vireo. Metric: revenue. Period: FY2025 (2025-01-01 to 2025-12-31). Currency: EUR. Scale: units. Accounting basis: IFRS. Scope: consolidated. Amount: 125000.50.
+Entity: Vireo. Metric: revenue. Period: FY2025 (2025-01-01 to 2025-12-31). Currency: EUR. Scale: units. Accounting basis: IFRS. Scope: consolidated. Alternative amount awaiting reconciliation: 124000.50.
+No statement in this file represents an actual company or financial result.

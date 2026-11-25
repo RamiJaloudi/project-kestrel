@@ -1,0 +1,16 @@
+﻿group,group_description,entity_count,field_count,meaning
+AI,"Versioned runs, playbooks, prompts, model configuration and constrained orchestration provenance.",4,45,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Analytics,"Permission-scoped review bottlenecks, materiality signals, saved views and aggregates.",3,29,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Checklist,"Versioned document requests, applicability and evidence coverage. Receipt is separate from legal review.",4,37,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Document,"Logical document identity, immutable versions, relationships, custodians, parties and segments.",8,88,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Finance,"Exact financial facts, reporting entities, periods, units, source lines and reconciliation.",9,96,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Findings,"Cited legal candidates, lawyer decisions, issue registers and seller Q&A.",4,52,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Governance,"Durable notifications, independent tasks, audit events and controlled playbook reanalysis.",6,64,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Identity,"Organizations, canonical user identities, matter membership and time-bound role grants.",5,41,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Reader,"Exact citation anchors, authorized reader sessions and independently checked comparisons.",3,36,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Redaction,Audience-specific removal proposals and validation of sanitized output.,3,33,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Release,"Separate immutable derivatives, lineage, approvals, audience grants and disclosure incidents.",6,58,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Review,"Independent assignments, event history, review sessions, review decisions and SLA calendars.",7,82,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Search,"Permission-filtered corpus records, query strategy and result evidence.",3,33,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+Security,"Deterministic authorization policy, ethical walls, named clean-team grants and attribute provenance.",8,82,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.
+VDR,"Source VDR inventory, import batches, source metadata and configurable mapping profiles.",3,33,Documentation domain copied from Entity_Catalog.Domain. Not a user group or authorization grant.

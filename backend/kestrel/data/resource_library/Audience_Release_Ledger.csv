@@ -1,0 +1,3 @@
+﻿example_status,release_id,report_id,report_version,audience,internal_review,audience_decision,antitrust_decision,expires_at,next_action
+SYNTHETIC,REL-001,REP-001,1,Halden,Pending,Pending,Applicability to be checked,,Finish exact-version internal review
+SYNTHETIC,REL-002,REP-002,1,Castlegate,Pending,Pending,Applicability to be checked,,Confirm commercial scope and exclusions

@@ -1,0 +1,114 @@
+{
+  "audit_date": "2026-11-23",
+  "phase": "0",
+  "source_path": "C:\\Freshfields-Takehome\\Due_Diligence_Checklist\\Contract-Content-Due-Diligence_Checklist.pdf",
+  "sha256": "d5873b151b4b7638b8d023611ef4f85c26a429de5960bd5e04aba8a2845b4c30",
+  "pages": 21,
+  "publisher": "Bloomberg Industry Group / Bloomberg Law",
+  "source_kind": "document request checklist, not a DDR template",
+  "date_evidence": "Copyright 2023 and footer code 0523; package identifies May 2023",
+  "taxonomy_sha256": "6568e2eea6ad490a619e69e7cb32dba0ab6aa5a73cff051cd2e9d126a40e4fc1",
+  "sections": [
+    {
+      "code": "A",
+      "title": "Organizational and Corporate Documents",
+      "start_page": 1,
+      "end_page": 3,
+      "start_verified": true
+    },
+    {
+      "code": "B",
+      "title": "Financial and Accounting Records",
+      "start_page": 4,
+      "end_page": 4,
+      "start_verified": true
+    },
+    {
+      "code": "C",
+      "title": "Tax Matters",
+      "start_page": 5,
+      "end_page": 6,
+      "start_verified": true
+    },
+    {
+      "code": "D",
+      "title": "Loans and Obligations",
+      "start_page": 6,
+      "end_page": 7,
+      "start_verified": true
+    },
+    {
+      "code": "E",
+      "title": "Property and Equipment",
+      "start_page": 8,
+      "end_page": 8,
+      "start_verified": true
+    },
+    {
+      "code": "F",
+      "title": "Intellectual Property",
+      "start_page": 9,
+      "end_page": 9,
+      "start_verified": true
+    },
+    {
+      "code": "G",
+      "title": "Material Contracts",
+      "start_page": 10,
+      "end_page": 11,
+      "start_verified": true
+    },
+    {
+      "code": "H",
+      "title": "Operational Matters",
+      "start_page": 12,
+      "end_page": 13,
+      "start_verified": true
+    },
+    {
+      "code": "I",
+      "title": "Litigation",
+      "start_page": 13,
+      "end_page": 13,
+      "start_verified": true
+    },
+    {
+      "code": "J",
+      "title": "Regulatory Matters",
+      "start_page": 14,
+      "end_page": 14,
+      "start_verified": true
+    },
+    {
+      "code": "K",
+      "title": "Employment and Compensation Matters",
+      "start_page": 14,
+      "end_page": 16,
+      "start_verified": true
+    },
+    {
+      "code": "L",
+      "title": "Data Privacy & Security",
+      "start_page": 16,
+      "end_page": 18,
+      "start_verified": true
+    },
+    {
+      "code": "M",
+      "title": "Environmental, Social, Governance (ESG) Matters",
+      "start_page": 18,
+      "end_page": 21,
+      "start_verified": true
+    },
+    {
+      "code": "N",
+      "title": "Other Specific Request Categories",
+      "start_page": 21,
+      "end_page": 21,
+      "start_verified": true
+    }
+  ],
+  "pdf_copied_into_repo": false,
+  "full_text_indexed": false,
+  "legal_approval": "not established by taxonomy import"
+}

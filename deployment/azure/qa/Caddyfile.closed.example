@@ -1,0 +1,45 @@
+# Review-only CLOSED target QA. Never opens an outside interface or obtains ACME.
+# Owner supplies QA-only token and trusted exact-host certificate paths privately.
+{
+    admin off
+    persist_config off
+    auto_https off
+    servers {
+        protocols h1 h2
+        strict_sni_host on
+        max_header_size 16KB
+        timeouts {
+            read_header 10s
+            read_body 20s
+            idle 30s
+        }
+    }
+}
+
+https://portal.ramijaloudi.com, https://firm.portal.ramijaloudi.com, https://halden.portal.ramijaloudi.com, https://castlegate.portal.ramijaloudi.com, https://admin.portal.ramijaloudi.com {
+    bind 127.0.0.1
+    tls {$KESTREL_QA_CERT_FILE} {$KESTREL_QA_KEY_FILE}
+    request_body {
+        max_size 4MiB
+    }
+    header {
+        -Server
+        X-Kestrel-Closed-QA true
+        Cache-Control no-store
+    }
+    reverse_proxy 127.0.0.1:9446 {
+        header_up -Forwarded
+        header_up -X-Forwarded-*
+        header_up -X-Real-IP
+        header_up -X-Demo-User
+        header_up -X-Kestrel-*
+        header_up Host {host}
+        header_up X-Kestrel-Proxy-Token {$KESTREL_QA_PROXY_TOKEN}
+        header_up X-Kestrel-Proto https
+        header_up X-Kestrel-Client-IP {remote_host}
+        transport http {
+            dial_timeout 3s
+            response_header_timeout 25s
+        }
+    }
+}

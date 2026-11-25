@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470" role="img" aria-labelledby="title desc">
+<title id="title">The schema follows the review</title><desc id="desc">Use implemented dictionaries for model structure and proposed dictionaries for target design. The proposed dictionary contains 809 fields. Its group column is a documentation domain, not an access grant.
+The implemented model export reads structure only; applied database migrations need separate verification.</desc>
+<rect width="1280" height="470" fill="#FFFFFF"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#567083"/></marker></defs>
+<text x="42" y="52" font-family="Arial,sans-serif" font-size="29" fill="#15384D" font-weight="700">The schema follows the review</text>
+<text x="42" y="86" font-family="Arial,sans-serif" font-size="17" fill="#4C6373">Use implemented dictionaries for model structure and proposed dictionaries for target design.</text>
+<rect x="42" y="127" width="278" height="228" rx="10" fill="#E8F2F7" stroke="#AEC1CE"/>
+<text x="61" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">1  People and sources</text>
+<text x="61" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Accounts and organizations</text>
+<text x="61" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Matter and access grants</text>
+<text x="61" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Document identity and version</text>
+<text x="61" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Exact evidence location</text>
+<path d="M323,241 L343,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="347" y="127" width="278" height="228" rx="10" fill="#EEF1FA" stroke="#AEC1CE"/>
+<text x="366" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">2  Analysis and review</text>
+<text x="366" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Playbook and model version</text>
+<text x="366" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Run and candidate finding</text>
+<text x="366" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Lawyer review and correction</text>
+<text x="366" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Independent governance</text>
+<path d="M628,241 L648,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="127" width="278" height="228" rx="10" fill="#FFF4DE" stroke="#AEC1CE"/>
+<text x="671" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">3  Reports and audiences</text>
+<text x="671" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Report and annex version</text>
+<text x="671" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Internal review decision</text>
+<text x="671" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Named audience release</text>
+<text x="671" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Expiry and revoked access</text>
+<path d="M933,241 L953,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="957" y="127" width="278" height="228" rx="10" fill="#E6F4EC" stroke="#AEC1CE"/>
+<text x="976" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">4  History and retention</text>
+<text x="976" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Audit event and correlation</text>
+<text x="976" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Immutable version bindings</text>
+<text x="976" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Signing snapshot and holds</text>
+<text x="976" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Eligible copy deletion</text>
+<text x="42" y="398" font-family="Arial,sans-serif" font-size="16" fill="#344F60">The proposed dictionary contains 809 fields. Its group column is a documentation domain, not an access grant.</text>
+<text x="42" y="423" font-family="Arial,sans-serif" font-size="16" fill="#344F60">The implemented model export reads structure only; applied database migrations need separate verification.</text>
+</svg>

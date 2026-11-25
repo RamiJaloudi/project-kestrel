@@ -1,0 +1,76 @@
+{
+  "region": "eastus2",
+  "scope": "Retail PAYG estimate; not a quote, SKU quota check or resource deployment",
+  "items": [
+    {
+      "meter": "D2as v5",
+      "monthly": 129.94,
+      "unit": "1 Hour",
+      "rate": 0.178,
+      "component": "Standard_D2as_v5",
+      "product": "Virtual Machines Dasv5 Series Windows"
+    },
+    {
+      "meter": "B2as v2",
+      "monthly": 61.61,
+      "unit": "1 Hour",
+      "rate": 0.0844,
+      "component": "Standard_B2as_v2",
+      "product": "Virtual Machines Basv2 Series Windows"
+    },
+    {
+      "product": "Standard SSD Managed Disks",
+      "unit": "1/Month",
+      "meter": "E6 LRS Disk",
+      "rate": 4.8,
+      "component": "disk"
+    },
+    {
+      "product": "Standard SSD Managed Disks",
+      "unit": "10K",
+      "meter": "E10 LRS Disk Operations",
+      "rate": 0.002,
+      "component": "disk"
+    },
+    {
+      "product": "Standard SSD Managed Disks",
+      "unit": "1/Month",
+      "meter": "E10 LRS Disk",
+      "rate": 9.6,
+      "component": "disk"
+    },
+    {
+      "product": "Standard SSD Managed Disks",
+      "unit": "1/Month",
+      "meter": "E6 LRS Disk Mount",
+      "rate": 0.47,
+      "component": "disk"
+    },
+    {
+      "product": "Standard SSD Managed Disks",
+      "unit": "1/Month",
+      "meter": "E10 LRS Disk Mount",
+      "rate": 0.91,
+      "component": "disk"
+    },
+    {
+      "product": "Standard SSD Managed Disks",
+      "unit": "10K",
+      "meter": "E6 LRS Disk Operations",
+      "rate": 0.002,
+      "component": "disk"
+    },
+    {
+      "meter": "Standard IPv4 Static Public IP",
+      "monthly": 3.65,
+      "unit": "1 Hour",
+      "rate": 0.005,
+      "component": "public_ipv4",
+      "product": "IP Addresses"
+    }
+  ],
+  "source": "https://prices.azure.com/api/retail/prices",
+  "currency": "USD",
+  "queried_utc": "2026-11-24T07:57:33.9283501Z",
+  "hours": 730
+}

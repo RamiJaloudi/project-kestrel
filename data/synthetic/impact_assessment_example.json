@@ -1,0 +1,43 @@
+{
+  "id": "IA-SYNTH-001",
+  "source_playbook": "PB-COC-DE-001:1.2.0",
+  "target_playbook": "PB-COC-DE-001:1.3.0",
+  "exact_changed_rules": [
+    {
+      "rule_id": "COC-03",
+      "type": "modified",
+      "field": "trigger",
+      "old": "Contract explicitly references direct change of ownership/control",
+      "new": "Contract explicitly references direct or indirect change of control, including ultimate ownership where the contract so provides"
+    },
+    {
+      "rule_id": "COC-09",
+      "type": "added",
+      "new": {
+        "rule_id": "COC-09",
+        "name": "Deemed assignment",
+        "trigger": "Contract deems a qualifying change of control an assignment requiring consent",
+        "exception": "Check permitted assignments, affiliate exceptions and definition of control",
+        "severity_hint": "review"
+      }
+    }
+  ],
+  "affected_doc_version_ids": [
+    "DOC-001:v1",
+    "DOC-002:v2",
+    "DOC-003:v1",
+    "DOC-004:v1"
+  ],
+  "approved_finding_ids": [
+    "FND-001",
+    "FND-002"
+  ],
+  "released_artifact_ids": [
+    "REL-001"
+  ],
+  "clean_team_doc_version_ids": [
+    "DOC-003:v1"
+  ],
+  "created_from": "SYNTHETIC_SAMPLE_FIXTURE",
+  "status": "impact_ready"
+}

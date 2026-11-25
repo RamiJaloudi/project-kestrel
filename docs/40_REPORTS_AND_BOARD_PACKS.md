@@ -1,0 +1,27 @@
+# Report drafting and board pack generation
+
+[USER DECISION] Implement Reports & Board Pack and explain whether an OpenAI key is needed. [IMPLEMENTED] Local assembly from reviewed findings works without any model request or key. Optional AI-authored prose is not implemented by this report increment; the existing optional source-analysis adapter remains separate and disabled. No paid AI calls were made.
+
+The Firm Reports & Board Pack screen now creates a due diligence draft or board briefing for a chosen Halden/Castlegate audience from explicitly selected reviewed findings. It assembles editable overview, scope/coverage caveats, source-linked sections, risk annex and consent/change-of-control annex. Counts describe selected contributing findings/versions, not whole-matter completion. Legacy unassessed risk fields remain visibly unassessed. This is a deterministic local drafting baseline, not an AI legal conclusion, exhaustive diligence assessment or researched legal playbook.
+
+Save edits creates a new immutable report version and a distinct release package. Original report text, annex snapshot and approvals remain retained. Each complete version has a canonical content hash covering all report text, citations, annex rows and generator version; source policy lineage pins exact reviewed finding editions. A different cleared lawyer approves the saved package. Clean-team packages also need the existing separate antitrust approval. Bank privilege exclusion applies to all source lineage. Correcting a contributing finding invalidates current external eligibility of derived reports. Ordinary external users see/download only packages released to their audience; revocation removes that eligibility. External report responses never provide internal source-reader coordinates.
+
+Word/PDF reports and an Excel workbook with risk and consent worksheets are generated from the saved snapshot. Unsaved editor changes are not exported or approved. Draft internal downloads are marked DRAFT; audience approval is separate. Annex text is not silently rewritten when report prose is edited: correct the source finding and regenerate to change the annex. Original source evidence can be opened in the existing reader by cleared internal lawyers. All list/download/write routes use existing authentication, authorization, CSRF and scoped audit controls; downloads reauthenticate and recheck policy after rendering so a revoked account cannot receive the completed artifact.
+
+Migration 0010 adds an immutable report_versions table. A pre-migration pg_dump is retained under .runtime/backups. The shared API, service consoles and worker topology remain unchanged; Start builds the new frontend and applies migrations; Stop retains report/approval history. Rendering is a local adapter using this workstation's bundled Python/document/PDF runtime and artifact-tool Node spreadsheet runtime. These paths and the spreadsheet junction are environment-specific; Azure packaging must replace/configure the renderer runtime and fonts rather than assume desktop bundles exist. Rendering is bounded by a 45-second timeout and 20 MiB output cap, with sanitized errors and temporary export files cleaned after response creation. Source data is passed to renderer stdin, not shell arguments or external Office/Google services.
+
+Operating steps:
+1. Sign in to the Firm portal as a cleared lawyer and open Reports & Board Pack.
+2. Select matter, output type, audience and reviewed findings; Generate draft.
+3. Review/edit sections, coverage caveats and both annexes. Save edits as a new version.
+4. Download the saved Word/PDF and Excel annexes for review. A second cleared lawyer reviews the exact saved version, enters rationale and approves; antitrust approval applies to restricted lineage.
+5. Halden/Castlegate Reports shows only that organization's eligible approved versions. Revoke from the report view when required. New text/content requires a new approval.
+
+A sample Halden board draft and an edited second version were saved through normal lawyer APIs. They remain unapproved; no external publication or approval was simulated. Wave 2 and prior source/release records remain preserved. Artifact QA files are under .runtime/report-qa and are not production records.
+
+Verification: full backend suite 127 passed / 1 PostgreSQL-only skip before the final extended report case; focused native PostgreSQL report/diligence tests 6 passed, then three extended report tests passed (including source-correction invalidation and account revocation during rendering). Alembic found no live schema drift. TypeScript/Vite build and real HTTPS Word/PDF/XLSX downloads passed. Word/PDF pages and both Excel sheets were rendered and inspected, with pagination/wrapping fixes applied. Browser UI interaction remains unverified because desktop access has been denied in this session. Existing Starlette/httpx test-client deprecation warning remains.
+
+Next work remains client discussion/uploads, configured OCR, named Halden clean-team source access, tracker Excel interchange, researched taxonomy/evaluation, cited Q&A and lifecycle/retention. This report workflow does not complete those separate requirements.
+
+
+[IMPLEMENTATION UPDATE, 21 NOV 2026] Optional live AI prose now creates a new unapproved report version from reviewed sections, using the shared spending ledger and preserving source citations/annex snapshots. See docs/41 and docs/42. The original template baseline and its test evidence remain historical records.

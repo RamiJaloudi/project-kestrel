@@ -1,0 +1,186 @@
+{
+  "languages": [
+    "en",
+    "de"
+  ],
+  "governing_laws": [
+    "unconfirmed",
+    "England and Wales",
+    "Germany",
+    "other"
+  ],
+  "rules": [
+    {
+      "id": "COC",
+      "description": "Change of control. Identify a change-of-control trigger, which party is subject to it, share-sale versus asset-sale applicability if stated, consent or notice, timing, exceptions and any termination consequence. Do not assume an assignment clause covers a share sale. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "change of control",
+        "Kontrollwechsel"
+      ]
+    },
+    {
+      "id": "ASSIGNMENT",
+      "description": "Assignment. Identify assignment, transfer, novation or subcontracting wording; consent/notice, permitted group transfers and carve-outs, and whether the proposed transaction is actually covered. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "assignment",
+        "Abtretung"
+      ]
+    },
+    {
+      "id": "EXCLUSIVITY",
+      "description": "Exclusivity. Identify exclusivity, sole sourcing/distribution, territory/customer/product scope, duration, minimum obligations, exceptions and termination or competition-law review questions without deciding enforceability. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "exclusive",
+        "ausschließlich"
+      ]
+    },
+    {
+      "id": "NON_COMPETE",
+      "description": "Non compete. Identify a non-compete or restrictive covenant, the restricted parties, activities, territory and duration, post-termination obligations and exceptions; flag legal applicability/enforceability as for counsel. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "non-compete",
+        "Wettbewerbsverbot"
+      ]
+    },
+    {
+      "id": "TERMINATION",
+      "description": "Termination. Identify termination rights, transaction/control triggers, convenience/default/cure, notice deadlines, licence/service continuity and survival consequences, including exceptions. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "termination",
+        "Kündigung"
+      ]
+    },
+    {
+      "id": "LIABILITY_CAP",
+      "description": "Liability caps. Identify aggregate/per-claim caps, amount or calculation basis, exclusions and carve-outs, uncapped liabilities and limitations. Do not treat a carve-out as a blanket cap or a liability exclusion as a monetary cap. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "liability cap",
+        "Haftungsbegrenzung"
+      ]
+    },
+    {
+      "id": "GOVERNING_LAW",
+      "description": "Governing law. Quote an express governing-law clause; distinguish governing law from forum/jurisdiction and document language. Record ambiguity or absence without inferring law from German or English wording. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "governed by",
+        "anwendbares Recht"
+      ]
+    },
+    {
+      "id": "DATA_PROTECTION",
+      "description": "Data protection. Identify contractual personal-data processing, controller/processor roles, processing agreements, security, breach notice, subprocessors, international transfer and change-related obligations if stated; do not assert statutory triggers without transaction facts and counsel. Return a document-specific candidate explanation and exact supporting wording. A lawyer must decide materiality, applicability and release.",
+      "triggers": [
+        "personal data",
+        "personenbezogene Daten"
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "text": "Synthetic contract wording: change of control.",
+      "expected_rule_ids": [
+        "COC"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: Kontrollwechsel.",
+      "expected_rule_ids": [
+        "COC"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: assignment.",
+      "expected_rule_ids": [
+        "ASSIGNMENT"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: Abtretung.",
+      "expected_rule_ids": [
+        "ASSIGNMENT"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: exclusive.",
+      "expected_rule_ids": [
+        "EXCLUSIVITY"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: ausschließlich.",
+      "expected_rule_ids": [
+        "EXCLUSIVITY"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: non-compete.",
+      "expected_rule_ids": [
+        "NON_COMPETE"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: Wettbewerbsverbot.",
+      "expected_rule_ids": [
+        "NON_COMPETE"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: termination.",
+      "expected_rule_ids": [
+        "TERMINATION"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: Kündigung.",
+      "expected_rule_ids": [
+        "TERMINATION"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: liability cap.",
+      "expected_rule_ids": [
+        "LIABILITY_CAP"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: Haftungsbegrenzung.",
+      "expected_rule_ids": [
+        "LIABILITY_CAP"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: governed by.",
+      "expected_rule_ids": [
+        "GOVERNING_LAW"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: anwendbares Recht.",
+      "expected_rule_ids": [
+        "GOVERNING_LAW"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: personal data.",
+      "expected_rule_ids": [
+        "DATA_PROTECTION"
+      ]
+    },
+    {
+      "text": "Synthetic contract wording: personenbezogene Daten.",
+      "expected_rule_ids": [
+        "DATA_PROTECTION"
+      ]
+    },
+    {
+      "text": "The delivery address is on the cover sheet.",
+      "expected_rule_ids": []
+    },
+    {
+      "text": "Der Lieferort ist auf dem Deckblatt angegeben.",
+      "expected_rule_ids": []
+    }
+  ],
+  "authorities": [],
+  "disclaimer": "Synthetic bilingual eight-risk review checklist, not a researched legal opinion or firm standard. Requires independent Legal SME approval. English/German language does not establish governing law; applicability, exceptions and materiality require transaction counsel."
+}

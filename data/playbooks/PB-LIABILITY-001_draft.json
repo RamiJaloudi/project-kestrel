@@ -1,0 +1,32 @@
+{
+  "id": "PB-LIABILITY-001",
+  "name": "Liability Caps and Carve-outs",
+  "version": "0.1.0",
+  "status": "draft_sample_only",
+  "risk_category": "liability",
+  "jurisdictions": [
+    "to_be_confirmed"
+  ],
+  "languages": [
+    "de",
+    "en"
+  ],
+  "document_types": [
+    "to_be_confirmed"
+  ],
+  "rules": [
+    {
+      "rule_id": "PB-LIABILITY-001-01",
+      "trigger": "liability cap, exclusion, carve-out or unlimited exposure",
+      "exception": "Scope, definitions, facts and applicable law must be confirmed by lawyer",
+      "severity_hint": "unknown"
+    }
+  ],
+  "evidence_requirements": [
+    "source version",
+    "exact quotation",
+    "page/offset when document-based"
+  ],
+  "legal_approval_required": true,
+  "authorities": []
+}

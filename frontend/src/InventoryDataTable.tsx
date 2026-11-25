@@ -1,0 +1,9 @@
+import {useState} from 'react';
+import KestrelDataTable,{type TableColumn} from './KestrelDataTable';
+import {workflowLink} from './WorkflowSteps';
+type Row={id:string;file_name:string;logical_key:string;version_number:number;wave:string;classification:string;classification_confirmed:boolean;extraction_status:string;language:string};
+export default function InventoryDataTable({matter,csrf,historical,refreshKey,onRead,onDenied}:{matter:string;csrf:string;historical:boolean;refreshKey:number;onRead:(id:string,historical:boolean)=>void;onDenied:()=>void}){
+ const [effectiveHistory,setEffectiveHistory]=useState<boolean|null>(null);
+ const columns:TableColumn<Row>[]=[{key:'file_name',title:'Document',render:r=><><b>{r.file_name}</b><small>{r.logical_key}  ·  v{r.version_number}</small></>},{key:'logical_key',title:'Document key'},{key:'version_number',title:'Version'},{key:'wave',title:'Wave'},{key:'classification',title:'Document class'},{key:'extraction_status',title:'Text status'},{key:'classification_confirmed',title:'Confirmed',render:r=>r.classification_confirmed?'Yes':'Pending'},{key:'language',title:'Language'},{key:'id',title:'Actions',orderable:false,searchable:false,render:r=><div className="api-links"><button onClick={()=>onRead(r.id,effectiveHistory??historical)}>Read evidence</button><a href={workflowLink('Risk Review',matter,r.id)}>Review document</a></div>}];
+ return <><p>Filter or sort this permitted inventory. Passage restrictions also apply. Internal metadata exports require confirmed handling; they contain no document passages and do not release material externally.</p><KestrelDataTable<Row> key={matter} dataset="inventory" matter={matter} csrf={csrf} columns={columns} filters={{source_filters:{historical}}} refreshKey={refreshKey} onDenied={onDenied} allowExport onEffectiveQuery={query=>setEffectiveHistory(query?!!query.source_filters?.historical:null)}/></>;
+}

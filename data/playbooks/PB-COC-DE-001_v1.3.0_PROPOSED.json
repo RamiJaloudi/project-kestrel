@@ -1,0 +1,67 @@
+{
+  "id": "PB-COC-DE-001",
+  "name": "Change of Control — German-related Commercial Contracts",
+  "owner_role": "legal_sme",
+  "jurisdictions": [
+    "Germany",
+    "England and Wales"
+  ],
+  "languages": [
+    "de",
+    "en"
+  ],
+  "document_types": [
+    "commercial_contract",
+    "software_license"
+  ],
+  "governing_law_handling": "Detect explicit clause; mark unknown if absent. Never infer solely from language.",
+  "risk_category": "change_of_control",
+  "status": "proposed_sample_only",
+  "output_schema": {
+    "rule_id": "string",
+    "evidence_span_id": "uuid",
+    "candidate_severity": "low|medium|high|unknown",
+    "uncertainty": "string"
+  },
+  "evidence_requirements": [
+    "original_doc_version",
+    "page_number",
+    "exact_original_quote",
+    "source_offsets",
+    "citation_verification"
+  ],
+  "legal_approval_required": true,
+  "authorities": [
+    {
+      "id": "GER-GMBHG",
+      "title": "German Limited Liability Companies Act (GmbHG)",
+      "url": "https://www.gesetze-im-internet.de/englisch_gmbhg/",
+      "license": "official-public",
+      "checked_current": false
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "COC-03",
+      "name": "Direct/indirect transfer",
+      "trigger": "Contract explicitly references direct or indirect change of control, including ultimate ownership where the contract so provides",
+      "exception": "Check consent waivers and definitions",
+      "severity_hint": "review"
+    },
+    {
+      "rule_id": "COC-07",
+      "name": "Notice requirement",
+      "trigger": "Contract specifies notification following control change",
+      "exception": "Check deadlines, parties and carve-outs",
+      "severity_hint": "review"
+    },
+    {
+      "rule_id": "COC-09",
+      "name": "Deemed assignment",
+      "trigger": "Contract deems a qualifying change of control an assignment requiring consent",
+      "exception": "Check permitted assignments, affiliate exceptions and definition of control",
+      "severity_hint": "review"
+    }
+  ],
+  "version": "1.3.0"
+}

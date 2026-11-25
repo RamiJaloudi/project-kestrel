@@ -1,0 +1,8 @@
+flowchart LR
+  S0["Select eligible evidence<br/>Check organization and matter<br/>Apply walls and source labels<br/>Check release and expiry<br/>Exclude unauthorized text"]
+  S1["Choose search mode<br/>Default is lexical BM25<br/>No default provider call<br/>Internal semantic or hybrid<br/>Needs approved provider use"]
+  S0 --> S1
+  S2["Retrieve and cite<br/>Rank permitted passages<br/>Keep exact version anchors<br/>Show uncertainty and gaps<br/>Recheck old stored answers"]
+  S1 --> S2
+  S3["Review the answer<br/>Open permitted citations<br/>Verify the source passage<br/>Record a legal finding apart<br/>External corpus is released"]
+  S2 --> S3

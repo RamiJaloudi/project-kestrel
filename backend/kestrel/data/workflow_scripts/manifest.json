@@ -1,0 +1,258 @@
+{
+  "schema": "kestrel-workflow-templates-1",
+  "catalog_sha256": "b8befefa1e5cda5753640ce4c20ca0076a3841e39708873a35e7a1fda750ada6",
+  "templates": {
+    "reader-comparison:default": {
+      "file": "reader-comparison-default.xlsx",
+      "sha256": "2ff07dda29c0acf50dbd1ff98792cafa72fa1bf2eec1e872e2a6f1543c1c2414",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "financial:firm": {
+      "file": "financial-firm.xlsx",
+      "sha256": "09cc2aaefb512dd827544065edcde3a4d74dea64a16f29361beb6db2c5776c5a",
+      "first_step_row": 10,
+      "steps": 9
+    },
+    "retrieval:firm": {
+      "file": "retrieval-firm.xlsx",
+      "sha256": "fca5661aa9e316c4f7cbc2a26614454150ae4fcdcd5b2b00c8d78e30841475e1",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "disclosures:firm": {
+      "file": "disclosures-firm.xlsx",
+      "sha256": "d95e13c01a7d3b4f8be62ca0545c8c4bbec659dde0829da9417ff985a80551ea",
+      "first_step_row": 10,
+      "steps": 7
+    },
+    "content-labels:default": {
+      "file": "content-labels-default.xlsx",
+      "sha256": "03dcf5e65fe2f9cb97a3ed2065501b511bf76091f4141f290e06984f927707c1",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "sla-alerts:default": {
+      "file": "sla-alerts-default.xlsx",
+      "sha256": "7d5fe5852c6f0232e3f6950ad4a13da4cf803e52ee57bebac52ff9135de20015",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "review-clocks:default": {
+      "file": "review-clocks-default.xlsx",
+      "sha256": "ba646269d591515e49cdcdf294a96dbbb4e34a7a24074d4605879a2076766343",
+      "first_step_row": 10,
+      "steps": 8
+    },
+    "review-work:default": {
+      "file": "review-work-default.xlsx",
+      "sha256": "9d752a7a0f41854c92c62e09407f9cae9ab175d8e3978bee943efd40d001a880",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "vdr-import:default": {
+      "file": "vdr-import-default.xlsx",
+      "sha256": "96f08dab2ca8f60c80c8f1fe7715351285369f3616267ca3fa39b529f9b1ab9c",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "checklists:default": {
+      "file": "checklists-default.xlsx",
+      "sha256": "0185e19eac62bb015467b6c17b73b3ed4b4fe426d700e2e0e92160efc8956542",
+      "first_step_row": 10,
+      "steps": 7
+    },
+    "released-trackers:default": {
+      "file": "released-trackers-default.xlsx",
+      "sha256": "41ae7497caaa724e08392bdde489f4c74a307faabb159ec62517edec556d9d1b",
+      "first_step_row": 10,
+      "steps": 4
+    },
+    "trackers:default": {
+      "file": "trackers-default.xlsx",
+      "sha256": "12e45f6934256efff284372b5d49ba558ca2341ed3276bf187e2c48a07ffcbb0",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "action-center:default": {
+      "file": "action-center-default.xlsx",
+      "sha256": "78021df3d63beff25880d59e81fff0aeb6d5e2921475aad5e9e1ca5709279281",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "profile:default": {
+      "file": "profile-default.xlsx",
+      "sha256": "a1891491557e5391f64ea1e8fbcdbab11f9a82f742dcf7ebd5d1802cdcf63bb4",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "report-qa:firm": {
+      "file": "report-qa-firm.xlsx",
+      "sha256": "477ac8812198670fb859cdf3d6310a08d278308e2c5d846c80961d0a8c8a2167",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "collaboration:firm": {
+      "file": "collaboration-firm.xlsx",
+      "sha256": "39e8ebae97c32000196fce699b390a2241e87c26e183d4bc280deff612350701",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "lifecycle:default": {
+      "file": "lifecycle-default.xlsx",
+      "sha256": "6541c4c7ab15c5f0b988fead1bdd8464e4e86573d818a8165c24ad5a5d101135",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "wall-checker:default": {
+      "file": "wall-checker-default.xlsx",
+      "sha256": "c1dfc05a6ffb48b3cd5aaffcd7defae6932756b3b779a3bfc174150aaa649804",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "account:default": {
+      "file": "account-default.xlsx",
+      "sha256": "96ffa4095bd1bcc5c28abda852054d62b8cb596209ac842c2efd2728967d2da7",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "lawyer:default": {
+      "file": "lawyer-default.xlsx",
+      "sha256": "7c5e08304ff631ec01db1e998dc07ee2bcb1fab79c545ee3569bc288ef00ffff",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "sme:default": {
+      "file": "sme-default.xlsx",
+      "sha256": "f86c6955b2b7ec7181230669aa0560ca61261379417f752e480c2e400603608e",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "admin:default": {
+      "file": "admin-default.xlsx",
+      "sha256": "1a4db50153133a18c504ec6d360172360c4c7db76a7759dae56f599f44fb99c8",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "security:default": {
+      "file": "security-default.xlsx",
+      "sha256": "f60c30ab60834b97075be0ed82ae8b2274ee032f6b2e3e36b45a38d4ecd3f980",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "conflicts:default": {
+      "file": "conflicts-default.xlsx",
+      "sha256": "78aa083b94505e811f2b366c04f31885e01feb6d58e35f0858c99d15b9a182d0",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "clean-team:firm": {
+      "file": "clean-team-firm.xlsx",
+      "sha256": "a1f336d011a2a1eca5d40f7a005d393d9c71adac281d11522fdee95d29cf12f0",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "clean-team:halden": {
+      "file": "clean-team-halden.xlsx",
+      "sha256": "0c4333b9f8fbb2c550fb5be73ab7ea5b8526894ba3d34c390a7f0b60aa168863",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "external:default": {
+      "file": "external-default.xlsx",
+      "sha256": "14b64d44bb47011688354667122a22e7d0648185ee934fa576c407f0ffb2def2",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "audit:default": {
+      "file": "audit-default.xlsx",
+      "sha256": "46045d63438f75a0cd2cdc4bd1cb4aae1d292318b066f781c665300a598333f2",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "ddr-runs:default": {
+      "file": "ddr-runs-default.xlsx",
+      "sha256": "3b4bc47cc9ba64c4243019c214004a8bf347026cb86bae679f2b7e98125667bf",
+      "first_step_row": 10,
+      "steps": 7
+    },
+    "agent-registry:default": {
+      "file": "agent-registry-default.xlsx",
+      "sha256": "40cc38f209ce88cb82c0733c15f26a979276e6a29621ee7b8c5006711e6f8d1a",
+      "first_step_row": 10,
+      "steps": 11
+    },
+    "tables:default": {
+      "file": "tables-default.xlsx",
+      "sha256": "0221ddba1e41ffbd2d509d62393b9cfc1803a2d97a1fb98adef24bf5e6e09be8",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "intelligence:default": {
+      "file": "intelligence-default.xlsx",
+      "sha256": "cdd3ffd3714f840754acf13d2fea3057253688daacb506c743fb5010453cc2a3",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "structured-intake:default": {
+      "file": "structured-intake-default.xlsx",
+      "sha256": "309bb830c898f8fbb6d69083149021c6c319849ecde4d615ae581af49a69d8ac",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "mfn:default": {
+      "file": "mfn-default.xlsx",
+      "sha256": "275946243394e10c2fd8c570e1ce4198f0a651e2e67191cde265e8cbb8122b69",
+      "first_step_row": 10,
+      "steps": 6
+    },
+    "financial:external": {
+      "file": "financial-external.xlsx",
+      "sha256": "3d6336e46e39e56d11f9aab4dfbaf6007055d25927683e3704771fbc3a9b14e3",
+      "first_step_row": 10,
+      "steps": 4
+    },
+    "retrieval:external": {
+      "file": "retrieval-external.xlsx",
+      "sha256": "c63fa24bb1e6835b454a2690b4493966b9f75f0ae8f7b9f4801d401c0c26bd62",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "disclosures:external": {
+      "file": "disclosures-external.xlsx",
+      "sha256": "6e5c9e347d9bff5bf3c8ed73e25f2d59c80503ed6bc05ff09e3fb85e23c8cbf2",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "sme-profile-approval:default": {
+      "file": "sme-profile-approval-default.xlsx",
+      "sha256": "afd8c23d277d02263b298470a8e3f1df3dcd2ddc04da59c0417e320bee830ac5",
+      "first_step_row": 10,
+      "steps": 11
+    },
+    "clean-team:castlegate": {
+      "file": "clean-team-castlegate.xlsx",
+      "sha256": "463764f2335e012980516027cdd4bc4dcd8a5c3391ba64dc03f8275ca3c16104",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "collaboration:halden": {
+      "file": "collaboration-halden.xlsx",
+      "sha256": "40542123f647050b4c5b8a6cdbf2a04ff06e88a6cd9605f9479e6b20f9f36707",
+      "first_step_row": 10,
+      "steps": 5
+    },
+    "collaboration:castlegate": {
+      "file": "collaboration-castlegate.xlsx",
+      "sha256": "5c9afeb8793be5547164da775c53576572c0f6832763b4b15b6bac0ac3846f35",
+      "first_step_row": 10,
+      "steps": 4
+    },
+    "report-qa:external": {
+      "file": "report-qa-external.xlsx",
+      "sha256": "976db0aa28c34f23141cbd137be6746e1adf29e425c61b55c2b6762480b3a264",
+      "first_step_row": 10,
+      "steps": 5
+    }
+  }
+}

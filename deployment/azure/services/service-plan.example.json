@@ -1,0 +1,15 @@
+{
+  "schema": "kestrel-windows-services-plan-1",
+  "release_root": "E:\\Kestrel\\app",
+  "python_exe": "E:\\Kestrel\\venv\\Scripts\\python.exe",
+  "caddy_exe": "E:\\Kestrel\\proxy\\caddy.exe",
+  "public_config_file": "E:\\Kestrel\\owner\\public-config.json",
+  "public_caddyfile": "E:\\Kestrel\\owner\\Caddyfile.public",
+  "service_root": "E:\\Kestrel\\services",
+  "log_root": "E:\\Kestrel\\logs",
+  "owner_sid": "S-1-5-21-100",
+  "app_account": "TARGETHOST\\kestrel_app",
+  "app_sid": "S-1-5-21-101",
+  "proxy_account": "TARGETHOST\\kestrel_proxy",
+  "proxy_sid": "S-1-5-21-102"
+}

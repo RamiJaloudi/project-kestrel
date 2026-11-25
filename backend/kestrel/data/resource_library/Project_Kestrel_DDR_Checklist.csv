@@ -1,0 +1,29 @@
+﻿Request ID,Section,Workstream,Original request,Priority,Owner role,Applicability,Receipt status,Evidence references,Review decision,Decision rationale,Next action
+A01,A,Corporate,Confirm the target and subsidiary perimeter with current constitutional and ownership records.,P0,Corporate lead,Unassessed,Not requested,,Pending,,Scope approval required
+A02,A,Corporate,"Identify shareholder arrangements, equity rights and approvals that could affect the proposed transaction.",P1,Corporate lead,Unassessed,Not requested,,Pending,,Scope approval required
+B01,B,Finance,"Provide period-labelled financial statements and management reporting with entity, currency and unit definitions.",P0,Finance lead,Unassessed,Not requested,,Pending,,Scope approval required
+B02,B,Finance,"Reconcile material revenue, cash and debt figures to their original schedules and identify restatements.",P1,Finance lead,Unassessed,Not requested,,Pending,,Scope approval required
+C01,C,Tax,Map the target group tax footprint and identify material open examinations or disputed exposures.,P1,Tax lead,Unassessed,Not requested,,Pending,,Scope approval required
+C02,C,Tax,Identify transaction-related tax assumptions and the evidence needed by the tax specialists.,P1,Tax lead,Unassessed,Not requested,,Pending,,Scope approval required
+D01,D,Debt,"Identify material borrowing, guarantees, security and transaction-related consent requirements.",P0,Finance counsel,Unassessed,Not requested,,Pending,,Scope approval required
+D02,D,Debt,Obtain the current covenant position and evidence for any waivers or lender conditions.,P1,Finance counsel,Unassessed,Not requested,,Pending,,Scope approval required
+E01,E,Property,Map significant owned or leased premises and operational assets to the relevant entities.,P1,Real estate lead,Unassessed,Not requested,,Pending,,Scope approval required
+E02,E,Property,"Identify title, lease, encumbrance or continuity issues that may affect the acquisition plan.",P1,Real estate lead,Unassessed,Not requested,,Pending,,Scope approval required
+F01,F,IP and software,"Establish ownership and chain of title for core software and other material IP, including contributor rights.",P0,IP software lead,Unassessed,Not requested,,Pending,,Scope approval required
+F02,F,IP and software,"Map third-party and open-source licence obligations to products, usage and transaction dependencies.",P0,IP software lead,Unassessed,Not requested,,Pending,,Scope approval required
+G01,G,Material contracts,Prioritize material customer and supplier agreements with amendments and complete execution records.,P0,Commercial lead,Unassessed,Not requested,,Pending,,Scope approval required
+G02,G,Material contracts,"Review evidenced change-of-control, assignment, consent, termination and MFN terms under the agreed playbook.",P0,Commercial lead,Unassessed,Not requested,,Pending,,Scope approval required
+H01,H,Operations,Identify material customer and supplier concentration and operational dependencies using dated source schedules.,P1,Operations lead,Unassessed,Not requested,,Pending,,Scope approval required
+H02,H,Operations,Route customer-level pricing and other competitive data to the named clean team before review or disclosure.,P0,Antitrust counsel,Unassessed,Not requested,,Pending,,Scope approval required
+I01,I,Disputes,"Identify material pending or threatened disputes and locate underlying evidence, with privilege handled separately.",P1,Disputes lead,Unassessed,Not requested,,Pending,,Scope approval required
+I02,I,Disputes,"Identify continuing settlement obligations, orders and restrictions relevant to business continuity.",P1,Disputes lead,Unassessed,Not requested,,Pending,,Scope approval required
+J01,J,Regulatory,"Map operations and transaction facts needed for counsel to assess competition, FDI and sector-specific triggers.",P0,Regulatory counsel,Unassessed,Not requested,,Pending,,Scope approval required
+J02,J,Regulatory,"Identify material permits, regulator engagement and unresolved compliance matters within the agreed scope.",P1,Regulatory counsel,Unassessed,Not requested,,Pending,,Scope approval required
+K01,K,Employment,"Identify key workforce arrangements, incentive plans and transaction-dependent employment obligations.",P1,Employment lead,Unassessed,Not requested,,Pending,,Scope approval required
+K02,K,Employment,Obtain the facts needed to assess employee representation or consultation requirements and sensitive data handling.,P1,Employment lead,Unassessed,Not requested,,Pending,,Scope approval required
+L01,L,Privacy and security,"Map material personal-data processing, transfers, processor arrangements and supporting contractual records.",P0,Privacy lead,Unassessed,Not requested,,Pending,,Scope approval required
+L02,L,Privacy and security,"Identify material security incidents, remediation evidence and outstanding contractual security commitments.",P1,Privacy security lead,Unassessed,Not requested,,Pending,,Scope approval required
+M01,M,ESG,"Identify material environmental, safety and supply-chain exposures supported by relevant business records.",P1,ESG regulatory lead,Unassessed,Not requested,,Pending,,Scope approval required
+M02,M,ESG,Identify substantiation and outstanding commitments for material ESG statements within the agreed review scope.,P1,ESG regulatory lead,Unassessed,Not requested,,Pending,,Scope approval required
+N01,N,Matter specific,"Confirm the week-five board priorities, evidence cutoff, materiality and escalation criteria.",P0,Partner and GC,Unassessed,Not requested,,Pending,,Scope approval required
+N02,N,Matter specific,"Agree signing freeze, retention, legal holds and eligible post-close disposal with named records owners.",P0,Records and partner,Unassessed,Not requested,,Pending,,Scope approval required

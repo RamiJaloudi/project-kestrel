@@ -1,0 +1,7 @@
+﻿example_status,entry_id,date,entity,account,description,currency,debit,credit,source_reference,verification_status
+SYNTHETIC,JE-001,2026-11-01,Demo Target,Bank,Owner funding,EUR,10000.00,0.00,DEMO-JOURNAL-1 rows 1-2,Illustrative only
+SYNTHETIC,JE-001,2026-11-01,Demo Target,Equity,Owner funding,EUR,0.00,10000.00,DEMO-JOURNAL-1 rows 1-2,Illustrative only
+SYNTHETIC,JE-002,2026-11-02,Demo Target,Software expense,Supplier invoice,EUR,2500.00,0.00,DEMO-INVOICE-1,Illustrative only
+SYNTHETIC,JE-002,2026-11-02,Demo Target,Accounts payable,Supplier invoice,EUR,0.00,2500.00,DEMO-INVOICE-1,Illustrative only
+SYNTHETIC,JE-003,2026-11-15,Demo Target,Accounts payable,Invoice payment,EUR,2500.00,0.00,DEMO-BANK-1,Illustrative only
+SYNTHETIC,JE-003,2026-11-15,Demo Target,Bank,Invoice payment,EUR,0.00,2500.00,DEMO-BANK-1,Illustrative only

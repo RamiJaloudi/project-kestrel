@@ -1,0 +1,32 @@
+{
+  "id": "PB-DP-EU-001",
+  "name": "Data Protection Due Diligence",
+  "version": "0.1.0",
+  "status": "draft_sample_only",
+  "risk_category": "data_protection",
+  "jurisdictions": [
+    "to_be_confirmed"
+  ],
+  "languages": [
+    "de",
+    "en"
+  ],
+  "document_types": [
+    "to_be_confirmed"
+  ],
+  "rules": [
+    {
+      "rule_id": "PB-DP-EU-001-01",
+      "trigger": "data processing, international transfers or security obligations",
+      "exception": "Scope, definitions, facts and applicable law must be confirmed by lawyer",
+      "severity_hint": "unknown"
+    }
+  ],
+  "evidence_requirements": [
+    "source version",
+    "exact quotation",
+    "page/offset when document-based"
+  ],
+  "legal_approval_required": true,
+  "authorities": []
+}

@@ -1,0 +1,11 @@
+# Folder-first document intake
+
+[USER DECISION] Replace the confusing single-file metadata form with folder selection and a simpler import flow.
+
+Documents now provides Choose folder → Review list → Import. Browser folder selection includes subfolders; supporting manifest.json metadata is read locally as suggestions and is not uploaded as a document. Supported documents are PDF, DOCX, XLSX, UTF-8 TXT/CSV, within the existing 3 MiB/file bounds and new browser queue bounds of 100 documents / 50 MiB. Legacy Office and unsupported files are excluded. Files are not imported until the user confirms synthetic material and explicitly starts import.
+
+The list shows relative paths, suggested IDs, version matches, restrictions, selection and per-file status. File details expands optional metadata. Existing clean-team/privileged handling and legal-advice type are preserved conservatively in suggestions. Replacement versions require a separate review confirmation. Checksums identify already-present files and prevent resending a successfully saved file on retry. Duplicate IDs within a batch require resolution. The server still validates and authorizes each individual upload; client metadata never grants access. Restricted pricing may fail for an ordinary lawyer and can be processed by an authorized named member.
+
+Imports run sequentially with individual results. Successful files are retained when another file fails. Stop after current document avoids interrupting an in-flight save. The matter selector is locked while reading/importing a folder. Classification and analysis remain separate steps, and OCR-required status is shown honestly. There is no arbitrary server-directory scanning, archive extraction or unattended background import. The browser exposes only the selected files, not a persistent filesystem folder permission.
+
+No backend API, schema, service process or launcher change is needed; the existing Start build serves the new component. The former ingestion form is replaced. The underlying document access, checksums and immutable-version implementation remains unchanged. TypeScript/Vite build is the available UI check; interactive browser inspection remains blocked by desktop access denial.

@@ -1,0 +1,32 @@
+{
+  "id": "PB-REG-001",
+  "name": "Transaction Regulatory Issue Screening",
+  "version": "0.1.0",
+  "status": "draft_sample_only",
+  "risk_category": "transaction_regulatory",
+  "jurisdictions": [
+    "to_be_confirmed"
+  ],
+  "languages": [
+    "de",
+    "en"
+  ],
+  "document_types": [
+    "to_be_confirmed"
+  ],
+  "rules": [
+    {
+      "rule_id": "PB-REG-001-01",
+      "trigger": "German GmbH transfer, merger control, FDI, works council or UK listing issue",
+      "exception": "Scope, definitions, facts and applicable law must be confirmed by lawyer",
+      "severity_hint": "unknown"
+    }
+  ],
+  "evidence_requirements": [
+    "source version",
+    "exact quotation",
+    "page/offset when document-based"
+  ],
+  "legal_approval_required": true,
+  "authorities": []
+}

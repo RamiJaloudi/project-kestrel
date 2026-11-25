@@ -1,0 +1,657 @@
+{
+  "version": 1,
+  "updated": "2026-11-24",
+  "assets": [
+    {
+      "id": "resource-library-guide",
+      "filename": "Resource_Library_Guide.md",
+      "title": "Find and use project assets",
+      "description": "Resources brings together workflow guides, diagrams, sample ledgers, report examples, forms and technical dictionaries.",
+      "category": "Guides",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Authored project guide",
+      "media_type": "text/markdown",
+      "bytes": 1858,
+      "sha256": "591b8ce53181850a118171526bf0ac169aa08693c79dc395c9b657d8bab9b988",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "api-and-schema-guide",
+      "filename": "API_and_Schema_Guide.md",
+      "title": "Understand the API and schema files",
+      "description": "Use OpenAPI to see the requests the application accepts today.",
+      "category": "API and schema",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Authored project guide",
+      "media_type": "text/markdown",
+      "bytes": 2460,
+      "sha256": "9b282abb0597b0e9b9ac24bd47a122145cb23da2d3d8417d365606e83bb5e0ee",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "report-and-ledger-guide",
+      "filename": "Report_and_Ledger_Guide.md",
+      "title": "Read sample reports and ledgers",
+      "description": "Every sample is fictional and separate from live matter records.",
+      "category": "Guides",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Authored project guide",
+      "media_type": "text/markdown",
+      "bytes": 1685,
+      "sha256": "422a85a2786d76cec6c1afa839382cb60fed00da9b257e42d84a7961a7a88282",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "document-review-ledger",
+      "filename": "Document_Review_Ledger.csv",
+      "title": "Document review ledger",
+      "description": "Fictional example rows. This file is not an application export or approval record. Column meanings are in Ledger_Field_Definitions.csv.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 485,
+      "sha256": "bb6d0c934620e9fbbe07f817bd9151e652285f0bf20e1e66323801f544dcb051",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "financial-transaction-ledger",
+      "filename": "Financial_Transaction_Ledger.csv",
+      "title": "Financial transaction ledger",
+      "description": "Fictional example rows. This file is not an application export or approval record. Column meanings are in Ledger_Field_Definitions.csv.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 841,
+      "sha256": "24265af14a9a6ab2a138309becb1de70acd6a9d65367b297dbbe6712940bd722",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "findings-and-issues-ledger",
+      "filename": "Findings_and_Issues_Ledger.csv",
+      "title": "Findings and open issues ledger",
+      "description": "Fictional example rows. This file is not an application export or approval record. Column meanings are in Ledger_Field_Definitions.csv.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 471,
+      "sha256": "0ae95faf36696bab79a45e37cf4d8123458f72d37a0279c1d2bf997ccde5a404",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "approval-decision-ledger",
+      "filename": "Approval_Decision_Ledger.csv",
+      "title": "Approval and decision ledger",
+      "description": "Fictional example rows. This file is not an application export or approval record. Column meanings are in Ledger_Field_Definitions.csv.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 349,
+      "sha256": "a170157f2efb32ee82ee9187a0d55e5f08f1f3acc0b3168685e88c0946f75fb0",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "audience-release-ledger",
+      "filename": "Audience_Release_Ledger.csv",
+      "title": "Audience release ledger",
+      "description": "Fictional example rows. This file is not an application export or approval record. Column meanings are in Ledger_Field_Definitions.csv.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 383,
+      "sha256": "9e665b59ad24f2ec55f0bbfc2e83bd3f4ef4e7a69b069ead96f68f40e0d78d69",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "audit-event-ledger",
+      "filename": "Audit_Event_Ledger.csv",
+      "title": "Audit event ledger",
+      "description": "Fictional example rows. This file is not an application export or approval record. Column meanings are in Ledger_Field_Definitions.csv.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 414,
+      "sha256": "f4eb0edd0f140db3aca8d291e5cbc20009e65bcf534aa46c2af5eb793e9988fe",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "ledger-field-definitions",
+      "filename": "Ledger_Field_Definitions.csv",
+      "title": "Ledger field definitions",
+      "description": "Column meanings for all six synthetic ledger formats. This dictionary describes examples, not database import contracts.",
+      "category": "Sample ledgers",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 5624,
+      "sha256": "722bf23c6f38c59630291b58b005a36fca20935119b7d92bac03c3eab24a2869",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "internal-due-diligence-sample",
+      "filename": "Internal_Due_Diligence_Sample.docx",
+      "title": "Internal due diligence report example",
+      "description": "Short internal draft with a fictional citation, assumptions, team recommendation and pending decisions.",
+      "category": "Sample reports",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 38052,
+      "sha256": "0d625f2d6720308c1884d1872d29075823a85b02f657f64acacb7e1401038513",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "halden-due-diligence-sample",
+      "filename": "Halden_Due_Diligence_Sample.docx",
+      "title": "Halden report example",
+      "description": "Client-format action summary using fictional facts; no source material or application release.",
+      "category": "Sample reports",
+      "audiences": [
+        "firm",
+        "halden"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 37844,
+      "sha256": "53b91ef794ec056d458147ea0c769b8a4b76f9daee5d4c437c4f7ad58e758cb8",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "castlegate-commercial-report-sample",
+      "filename": "Castlegate_Commercial_Report_Sample.docx",
+      "title": "Castlegate commercial report example",
+      "description": "Commercial-format status update with explicit missing financial impact and no privileged legal analysis.",
+      "category": "Sample reports",
+      "audiences": [
+        "firm",
+        "castlegate"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 37774,
+      "sha256": "2f246de4812859e3010803e1e64d0e048f366054de394613d8925cb1d94a97b2",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "document-to-report-svg",
+      "filename": "Document_to_Report.svg",
+      "title": "From a VDR document to a report",
+      "description": "Implemented workflow overview. Each stage retains its source and version. Search answers a question over permitted evidence. It does not prove that every document was reviewed. This diagram describes the code workflow; it does not prove acceptance on the Azure VM.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Current code and explicit deployment limits",
+      "media_type": "image/svg+xml",
+      "bytes": 4395,
+      "sha256": "a7303225ecbf4dfbfe15304d16fa17eadaf31cbda07e6d493d225c351cf0f16a",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "document-to-report-mmd",
+      "filename": "Document_to_Report.mmd",
+      "title": "From a VDR document to a report editable source",
+      "description": "Implemented workflow overview. Each stage retains its source and version.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Editable Mermaid source",
+      "media_type": "text/plain",
+      "bytes": 662,
+      "sha256": "0b25656afd718144567530358745ceab2dc965da9a7550399b22987bc76a6498",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "access-and-release-svg",
+      "filename": "Access_and_Release.svg",
+      "title": "How access and release are checked",
+      "description": "The hostname chooses the screen. The server decides whether the person may act. Root Admin has no blanket legal or source-reading privilege. Notification read is not approval. The Resource library contains authored examples only; it does not expose live matter exports.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Current code and explicit deployment limits",
+      "media_type": "image/svg+xml",
+      "bytes": 4394,
+      "sha256": "06ff2d8e038508cc5b39663734e1a48259206ced6107caef3b6317d7d543ed9c",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "access-and-release-mmd",
+      "filename": "Access_and_Release.mmd",
+      "title": "How access and release are checked editable source",
+      "description": "The hostname chooses the screen. The server decides whether the person may act.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Editable Mermaid source",
+      "media_type": "text/plain",
+      "bytes": 645,
+      "sha256": "6cfaf25f6c8e32a54d0585c5682dd3a603026644f04fcaf9dd7463061fcbee7e",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "azure-deployment-svg",
+      "filename": "Azure_Deployment.svg",
+      "title": "Azure portal deployment",
+      "description": "DNS configured on 24 November 2026. HTTPS and application activation have separate acceptance gates. Configured hostnames are not evidence of a live public application. Do not bypass the CLOSED gate. Linux requires replacements for DPAPI, Windows service control and the owner approval boundary.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Current code and explicit deployment limits",
+      "media_type": "image/svg+xml",
+      "bytes": 4432,
+      "sha256": "fe10d01cddcf59ac1fb14ba0882d65c548283186c2cfa48f9ba8338c22fb0246",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "azure-deployment-mmd",
+      "filename": "Azure_Deployment.mmd",
+      "title": "Azure portal deployment editable source",
+      "description": "DNS configured on 24 November 2026. HTTPS and application activation have separate acceptance gates.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Editable Mermaid source",
+      "media_type": "text/plain",
+      "bytes": 653,
+      "sha256": "ef3c577e8c6eb71cd2f0891a10dcbe0f550aa4cad1f24e48f4e83a14bbc9d85b",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "schema-story-svg",
+      "filename": "Schema_Story.svg",
+      "title": "The schema follows the review",
+      "description": "Use implemented dictionaries for model structure and proposed dictionaries for target design. The proposed dictionary contains 809 fields. Its group column is a documentation domain, not an access grant. The implemented model export reads structure only; applied database migrations need separate verification.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Current code and explicit deployment limits",
+      "media_type": "image/svg+xml",
+      "bytes": 4470,
+      "sha256": "c4dc0bb09d740d6a9dc254359620d36249fd4c3619cdd364074f7a4f35eebdcc",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "schema-story-mmd",
+      "filename": "Schema_Story.mmd",
+      "title": "The schema follows the review editable source",
+      "description": "Use implemented dictionaries for model structure and proposed dictionaries for target design.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Editable Mermaid source",
+      "media_type": "text/plain",
+      "bytes": 649,
+      "sha256": "7790bd24213caaa1ce7b6a97dfc88c452f64eebf874e1f1bea27e6c9c765d10f",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "api-architecture-svg",
+      "filename": "API_Architecture.svg",
+      "title": "How the API connects the application",
+      "description": "One typed API supports the portals. Calling an endpoint never creates permission. OpenAPI describes current request and response contracts. Model CSVs describe the code-declared structure. The proposed 809-field design is separate. Enterprise integrations remain design or mock adapters where stated.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Current code and explicit deployment limits",
+      "media_type": "image/svg+xml",
+      "bytes": 4471,
+      "sha256": "4b10634eb0298216ce57a0c7cb34e3aa76eb19a2e6a87b01e1dd5dddc039f7fa",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "api-architecture-mmd",
+      "filename": "API_Architecture.mmd",
+      "title": "How the API connects the application editable source",
+      "description": "One typed API supports the portals. Calling an endpoint never creates permission.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Editable Mermaid source",
+      "media_type": "text/plain",
+      "bytes": 656,
+      "sha256": "c7ccf3a666b341d5e288acddba13721506708eb371b76f2a84e80bcce26939f3",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "search-architecture-svg",
+      "filename": "Search_Architecture.svg",
+      "title": "How a cited question is answered",
+      "description": "Search uses the evidence the signed-in person may currently read. A ranked answer does not establish complete diligence or lawyer approval. Missing evidence stays unknown. Provider-backed semantic search remains subject to processing policy and the shared cost cap.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Current code and explicit deployment limits",
+      "media_type": "image/svg+xml",
+      "bytes": 4396,
+      "sha256": "73e855fd71ad848df5b2ee521fde42c3108adde3ea470fde129660cc27bb34b0",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "search-architecture-mmd",
+      "filename": "Search_Architecture.mmd",
+      "title": "How a cited question is answered editable source",
+      "description": "Search uses the evidence the signed-in person may currently read.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "Editable Mermaid source",
+      "media_type": "text/plain",
+      "bytes": 659,
+      "sha256": "f8dafd9e3340bf26bed14a37805b62ef4b480b5f4d6c99d01c22445efe709a05",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "implemented-schema-fields",
+      "filename": "Implemented_Schema_Fields.csv",
+      "title": "Implemented schema fields",
+      "description": "Code-derived table, column, type, key and nullability snapshot, with definition basis. No database rows.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Implemented model snapshot",
+      "media_type": "text/csv",
+      "bytes": 358532,
+      "sha256": "035fa38de389e18e8be8fe97314fcac4a7691d14ae554a75b14b563bb7e0eb8c",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "implemented-schema-tables",
+      "filename": "Implemented_Schema_Tables.csv",
+      "title": "Implemented schema tables",
+      "description": "Code-derived table inventory and field counts. Not proof of deployed migrations.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Implemented model snapshot",
+      "media_type": "text/csv",
+      "bytes": 7810,
+      "sha256": "a8e4e819e3ded9aa73dd7189f00432a6a9c8a54129357b6596fe76fa131db2c7",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "proposed-schema-fields",
+      "filename": "Proposed_Schema_Fields.csv",
+      "title": "Proposed schema fields with definitions",
+      "description": "All 809 proposed fields, group meanings, definition basis and portability notes. Not implemented DDL.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Proposed target design",
+      "media_type": "text/csv",
+      "bytes": 662683,
+      "sha256": "41cb6fc767eda8b5e4065657a0d2a7c45200602afd1ef889afef337c15582f68",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "schema-csv-column-guide",
+      "filename": "Schema_CSV_Column_Guide.csv",
+      "title": "Schema CSV column guide",
+      "description": "Explains the 21 headers in the proposed schema dictionary.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored technical documentation",
+      "media_type": "text/csv",
+      "bytes": 2594,
+      "sha256": "efba06ae8bced7a2f5262348ebc76de25c0fb4f0d8da0b93a4c9582dd4353b04",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "tech-stack-and-linux-portability",
+      "filename": "Tech_Stack_and_Linux_Portability.csv",
+      "title": "Tech stack and Linux portability",
+      "description": "Component versions, purpose, selection reasons and Windows-to-Linux migration work.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored technical documentation",
+      "media_type": "text/csv",
+      "bytes": 36263,
+      "sha256": "3b6cf2a9b97af7f11382acb37a3550b9e04ac19617959fd4d8ee2dd6c361b5df",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "tech-stack-and-schema-guide",
+      "filename": "Tech_Stack_and_Schema_Guide.docx",
+      "title": "Tech stack and schema story",
+      "description": "Concise Word guide to the field families and portability limits.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored technical documentation",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 41480,
+      "sha256": "ab7787f0368d86754256eacf04faa6b8f3b21945832f5c56a6df5363e76c8016",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "proposed-schema-groups",
+      "filename": "Proposed_Schema_Groups.csv",
+      "title": "Proposed schema groups",
+      "description": "Definitions and counts of documentation domains. These are not account groups.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Proposed target design",
+      "media_type": "text/csv",
+      "bytes": 3097,
+      "sha256": "be9154dec3550e0b6238261b89cdfb973033efe65f8cbf6187b199217988d664",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "proposed-entity-catalog",
+      "filename": "Proposed_Entity_Catalog.csv",
+      "title": "Proposed entity catalogue",
+      "description": "Entity purpose and design domains in the proposed target schema.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Proposed target design",
+      "media_type": "text/csv",
+      "bytes": 6919,
+      "sha256": "8fc50cc453608140b39219a91a6fb2247dddad31d00356b23546faa3bb3d45d3",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "proposed-fk-relationships",
+      "filename": "Proposed_FK_Relationships.csv",
+      "title": "Proposed foreign key relationships",
+      "description": "Target schema relationship design; check actual migrations before implementation.",
+      "category": "API and schema",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Proposed target design",
+      "media_type": "text/csv",
+      "bytes": 6228,
+      "sha256": "6535a29b3cabca05fd082ce5b48bb300e2cf8077aa3ab9becbef32d3234f975f",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "project-kestrel-ddr-checklist-csv",
+      "filename": "Project_Kestrel_DDR_Checklist.csv",
+      "title": "Project Kestrel DDR Checklist",
+      "description": "Authored synthetic checklist or associate review tracker. Not an original Freshfields form.",
+      "category": "Forms and trackers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "text/csv",
+      "bytes": 5807,
+      "sha256": "9e4050cc7fbe02000e23726eac579a528c149f59d49f6e1c533f1ccd2722d747",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "project-kestrel-ddr-checklist-pdf",
+      "filename": "Project_Kestrel_DDR_Checklist.pdf",
+      "title": "Project Kestrel DDR Checklist",
+      "description": "Authored synthetic checklist or associate review tracker. Not an original Freshfields form.",
+      "category": "Forms and trackers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/pdf",
+      "bytes": 29462,
+      "sha256": "77eaa80c3fb9cf70a5c238460d332d01948d8fe196f32c10b75d5090e24f5d27",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "project-kestrel-ddr-checklist-xlsx",
+      "filename": "Project_Kestrel_DDR_Checklist.xlsx",
+      "title": "Project Kestrel DDR Checklist",
+      "description": "Authored synthetic checklist or associate review tracker. Not an original Freshfields form.",
+      "category": "Forms and trackers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 12440,
+      "sha256": "0fe0f86b404731f894753fd58262ff69065941c49980aa7b8754a4ff8ae507bc",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "associate-vdr-review-guide-pdf",
+      "filename": "Associate_VDR_Review_Guide.pdf",
+      "title": "Associate VDR Review Guide",
+      "description": "Authored synthetic checklist or associate review tracker. Not an original Freshfields form.",
+      "category": "Forms and trackers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/pdf",
+      "bytes": 24373,
+      "sha256": "b0588c83cbb0156fb078da4b5c436755d1ae139bea5f53f601c4280a1f64ed81",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "project-kestrel-associate-vdr-tracker-xlsx",
+      "filename": "Project_Kestrel_Associate_VDR_Tracker.xlsx",
+      "title": "Project Kestrel Associate VDR Tracker",
+      "description": "Authored synthetic checklist or associate review tracker. Not an original Freshfields form.",
+      "category": "Forms and trackers",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored synthetic example",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 13982,
+      "sha256": "93e2bec712f5a3ec9da153d813c4d6c19d32abc8c2dea2b42337ac3e9fe7dace",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "presentation-and-companions",
+      "filename": "Presentation_and_Companions.zip",
+      "title": "Plain English presentation and companions",
+      "description": "PPTX with speaker notes and its linked schema and tracker companions. Extract the folder before opening the presentation.",
+      "category": "Guides",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored assessment presentation",
+      "media_type": "application/zip",
+      "bytes": 207858,
+      "sha256": "9c85c00e5d870ef25ffdda0d4f00fe7aaf739337b836512f60c73ec7d15a089a",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "project-kestrel-partner-note",
+      "filename": "Project_Kestrel_Partner_Note.pdf",
+      "title": "One page partner note PDF",
+      "description": "Plain-language partner briefing from the written deliverables.",
+      "category": "Guides",
+      "audiences": [
+        "firm"
+      ],
+      "status": "Authored assessment note",
+      "media_type": "application/pdf",
+      "bytes": 4149,
+      "sha256": "e1fe81d5437ac4ba24db080f8a6bd337e8d8d834891ef3849017dc7630a18efd",
+      "updated": "2026-11-24"
+    }
+  ]
+}

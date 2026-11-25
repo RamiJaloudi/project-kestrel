@@ -1,0 +1,4 @@
+﻿example_status,document_id,version,vdr_reference,title,received_on,reviewer,review_status,finding_id,next_action
+SYNTHETIC,DOC-001,1,VDR-DEMO-001,Customer agreement,2026-11-20,Reviewer A,Review complete,FND-001,Obtain consent analysis
+SYNTHETIC,DOC-002,1,VDR-DEMO-002,Software licence,2026-11-21,Reviewer B,Awaiting review,,Check assignment terms
+SYNTHETIC,DOC-001,2,VDR-DEMO-001-v2,Customer agreement amendment,2026-11-24,Reviewer A,Awaiting comparison,,Compare with version 1

@@ -1,0 +1,15 @@
+# Fictional employer logins and credential export
+
+[USER DECISION] Export all demo login credentials, including Chris, Sumeet and Rami Jaloudi, to CSV; use fictional employer-based UPN/email domains. Shared demo password remains unchanged.
+
+[DESIGN] Firm accounts use freshfields.example; Halden accounts use halden.example; Castlegate accounts use castlegate.example. Rami receives a root_admin account only, with synthetic registry administration scope. No implicit legal approval or clean-team grant. Rename existing accounts in place, preserving IDs, roles, assignments, audit references and walls, and revoke sessions for renamed identities. Provisioning/verification and .env identities must follow the new names without recreating legacy accounts.
+
+Files: identity naming/provisioning helpers, local operator migration/export, profile verifier/tests and startup configuration. Acceptance: no duplicate users or lost grants; startup idempotence; existing credential verification; CSV has every app account once, matching UPN/email, employer/roles/portal and same verified password; real HTTPS sign-in for all 36 accounts. CSV lives in ignored local outputs, not static assets or application logs. This is a credential directory for the synthetic application, not an export of DB keys or certificate private keys.
+
+## Completed
+
+35 identities renamed in place and sessions for renamed users revoked. New owner UPN is rami.jaloudi@freshfields.example, role root_admin, with thirty-day scope to the two existing synthetic fixtures only. No clean-team grant or legal self-approval override was added. Named reviewer UPNs are chris.madden@freshfields.example and sumeet.josh_external@freshfields.example. Private .env and provisioning defaults now match; legacy typo/domain identities are not recreated by Start. Existing account UUID references, role grants, matter assignments, clean-team membership, walls and authored records are preserved.
+
+CSV snapshot: outputs/01a1f43e-5e06-7fa1-8f57-592009775d46/Kestrel_Demo_Credentials.csv. UTF-8 BOM, quoted fields, CRLF, 36 data rows, 8 columns: DisplayName, Employer, UPN, Email, Password, Roles, PortalURL, Active. Every row's password was verified against its stored Argon2 hash before export. 30 firm identities, three Halden and three Castlegate identities. CSV and its private input are owner-restricted; outputs is ignored. Shared password was retained as requested, with no credential values added to source or logs.
+
+Validation: six focused SQLite provisioning/migration tests passed; two additional PostgreSQL identity/owner tests passed in isolated schemas; actual HTTPS sign-in/role/guide checks passed for all 36 users. Warm Start verified the updated names without duplicate accounts. CSV round-trip checked row count, uniqueness, named people, employer-domain counts, matching UPN/email, identical password and HTTPS portal links. Start/Stop messages and templates reflect owner/employer accounts and retained exports. No GUI or public deployment changes were needed.

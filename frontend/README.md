@@ -1,0 +1,2 @@
+# Synthetic Local UI Mock
+Run `npm install` and `npm run dev` from this folder, then open http://127.0.0.1:5173. React preview demonstrates Legal Governance Action Center screen design and client-side buttons only. **No authentication, API service, job processing, real audit or secure permission enforcement.** It must NOT be publicly deployed. Codex S1 establishes server-backed identity and authorization before any protected UI can be connected. The visible 4 / 2 / 1 / 1 counts are computed from tiny fake records, not a real 12k-document impact assessment.

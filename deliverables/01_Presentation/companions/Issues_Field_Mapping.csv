@@ -1,0 +1,15 @@
+﻿#,Tracker header,Target normalized field,Mapping note
+1,Issue ID,issue_register.source_issue_id,Issues List row 2; joins rather than duplicative storage
+2,Related Doc ID,issue_register.document_id,Issues List row 2; joins rather than duplicative storage
+3,Doc Title (auto),documents.canonical_title (joined),Issues List row 2; joins rather than duplicative storage
+4,Workstream (auto),document_tags(workstream) (joined),Issues List row 2; joins rather than duplicative storage
+5,Issue Description,issue_register.description,Issues List row 2; joins rather than duplicative storage
+6,Risk Rating,issue_register.risk_rating,Issues List row 2; joins rather than duplicative storage
+7,Proposed Mitigation,issue_register.proposed_mitigation,Issues List row 2; joins rather than duplicative storage
+8,Mitigation Type,issue_register.mitigation_type,Issues List row 2; joins rather than duplicative storage
+9,Raised By,issue_register.raised_by_user_id -> users,Issues List row 2; joins rather than duplicative storage
+10,Date Raised,issue_register.date_raised,Issues List row 2; joins rather than duplicative storage
+11,Request Sent to Seller,issue_register.seller_request_sent_at,Issues List row 2; joins rather than duplicative storage
+12,Seller Response,seller_qa_items.response_text / seller_response_id,Issues List row 2; joins rather than duplicative storage
+13,Status,issue_register.issue_status,Issues List row 2; joins rather than duplicative storage
+14,Owner,issue_register.owner_user_id -> users,Issues List row 2; joins rather than duplicative storage

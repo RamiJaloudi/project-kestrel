@@ -1,0 +1,255 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.49.2.45890",
+      "templateHash": "8716867703668799087"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus2",
+      "metadata": {
+        "description": "Azure region; confirm quota and the actual quote before creation."
+      }
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_B2as_v2",
+      "allowedValues": [
+        "Standard_B2as_v2"
+      ],
+      "metadata": {
+        "description": "Small burstable Windows demo; not measured production capacity."
+      }
+    },
+    "vmName": {
+      "type": "string",
+      "defaultValue": "kestrel-demo",
+      "minLength": 3,
+      "maxLength": 12
+    },
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Windows owner login. Never use the application dummy password."
+      }
+    },
+    "adminPassword": {
+      "type": "securestring",
+      "minLength": 16
+    },
+    "adminSourceIp": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Optional owner IPv4 address ONLY; template appends /32. Blank means no RDP ingress."
+      }
+    },
+    "allowPublicWeb": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Separate reviewed go-live gate. Keep false until explicit approval and security checks."
+      }
+    }
+  },
+  "variables": {
+    "tags": {
+      "project": "Project Kestrel",
+      "purpose": "Synthetic candidate demonstration",
+      "dataClassification": "Synthetic only"
+    },
+    "ownerRules": "[if(empty(parameters('adminSourceIp')), createArray(), createArray(createObject('name', 'OwnerRdpOnly', 'properties', createObject('priority', 100, 'direction', 'Inbound', 'access', 'Allow', 'protocol', 'Tcp', 'sourcePortRange', '*', 'destinationPortRange', '3389', 'sourceAddressPrefix', format('{0}/32', parameters('adminSourceIp')), 'destinationAddressPrefix', '*'))))]",
+    "webRules": "[if(parameters('allowPublicWeb'), createArray(createObject('name', 'ReviewedWebIngress', 'properties', createObject('priority', 200, 'direction', 'Inbound', 'access', 'Allow', 'protocol', 'Tcp', 'sourcePortRange', '*', 'destinationPortRanges', createArray('80', '443'), 'sourceAddressPrefix', 'Internet', 'destinationAddressPrefix', '*'))), createArray())]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2022-05-01",
+      "name": "[format('{0}-nsg', parameters('vmName'))]",
+      "location": "[parameters('location')]",
+      "tags": "[variables('tags')]",
+      "properties": {
+        "securityRules": "[concat(variables('ownerRules'), variables('webRules'), createArray(createObject('name', 'DenyOtherInbound', 'properties', createObject('priority', 4096, 'direction', 'Inbound', 'access', 'Deny', 'protocol', '*', 'sourcePortRange', '*', 'destinationPortRange', '*', 'sourceAddressPrefix', '*', 'destinationAddressPrefix', '*'))))]"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2024-05-01",
+      "name": "[format('{0}-vnet', parameters('vmName'))]",
+      "location": "[parameters('location')]",
+      "tags": "[variables('tags')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.42.0.0/24"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "application",
+            "properties": {
+              "addressPrefix": "10.42.0.0/27",
+              "defaultOutboundAccess": false,
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-nsg', parameters('vmName')))]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', format('{0}-nsg', parameters('vmName')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2022-05-01",
+      "name": "[format('{0}-ip', parameters('vmName'))]",
+      "location": "[parameters('location')]",
+      "tags": "[variables('tags')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "publicIPAddressVersion": "IPv4"
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2022-05-01",
+      "name": "[format('{0}-nic', parameters('vmName'))]",
+      "location": "[parameters('location')]",
+      "tags": "[variables('tags')]",
+      "properties": {
+        "enableIPForwarding": false,
+        "ipConfigurations": [
+          {
+            "name": "application",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', format('{0}-ip', parameters('vmName')))]"
+              },
+              "subnet": {
+                "id": "[reference(resourceId('Microsoft.Network/virtualNetworks', format('{0}-vnet', parameters('vmName'))), '2024-05-01').subnets[0].id]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', format('{0}-ip', parameters('vmName')))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', format('{0}-vnet', parameters('vmName')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines",
+      "apiVersion": "2022-03-01",
+      "name": "[parameters('vmName')]",
+      "location": "[parameters('location')]",
+      "tags": "[variables('tags')]",
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "[parameters('vmName')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]",
+          "windowsConfiguration": {
+            "provisionVMAgent": true,
+            "enableAutomaticUpdates": true
+          }
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "MicrosoftWindowsServer",
+            "offer": "WindowsServer",
+            "sku": "2022-datacenter-g2",
+            "version": "latest"
+          },
+          "osDisk": {
+            "name": "[format('{0}-os', parameters('vmName'))]",
+            "createOption": "FromImage",
+            "diskSizeGB": 128,
+            "managedDisk": {
+              "storageAccountType": "StandardSSD_LRS"
+            },
+            "deleteOption": "Detach"
+          },
+          "dataDisks": [
+            {
+              "name": "[format('{0}-data', parameters('vmName'))]",
+              "lun": 0,
+              "diskSizeGB": 64,
+              "createOption": "Empty",
+              "managedDisk": {
+                "storageAccountType": "StandardSSD_LRS"
+              },
+              "caching": "None",
+              "deleteOption": "Detach"
+            }
+          ]
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', format('{0}-nic', parameters('vmName')))]",
+              "properties": {
+                "deleteOption": "Detach"
+              }
+            }
+          ]
+        },
+        "securityProfile": {
+          "securityType": "TrustedLaunch",
+          "uefiSettings": {
+            "secureBootEnabled": true,
+            "vTpmEnabled": true
+          }
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', format('{0}-nic', parameters('vmName')))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "publicIpv4": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', format('{0}-ip', parameters('vmName'))), '2022-05-01').ipAddress]"
+    },
+    "vmResourceId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
+    },
+    "approvedPortalHosts": {
+      "type": "array",
+      "value": [
+        "portal.ramijaloudi.com",
+        "firm.portal.ramijaloudi.com",
+        "halden.portal.ramijaloudi.com",
+        "castlegate.portal.ramijaloudi.com",
+        "admin.portal.ramijaloudi.com"
+      ]
+    },
+    "publicWebRequested": {
+      "type": "bool",
+      "value": "[parameters('allowPublicWeb')]"
+    }
+  }
+}

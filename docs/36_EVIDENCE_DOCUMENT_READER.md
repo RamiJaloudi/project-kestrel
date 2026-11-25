@@ -1,0 +1,18 @@
+# Evidence document reader
+
+[USER DECISION] Evidence clicks open a popup document reader for PDF, Word, text and Excel.
+
+[IMPLEMENTED] The Firm portal's source-register View evidence button and Risk Review citation links open a modal dialog without navigating away from the workflow. Escape or Close returns focus to the invoking control. The modal shows the immutable source version, checksum, language and declared law. It has evidence navigation, original-text search, text-size controls and an authorized original download.
+
+- PDF: authenticated same-origin original PDF viewer; citation navigation selects its page. The adjacent original-language evidence pane highlights the exact code-point span. Image-only PDFs can be read visually but remain OCR-required. Native PDF text highlighting is not claimed; highlighting is in the evidence pane.
+- Word (`.docx`): readable paragraphs and table rows in document order, with original evidence locators and highlighted quoted text. This is a text/table presentation, not a reproduction of Word pagination, drawings, tracked changes or full styling.
+- Excel (`.xlsx`): worksheet tabs, column letters, original row numbers, cell coordinates/values and selected cited row. Exact evidence is highlighted in the adjacent pane. Formatting, charts and formulas are not rendered. The existing intake rules still exclude formula/macro workbooks.
+- UTF-8 TXT/CSV: escaped text with exact citation highlighting. CSV is displayed as text. Legacy `.doc`/`.xls` files are not supported by the existing intake baseline.
+
+The reader uses the shared API and worker-independent presentation adapter. It does not send documents to Microsoft, Google or an external viewer, and performs no AI call. React escapes source content; no Office HTML or scripts are injected. Source bytes and existing evidence offsets are preserved. PDF embedding is permitted only on the authenticated inline-PDF response, only from the same origin; other responses retain frame-ancestor denial. Every reader/inline request rechecks the existing shared authorization and checksums, emits scoped audit events, and returns Cache-Control no-store. The open dialog rechecks access every 15 seconds and clears its content on access/session failure. Downloads also recheck access.
+
+File plan: `DocumentReader.tsx`, workspace links and scoped styles; read-only presentation adapter; workflow reader/inline routes and narrowly scoped framing response; reader access/format tests. No schema migration, extra service, new port or dependency is needed. Start/Stop continue to manage the shared components; their messages identify the reader. Rollback closes the dialog/reverts reader UI and read-only endpoints; document versions and decisions remain unchanged.
+
+Acceptance tests cover actual PDF bytes and headers, Word paragraphs, text and historical originals, Excel cells and named scope, external/client/bank/root denial and revoked wall/membership access. Browser visual inspection was attempted but the computer-use service returned GetCursorPos access denied; the native PDF viewer and dialog appearance still require an interactive browser check.
+
+Recorded results: 34 targeted reader/workflow/auth tests passed on SQLite; 12 reader/workflow tests passed on native PostgreSQL; TypeScript/Vite build passed. The restarted local HTTPS application served byte-verified original PDFs, readable Word sources and a named-scope Excel grid through real sessions. Wave 1 remains five sources and Wave 2 remains unimported. Existing Starlette/httpx test-client deprecation warning remains. The source viewer uses the existing authorization service; it does not grant access based on opening the dialog.

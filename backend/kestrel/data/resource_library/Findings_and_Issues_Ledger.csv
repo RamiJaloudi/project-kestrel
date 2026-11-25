@@ -1,0 +1,3 @@
+﻿example_status,finding_id,document_id,source_version,citation,issue,proposed_risk,legal_review,recommendation,owner,due_on
+SYNTHETIC,FND-001,DOC-001,1,DEMO clause 8.2,Consent may be needed on change of control,High,Pending,Obtain complete agreement and consent position,Reviewer A,2026-11-27
+SYNTHETIC,FND-002,DOC-002,1,DEMO clause 5,Licence assignment treatment is unclear,Unknown,Pending,Confirm transaction structure and assignment trigger,Reviewer B,2026-11-28

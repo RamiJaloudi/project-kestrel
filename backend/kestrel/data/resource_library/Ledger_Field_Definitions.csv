@@ -1,0 +1,63 @@
+﻿file,field,definition,example_status
+Document_Review_Ledger.csv,example_status,Marks all rows fictional.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,document_id,Stable example document key.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,version,Exact example source version.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,vdr_reference,Illustrative seller data-room reference.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,title,Safe document label.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,received_on,Receipt date in ISO format.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,reviewer,Fictional assigned reviewer.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,review_status,Coverage state; not audience approval.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,finding_id,Related example finding if recorded.,SYNTHETIC EXAMPLE
+Document_Review_Ledger.csv,next_action,Specific outstanding task.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,example_status,Marks all rows fictional.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,entry_id,Journal entry key joining its debit and credit lines.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,date,Posting date.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,entity,Fictional reporting entity.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,account,Account receiving the debit or credit.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,description,Plain explanation of the entry.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,currency,ISO currency code; no FX conversion.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,debit,Debit amount as an exact decimal string.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,credit,Credit amount as an exact decimal string.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,source_reference,Illustrative evidence pointer.,SYNTHETIC EXAMPLE
+Financial_Transaction_Ledger.csv,verification_status,These rows have not undergone application fact verification.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,example_status,Marks all rows fictional.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,finding_id,Stable issue identifier.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,document_id,Related fictional document.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,source_version,Exact source version.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,citation,"Illustrative citation, not retrievable evidence.",SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,issue,Question or risk for review.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,proposed_risk,Unapproved priority suggestion; Unknown is not Low.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,legal_review,Lawyer decision state.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,recommendation,Team proposed next step.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,owner,Fictional responsible reviewer.,SYNTHETIC EXAMPLE
+Findings_and_Issues_Ledger.csv,due_on,Suggested task date.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,example_status,Marks all rows fictional.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,decision_id,Decision record key.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,subject_type,Kind of controlled item.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,subject_id,Item identifier.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,subject_version,Exact revision submitted.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,author,Fictional creator; cannot self-approve.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,reviewer,Fictional independent decision maker.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,decision,Sample state; not an application decision.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,rationale,Reason for the decision or pending work.,SYNTHETIC EXAMPLE
+Approval_Decision_Ledger.csv,decided_at,UTC decision time; blank while pending.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,example_status,Marks all rows fictional.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,release_id,Release proposal key.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,report_id,Target report.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,report_version,Exact report revision.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,audience,Intended organization.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,internal_review,Independent internal report decision.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,audience_decision,Separate audience decision.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,antitrust_decision,Separate counsel gate when applicable.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,expires_at,Expiry if an actual release is approved.,SYNTHETIC EXAMPLE
+Audience_Release_Ledger.csv,next_action,Outstanding prerequisite.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,example_status,Marks all rows fictional.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,event_id,Example event key.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,occurred_at,UTC event time.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,actor,Fictional acting person.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,action,Attempted action.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,object_type,Type of affected record.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,object_id,Example record key.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,outcome,Observed or proposed outcome.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,correlation_id,Connects related request activity without source text.,SYNTHETIC EXAMPLE
+Audit_Event_Ledger.csv,integrity_note,States the limit of this illustrative file.,SYNTHETIC EXAMPLE

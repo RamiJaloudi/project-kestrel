@@ -1,0 +1,8 @@
+flowchart LR
+  S0["Verify the person<br/>Signed-in server session<br/>Correct organization portal<br/>Active account and roles<br/>No role from request headers"]
+  S1["Check the scope<br/>Matter assignment<br/>Ethical walls and labels<br/>Named clean-team scope<br/>Expiry and source limits"]
+  S0 --> S1
+  S2["Check the output<br/>Lawyer-reviewed finding<br/>Independent report decision<br/>Audience release decision<br/>Antitrust decision if required"]
+  S1 --> S2
+  S3["Serve allowed content<br/>Check again on each request<br/>Keep client and bank separate<br/>Record permitted audit data<br/>Deny when a gate is missing"]
+  S2 --> S3

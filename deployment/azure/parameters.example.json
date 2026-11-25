@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "vmSize": {
+      "value": "Standard_B2as_v2"
+    },
+    "vmName": {
+      "value": "kestrel-demo"
+    },
+    "adminUsername": {
+      "value": "KestrelOwner"
+    },
+    "adminSourceIp": {
+      "value": ""
+    },
+    "allowPublicWeb": {
+      "value": false
+    }
+  }
+}

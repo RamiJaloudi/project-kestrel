@@ -1,0 +1,3 @@
+﻿example_status,event_id,occurred_at,actor,action,object_type,object_id,outcome,correlation_id,integrity_note
+SYNTHETIC,EVT-001,2026-11-24T14:00:00Z,Reviewer A,Read,Document version,DOC-001-v1,Permitted,DEMO-CORR-001,Example only; no hash chain proof
+SYNTHETIC,EVT-002,2026-11-24T14:05:00Z,Reviewer A,Submit review,Finding,FND-001,Pending independent decision,DEMO-CORR-002,Example only; not a retained event

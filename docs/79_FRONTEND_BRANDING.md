@@ -1,0 +1,14 @@
+# 79 Frontend branding and palette
+
+[USER DECISION, 24 Nov 2026] Use the supplied `Deliverables/FRESHFIELDS_image_black_white.png`, retain only “FRESHFIELDS,” center it within a square image, and apply [Color-Hex palette 816](https://www.color-hex.com/color-palette/816).
+
+The original source is unchanged. The application asset is `frontend/src/assets/freshfields-square.png`, a square black/white split with the centered wordmark only. `BrandMark.tsx` supplies accessible alternative text and constrained square dimensions on Portal Home, portal sidebars and Administration. It is bundled by Vite rather than depending on a workstation-only image path.
+
+The shared last-loaded `theme.css` applies the exact palette: gold `#ecb939`,light gold `#f0c75e`,brown `#726255`,charcoal `#372e29`,black `#000000`. Neutral white/warm surfaces support readability. Gold buttons and selected navigation use dark text. Focus outlines remain visible; success/error colors retain their meanings. Existing compact spacing and authorization behavior are preserved.
+
+The built-in image-generation tool edited the supplied bitmap. Prompt: “Edit the supplied image into a clean SQUARE 1:1 application logo. Retain a flat pure-white left half and pure-black right half, split vertically at the center. Keep ONLY FRESHFIELDS in large bold sans-serif uppercase on one line, centered horizontally and vertically, with equal margins. Letters on white are black; letters on black are white. Remove Project Kestrel, Stage-2 Assessment, Rami Jaloudi, November 2026 and all other text. No subtitle, border, extra shapes, gradient, texture, shadow or watermark. Exact spelling FRESHFIELDS.”
+
+Validation: TypeScript/Vite build passed. Actual local HTTPS browser checks covered Home, authenticated Firm Documents and the read-only Administration preview. Screenshots are in `delivery/frontend_preview/`. The existing running LOCAL backend can serve this frontend without a database migration; the configuration loader's exact-known-localhost 404 compatibility path never applies to public or unknown hosts. Start and Stop continue using the same built frontend and require no new service or launcher command. No public deployment occurred.
+
+
+Additional read-only browser verification covered DDR Runs, the loaded Financial Evidence grid/context empty state, Review Intelligence with nine permitted source records, Agent Registry and the masked AI-provider page. Screenshots were saved without creating runs, approving content or changing provider settings. The intelligence wheel and legend now use the same requested five-color palette; TypeScript/Vite rebuilt 82 modules successfully. Actual context editing/confirmation was not performed against live business records. Later technical stage-draft preparation is documented separately in docs83.

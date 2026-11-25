@@ -1,0 +1,31 @@
+﻿#,Tracker header,Target normalized field / derived,Import / derivation guidance,Origin,Source
+1,Doc ID,documents.external_tracker_id,exact tracker reference; immutable logical UUID separate,TRACKER,Source: Review Log row 2; row 3 is synthetic example
+2,VDR Index #,document_sources.vdr_index_number,may not be globally unique; scope to matter and source,VDR,Source: Review Log row 2; row 3 is synthetic example
+3,VDR Folder Path,document_sources.folder_path,preserve original path; do not infer ACL solely from folders,VDR,Source: Review Log row 2; row 3 is synthetic example
+4,Document Title,documents.canonical_title,source title and current display alias; version title override if needed,VDR,Source: Review Log row 2; row 3 is synthetic example
+5,Doc Type,documents.document_kind / document_tags,controlled vocabulary and classification provenance,TRACKER,Source: Review Log row 2; row 3 is synthetic example
+6,Workstream,document_tags(tag_family=workstream),"many-to-many, legal and finance workstreams possible",TRACKER,Source: Review Log row 2; row 3 is synthetic example
+7,Counterparty,document_parties.party_name,one-to-many party roles,TRACKER,Source: Review Log row 2; row 3 is synthetic example
+8,Doc Date,document_versions.doc_date,"date of instrument, distinct from ingest dates",TRACKER,Source: Review Log row 2; row 3 is synthetic example
+9,Date Added to VDR,document_sources.vdr_added_at,source-provided VDR upload timestamp,VDR,Source: Review Log row 2; row 3 is synthetic example
+10,Assigned Reviewer,"review_tasks.assigned_to_user_id -> users(upn,display_name)",many active tasks per doc; no comma-separated persons,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+11,Date Assigned,review_tasks.assigned_at / review_task_events,per assignment; reassign creates event/history,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+12,Review Status,review_tasks.status / review_decisions.review_status,differentiate task from lawyer disposition,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+13,Date Reviewed,review_decisions.reviewed_at,retain each reviewer decision,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+14,Days Open,derived: review_tasks + review_task_events + sla_calendars,"queue age, business days, active review time separate",DERIVED,Source: Review Log row 2; row 3 is synthetic example
+15,Change of Control,review_clause_answers(clause_code=change_of_control),enum yes/no/unclear/NA with citations,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+16,Anti-Assignment,review_clause_answers(clause_code=anti_assignment),independent clause flag with citation,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+17,Consent / Notice Req'd,review_clause_answers(clause_code=consent_notice),consent and notice can coexist; richer normalized findings,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+18,Exclusivity / Non-Compete,review_clause_answers(clause_code=exclusivity_noncompete),split into child flags in advanced playbooks,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+19,MFN,review_clause_answers(clause_code=mfn),most-favored nation terms; potential competitive info,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+20,Termination for Convenience,review_clause_answers(clause_code=termination_convenience),evidence and law distinct,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+21,Expiry / Renewal Date,document_tags(date expiry_renewal) / structured_contract_terms,prefer separate structured term record later,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+22,Material?,document_findings.materiality_status,reviewed assertion; not automatically bank-shareable,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+23,Risk Rating,document_findings.risk_rating,may be multiple findings per document,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+24,Key Findings / Summary,document_findings.approved_text / candidate_text,never overwrite lawyer approved text,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+25,Follow-Up Req'd?,issue_register / seller_qa_items,corresponds to outstanding Q&A,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+26,Request List Ref,document_checklist_links -> checklist_items,many-to-many coverage; preserve external request refs,CHECKLIST,Source: Review Log row 2; row 3 is synthetic example
+27,Disclosure Schedule Ref,document_tags / dedicated disclosure_schedule_links,source-linked disclosure schedule references,LEGAL,Source: Review Log row 2; row 3 is synthetic example
+28,QC Reviewer,review_tasks assignment_type=qc / review_decisions,many QC reviewers and timestamps,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+29,QC Status,review_decisions.review_status,distinct from analysis approval and publication,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example
+30,Comments,review_decisions.review_notes / governed comments,do not copy privileged text into bank-visible views,WORKFLOW,Source: Review Log row 2; row 3 is synthetic example

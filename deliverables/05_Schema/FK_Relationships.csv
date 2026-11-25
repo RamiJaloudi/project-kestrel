@@ -1,0 +1,56 @@
+﻿Source field,Target PK,Cardinality,Constraint,Explanation
+matters.client_organization_id,organizations.id,many-to-one,FK + matter consistency,Client organization and matter
+users.organization_id,organizations.id,many-to-one,FK + matter consistency,Canonical identity tenant
+user_role_grants.user_id,users.id,many-to-one,FK + matter consistency,RBAC grants
+matter_memberships.matter_id,matters.id,many-to-one,FK + matter consistency,Matter membership
+vdr_import_batches.mapping_version_id,vdr_mapping_profiles.id,many-to-one,FK + matter consistency,Import profile version
+vdr_import_batches.matter_id,matters.id,many-to-one,FK + matter consistency,Import matter scope
+document_sources.batch_id,vdr_import_batches.id,many-to-one,FK + matter consistency,VDR import origin
+documents.primary_source_id,document_sources.id,many-to-one,FK + matter consistency,Logical source pointer
+documents.matter_id,matters.id,many-to-one,FK + matter consistency,Document matter isolation
+document_versions.document_id,documents.id,many-to-one,FK + matter consistency,Immutable source versions
+document_versions.supersedes_version_id,document_versions.id,recursive,FK + matter consistency,Supersedes lineage
+documents.current_version_id,document_versions.id,many-to-one,FK + matter consistency,Cached current pointer; atomic update
+record_custodians.matter_id,matters.id,many-to-one,FK + matter consistency,Custodian matter scope
+document_custodians.document_id,documents.id,many-to-one,FK + matter consistency,Multiple custodians
+document_custodians.custodian_id,record_custodians.id,many-to-one,FK + matter consistency,Custodian identity
+document_segments.document_version_id,document_versions.id,many-to-one,FK + matter consistency,Immutable segment source
+document_checklist_links.document_version_id,document_versions.id,many-to-one,FK + matter consistency,Evidence coverage
+checklist_items.checklist_version_id,checklist_versions.id,many-to-one,FK + matter consistency,Checklist version
+checklist_coverage.checklist_item_id,checklist_items.id,many-to-one,FK + matter consistency,Coverage tracking
+review_tasks.document_version_id,document_versions.id,many-to-one,FK + matter consistency,Parallel tasks
+review_tasks.assigned_to_user_id,users.id,many-to-one,FK + matter consistency,User task owner
+review_task_events.task_id,review_tasks.id,many-to-one,FK + matter consistency,Append-only assignment transitions
+review_sessions.task_id,review_tasks.id,many-to-one,FK + matter consistency,Time intervals
+review_decisions.task_id,review_tasks.id,many-to-one,FK + matter consistency,Multiple independent reviews
+review_clause_answers.review_decision_id,review_decisions.id,many-to-one,FK + matter consistency,Clause flags
+review_sla_policies.calendar_id,sla_calendars.id,many-to-one,FK + matter consistency,SLA clock
+security_attributes.id,document_attribute_assertions.attribute_id,one-to-many,FK + matter consistency,Dynamic ABAC registry
+document_attribute_assertions.document_version_id,document_versions.id,many-to-one,FK + matter consistency,Versioned ABAC claims
+document_attribute_assertions.segment_id,document_segments.id,many-to-one,FK + matter consistency,Segment restrictions
+attribute_downgrade_approvals.assertion_id,document_attribute_assertions.id,many-to-one,FK + matter consistency,Human downgrade
+access_policy_decisions.matter_id,matters.id,many-to-one,FK + matter consistency,PDP audit
+ethical_wall_rules.principal_id,users.id,many-to-one,FK + matter consistency,Named wall restriction
+clean_team_grants.user_id,users.id,many-to-one,FK + matter consistency,Named exception source
+document_findings.document_version_id,document_versions.id,many-to-one,FK + matter consistency,Exact evidence version
+document_findings.playbook_version_id,playbook_versions.id,many-to-one,FK + matter consistency,Immutable rules used
+finding_reviews.finding_id,document_findings.id,many-to-one,FK + matter consistency,Human judgment
+issue_register.finding_id,document_findings.id,many-to-one,FK + matter consistency,Issue to verified finding
+redaction_projects.source_document_version_id,document_versions.id,many-to-one,FK + matter consistency,Redaction original
+redaction_marks.redaction_project_id,redaction_projects.id,many-to-one,FK + matter consistency,Proposed and approved marks
+redaction_marks.source_segment_id,document_segments.id,many-to-one,FK + matter consistency,Anchor precision
+release_artifacts.latest_version_id,release_artifact_versions.id,many-to-one,FK + matter consistency,Current public derivative
+release_artifact_versions.artifact_id,release_artifacts.id,many-to-one,FK + matter consistency,Immutable derivative versions
+sanitization_validation_runs.artifact_version_id,release_artifact_versions.id,many-to-one,FK + matter consistency,Safety check
+release_approvals.artifact_version_id,release_artifact_versions.id,many-to-one,FK + matter consistency,Approval distinct from validation
+release_grants.artifact_version_id,release_artifact_versions.id,many-to-one,FK + matter consistency,Scoped revocable audience grant
+document_citations.document_version_id,document_versions.id,many-to-one,FK + matter consistency,Exact reader anchor
+financial_facts.source_document_version_id,document_versions.id,many-to-one,FK + matter consistency,Financial fact trace
+financial_facts.citation_id,document_citations.id,many-to-one,FK + matter consistency,Cell/page evidence
+financial_facts.metric_id,financial_metrics.id,many-to-one,FK + matter consistency,Metric catalog
+financial_facts.period_id,financial_periods.id,many-to-one,FK + matter consistency,Fiscal specificity
+financial_facts.reporting_entity_id,financial_entities.id,many-to-one,FK + matter consistency,Legal reporting entity
+financial_statement_lines.financial_fact_id,financial_facts.id,many-to-one,FK + matter consistency,Original labels and formulas
+financial_reconciliations.metric_id,financial_metrics.id,many-to-one,FK + matter consistency,Conflict dimension
+reanalysis_approvals.impact_assessment_id,playbook_change_assessments.id,many-to-one,FK + matter consistency,Immutable impact snapshot
+reanalysis_jobs.approval_id,reanalysis_approvals.id,many-to-one,FK + matter consistency,Only approved reruns

@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-24",
+  "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+  "sdk_retry_source": "https://github.com/openai/openai-python#retries",
+  "storage_source": "https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create/",
+  "data_controls_source": "https://developers.openai.com/api/docs/guides/your-data",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "currency": "USD",
+  "tier": "standard",
+  "region": "global",
+  "input_usd_per_million": "0.75",
+  "output_usd_per_million": "4.50",
+  "cached_input_discounts_used": false,
+  "node_charge_rounding": "whole-cent ceiling",
+  "graph_charge": "sum of independently priced known node charges",
+  "application_run_cap_cents": 200,
+  "application_month_cap_cents": 1000,
+  "paid_validation_requests": 0,
+  "account_or_subscription_prices_claimed": false
+}
