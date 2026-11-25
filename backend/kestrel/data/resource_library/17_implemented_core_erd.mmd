@@ -1,0 +1,71 @@
+erDiagram
+  matters {
+    string id PK
+  }
+  accounts {
+    string id PK
+    string organization_id FK
+  }
+  matter_assignments {
+    string id PK
+    string account_id FK
+    string matter_id FK
+  }
+  documents {
+    string id PK
+    string matter_id FK
+  }
+  document_sources {
+    string id PK
+    string matter_id FK
+    string document_id FK
+    string source_id FK
+  }
+  source_versions {
+    string id PK
+    string policy_id FK
+    string matter_id FK
+    string previous_id FK
+  }
+  legal_finding_revisions {
+    string id PK
+    string previous_id FK
+    string candidate_id FK
+    string source_id FK
+  }
+  source_findings {
+    string id PK
+    string policy_id FK
+    string source_id FK
+    string job_id FK
+  }
+  document_policy_versions {
+    string id PK
+    string matter_id FK
+  }
+  report_versions {
+    string id PK
+    string previous_id FK
+    string release_id FK
+  }
+  release_packages {
+    string id PK
+    string policy_id FK
+    string created_by FK
+  }
+  release_approvals {
+    string id PK
+    string release_id FK
+    string actor_id FK
+  }
+  documents ||..o{ document_sources : "document_id"
+  source_versions ||..o{ document_sources : "source_id"
+  matters ||..o{ documents : "matter_id"
+  source_findings |o..o{ legal_finding_revisions : "candidate_id"
+  accounts ||..o{ matter_assignments : "account_id"
+  matters ||..o{ matter_assignments : "matter_id"
+  release_packages ||..o{ release_approvals : "release_id"
+  document_policy_versions ||..o{ release_packages : "policy_id"
+  release_packages ||..o{ report_versions : "release_id"
+  document_policy_versions ||..o{ source_findings : "policy_id"
+  source_versions ||..o{ source_findings : "source_id"

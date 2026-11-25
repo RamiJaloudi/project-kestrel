@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="941" viewBox="0 0 1340 941" role="img" aria-labelledby="title desc">
+<title id="title">System context</title><desc id="desc">The platform is an independent synthetic demonstration. Enterprise VDR, identity, document-management and wall connections need firm-approved integrations.</desc>
+<rect width="1340" height="941" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">System context</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M235,335 L235,367.0 L670,367.0 L670,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="433.0" y="349.0" width="39.0" height="16" fill="white"/>
+<text x="452.5" y="360.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">intake</text>
+<path d="M420,490 L485,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="433.0" y="467" width="39.0" height="16" fill="white"/>
+<text x="452.5" y="478" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">review</text>
+<path d="M670,399 L670,367.0 L1105,367.0 L1105,335" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="862.5" y="336.0" width="50.0" height="29" fill="white"/>
+<text x="887.5" y="347.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">released</text>
+<text x="887.5" y="360.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">only</text>
+<path d="M670,581 L670,613.0 L1105,613.0 L1105,645" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="862.5" y="582.0" width="50.0" height="29" fill="white"/>
+<text x="887.5" y="593.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">released</text>
+<text x="887.5" y="606.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">only</text>
+<path d="M235,645 L235,613.0 L670,613.0 L670,581" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="424.75" y="582.0" width="55.5" height="29" fill="white"/>
+<text x="452.5" y="593.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">technical</text>
+<text x="452.5" y="606.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">scope</text>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Seller data room</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Seller-hosted source system</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Authorized CSV and folder intake</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Originals remain source evidence</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Firm legal team</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Associates receive documents</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Lawyers verify exact passages</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Legal SMEs decide independently</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Kestrel review platform</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Versioned evidence and workflow</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Review, reporting and audit</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Shared permission checks</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Halden deal team</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Only released client packages</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Named source grants are separate</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Can ask questions and upload</text>
+<rect x="920" y="645" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Castlegate advisers</text>
+<text x="938" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">Only released commercial subset</text>
+<text x="938" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">No privileged internal advice</text>
+<text x="938" y="746" font-family="Arial,sans-serif" font-size="16" fill="#294958">No general source access</text>
+<rect x="50" y="645" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Technical administration</text>
+<text x="68" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">Accounts and system settings</text>
+<text x="68" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">No blanket source privilege</text>
+<text x="68" y="746" font-family="Arial,sans-serif" font-size="16" fill="#294958">No legal self-approval</text>
+<text x="50" y="870" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">The platform is an independent synthetic demonstration. Enterprise VDR, identity, document-management and wall connections need firm-</text>
+<text x="50" y="892" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">approved integrations.</text>
+</svg>

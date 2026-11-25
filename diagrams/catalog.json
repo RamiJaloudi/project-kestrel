@@ -1,0 +1,239 @@
+{
+  "diagrams": [
+    {
+      "id": "01_system_context",
+      "folder": "01_system",
+      "title": "System context",
+      "status": "CURRENT CODE",
+      "note": "The platform is an independent synthetic demonstration. Enterprise VDR, identity, document-management and wall connections need firm-approved integrations.",
+      "evidence": [
+        "docs/01_design/00_SOURCE_AND_SCOPE.md",
+        "backend/kestrel/services/auth.py"
+      ]
+    },
+    {
+      "id": "02_application_containers",
+      "folder": "01_system",
+      "title": "Application containers",
+      "status": "CURRENT CODE",
+      "note": "These are logical runtime components. The Azure deployment requires separate real-service, HTTPS and owner acceptance. Windows DPAPI and service identities need reviewed Linux replacements.",
+      "evidence": [
+        "backend/kestrel/main.py",
+        "backend/kestrel/preview.py",
+        "deployment/azure/services/README.md"
+      ]
+    },
+    {
+      "id": "03_azure_dns_and_deployment",
+      "folder": "01_system",
+      "title": "Azure DNS and deployment",
+      "status": "CONFIGURED DNS / GATED DEPLOYMENT",
+      "note": "DNS records are configured. This is the intended deployment and acceptance sequence, not a claim that public HTTPS or application activation is complete.",
+      "evidence": [
+        "deployment/azure/README.md",
+        "backend/kestrel/deployment_settings.py"
+      ]
+    },
+    {
+      "id": "04_api_architecture",
+      "folder": "01_system",
+      "title": "API architecture",
+      "status": "CURRENT CODE",
+      "note": "A known endpoint or visible API schema does not grant an operation. See the implemented model dictionaries for structure and the current OpenAPI contract for requests.",
+      "evidence": [
+        "backend/kestrel/main.py",
+        "backend/kestrel/preview.py",
+        "backend/kestrel/api"
+      ]
+    },
+    {
+      "id": "05_authenticated_request_sequence",
+      "folder": "01_system",
+      "title": "Authenticated request sequence",
+      "status": "CURRENT CODE",
+      "note": "Specific services use their own transaction and recheck boundaries. This diagram describes the shared pattern, not a claim of one identical implementation on every endpoint.",
+      "evidence": [
+        "backend/kestrel/services/auth.py",
+        "backend/kestrel/public_boundary.py",
+        "backend/kestrel/api/resource_assets.py"
+      ]
+    },
+    {
+      "id": "06_document_evidence_lifecycle",
+      "folder": "02_workflows",
+      "title": "Document evidence lifecycle",
+      "status": "CURRENT CODE",
+      "note": "A document is more than extracted data: its original bytes, provenance, access restrictions, evidence anchors and review history all matter. Receipt is separate from completed review.",
+      "evidence": [
+        "backend/kestrel/models.py",
+        "backend/kestrel/services/workflow.py",
+        "backend/kestrel/services/disclosures.py"
+      ]
+    },
+    {
+      "id": "07_permission_first_search",
+      "folder": "02_workflows",
+      "title": "Permission first search",
+      "status": "CURRENT CODE",
+      "note": "There is no general automatic four-engine fusion or universal reranking stage. Metadata grids and verified-financial filters are distinct supported paths. External semantic indexing is not enabled.",
+      "evidence": [
+        "backend/kestrel/services/questions.py",
+        "docs/02_workflows/60_PERMISSION_FIRST_RETRIEVAL.md"
+      ]
+    },
+    {
+      "id": "08_ddr_graph_execution",
+      "folder": "02_workflows",
+      "title": "DDR graph execution",
+      "status": "CURRENT CODE",
+      "note": "The graph has coordinator, contracts, draft, quality, citations, join, review_task and human_gate nodes. A registry entry does not implement another specialist. Ambiguous live provider completion is not automatically resent.",
+      "evidence": [
+        "backend/kestrel/ddr/graph.py",
+        "backend/kestrel/services/ddr_execution.py"
+      ]
+    },
+    {
+      "id": "09_report_review_and_release",
+      "folder": "02_workflows",
+      "title": "Report review and release",
+      "status": "CURRENT CODE",
+      "note": "The former generic agent chain is replaced by the actual report and approval boundaries. AI checks do not replace lawyer or audience decisions.",
+      "evidence": [
+        "backend/kestrel/services/reports.py",
+        "backend/kestrel/services/ddr_runs.py"
+      ]
+    },
+    {
+      "id": "10_financial_evidence_and_decisions",
+      "folder": "02_workflows",
+      "title": "Financial evidence and decisions",
+      "status": "CURRENT CODE",
+      "note": "This baseline does not implement a general financial analyst agent, broad automatic table recognition, or a valuation/materiality engine.",
+      "evidence": [
+        "backend/kestrel/services/financial.py",
+        "docs/02_workflows/76_FINANCIAL_CONTEXT_AND_STAGING.md"
+      ]
+    },
+    {
+      "id": "11_playbook_change_and_approved_rerun",
+      "folder": "02_workflows",
+      "title": "Playbook change and approved rerun",
+      "status": "CURRENT CODE",
+      "note": "Publication does not silently rerun historic material, replace a reviewed finding or republish a client package.",
+      "evidence": [
+        "backend/kestrel/services/action_center.py",
+        "backend/kestrel/services/agent_registry.py"
+      ]
+    },
+    {
+      "id": "12_access_and_audience_boundaries",
+      "folder": "03_security_operations",
+      "title": "Access and audience boundaries",
+      "status": "CURRENT CODE",
+      "note": "Each source or output retains its restrictions. The shared policy engine applies current access rather than trusting the portal, an old link, a cached result or an administrator title.",
+      "evidence": [
+        "backend/kestrel/services/auth.py",
+        "backend/kestrel/services/policy.py",
+        "backend/kestrel/services/response_guard.py"
+      ]
+    },
+    {
+      "id": "13_sanitized_source_disclosure",
+      "folder": "03_security_operations",
+      "title": "Sanitized source disclosure",
+      "status": "CURRENT CODE",
+      "note": "This is a new text-only artifact workflow, not a claim that the original PDF, Word or spreadsheet has been safely redacted in place.",
+      "evidence": [
+        "backend/kestrel/services/disclosures.py",
+        "docs/02_workflows/59_VALIDATED_SANITIZED_DISCLOSURES.md"
+      ]
+    },
+    {
+      "id": "14_durable_work_and_failure_handling",
+      "folder": "03_security_operations",
+      "title": "Durable work and failure handling",
+      "status": "CURRENT CODE",
+      "note": "The database supplies durable work records. Azure Service Bus, Redis or a managed orchestrator are not silently substituted into this demo.",
+      "evidence": [
+        "backend/kestrel/services/ddr_execution.py",
+        "backend/kestrel/services/jobs.py"
+      ]
+    },
+    {
+      "id": "15_audit_backup_and_retention",
+      "folder": "03_security_operations",
+      "title": "Audit backup and retention",
+      "status": "CURRENT CODE",
+      "note": "Local integrity evidence is not external WORM storage or proven disaster recovery. The Azure restore and service acceptance are separate live operations.",
+      "evidence": [
+        "backend/kestrel/services/archives.py",
+        "backend/kestrel/services/lifecycle.py",
+        "docs/04_operations/43_BACKUP_ARCHIVE_AND_VERIFICATION.md"
+      ]
+    },
+    {
+      "id": "16_the_data_story",
+      "folder": "04_data",
+      "title": "The data story",
+      "status": "CURRENT CODE",
+      "note": "These arrows describe the business lifecycle, not a foreign key for every step. The next core entity diagram and 17 detailed model views show declared database relationships. The proposed 809-field design is separate.",
+      "evidence": [
+        "backend/kestrel/models.py",
+        "backend/kestrel/data/resource_library/Implemented_Schema_Fields.csv"
+      ]
+    },
+    {
+      "id": "17_implemented_core_erd",
+      "folder": "04_data",
+      "title": "Implemented core ERD",
+      "status": "CURRENT CODE",
+      "note": "This visual ERD shows selected real foreign keys. Each arrow points from the child record to its referenced parent. Additional keys, optional links and all 153 tables are documented in the 17 area views and complete relationship CSV.",
+      "evidence": [
+        "backend/kestrel/models.py",
+        "backend/kestrel/data/resource_library/Implemented_Schema_Fields.csv"
+      ]
+    },
+    {
+      "id": "18_core_entity_relationships",
+      "folder": "04_data",
+      "title": "Core entity relationships",
+      "status": "CURRENT CODE",
+      "note": "Solid arrows are declared foreign keys from child to parent. This is a selected core view; the 17 detailed area views cover every table. Report body_json and release references_json retain additional provenance that is not a declared foreign key.",
+      "evidence": [
+        "backend/kestrel/models.py",
+        "backend/kestrel/data/resource_library/Implemented_Schema_Fields.csv"
+      ]
+    },
+    {
+      "id": "19_enterprise_integration_boundaries",
+      "folder": "05_target_design",
+      "title": "Enterprise integration boundaries",
+      "status": "TARGET DESIGN / NOT IMPLEMENTED CONNECTIONS",
+      "note": "The enterprise services shown are target integrations. The candidate does not claim working firm Entra, Intapp, iManage, M365 or enterprise AI connectivity.",
+      "evidence": [
+        "docs/01_design/12_MOCK_INTEGRATIONS_AND_OPERATIONS.md",
+        "docs/01_design/00_SOURCE_AND_SCOPE.md"
+      ]
+    },
+    {
+      "id": "20_additional_specialist_roadmap",
+      "folder": "05_target_design",
+      "title": "Additional specialist roadmap",
+      "status": "TARGET DESIGN / FUTURE SPECIALISTS",
+      "note": "This replaces the old parallel-specialist image as a roadmap. Registering a role does not make it executable; only the implemented contracts specialist is claimed today.",
+      "evidence": [
+        "backend/kestrel/ddr/graph.py",
+        "docs/05_validation/80_GATE_ACCEPTANCE_STATUS.md"
+      ]
+    }
+  ],
+  "data_model": {
+    "tables": 153,
+    "fields": 1412,
+    "foreign_keys": 442,
+    "domains": 17,
+    "owned_tables": 153,
+    "model_sha256": "a5653d0289d60226d4601bf702067d125cac8f2335546d78b273cf13ab6972fb",
+    "model_hash_encoding": "UTF-8 source with normalized LF line endings"
+  }
+}

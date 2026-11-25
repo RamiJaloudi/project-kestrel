@@ -1,0 +1,28 @@
+flowchart TD
+  VDR[Third-party VDR / mock adapter] --> ING[Ingestion API + manifest]
+  ING --> Q[Background job queue]
+  Q --> OCR[OCR / language / version extraction]
+  OCR --> DOC[(Blob/object storage + document versions)]
+  OCR --> IDX[(Hybrid index: metadata/BM25/vector)]
+  DOC --> RISK[Playbook-driven batch risk extraction]
+  IDX --> QA[Permission-trimmed RAG Q&A]
+  PB[(Published playbook snapshots)] --> RISK
+  RISK --> EVID[Evidence validator]
+  EVID --> CAND[Candidate findings]
+  CAND --> REV[Freshfields attorney review]
+  REV --> REL[Separate audience release / antitrust gate]
+  REL --> H[Halden portal]
+  REL --> B[Castlegate portal]
+  REV --> REP[Draft DD report]
+  PB --> IMP[Version diff + impact assessment]
+  IMP --> TASK[SME action center + immutable approval]
+  TASK --> RERUN[Authorized background reanalysis]
+  RERUN --> CAND
+  AUTH[Session + organization + matter + ethical wall + clean team + label + release policy] -.enforces.-> ING
+  AUTH -.enforces.-> IDX
+  AUTH -.enforces.-> QA
+  AUTH -.enforces.-> REV
+  AUTH -.enforces.-> REL
+  AUTH -.enforces.-> TASK
+  EVT[(Append-only governance and access audit)] -.logs.-> TASK
+  EVT -.logs.-> REL

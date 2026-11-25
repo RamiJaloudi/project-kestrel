@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">API architecture</title><desc id="desc">A known endpoint or visible API schema does not grant an operation. See the implemented model dictionaries for structure and the current OpenAPI contract for requests.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">API architecture</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1087.25" y="356.0" width="55.5" height="16" fill="white"/>
+<text x="1115" y="367.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">permitted</text>
+<path d="M1105,335 L1105,367.0 L670,367.0 L670,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="859.75" y="349.0" width="55.5" height="16" fill="white"/>
+<text x="887.5" y="360.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">permitted</text>
+<path d="M1105,399 L1105,385 L235,385 L235,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Organization portal</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Same-origin browser requests</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Server session identifies person</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">CSRF protects state changes</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">FastAPI routers</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Pydantic request contracts</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Account and organization checks</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">OpenAPI grouped by capability</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Shared services and policy</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Matter, wall, label and source</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Independent approval rules</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Current audience entitlements</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Evidence and review APIs</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Intake, reader and findings</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Checklists and review tasks</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Financial evidence and disclosures</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Governance and report APIs</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Playbooks, impacts and registry</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">DDR runs and report versions</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Separate release and audit</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Persistence and adapters</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">SQLAlchemy and PostgreSQL</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Private file and provider ports</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Workers enforce fresh authority</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">A known endpoint or visible API schema does not grant an operation. See the implemented model dictionaries for structure and the current</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">OpenAPI contract for requests.</text>
+</svg>

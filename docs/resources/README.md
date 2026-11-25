@@ -1,6 +1,8 @@
-# Project resource library
+# Resource library
 
-Authored documentation and fictional examples. Portal downloads require sign-in. Files in a public source repository are publicly readable.
+[Architecture diagram library](../../diagrams/README.md) · [Guides by topic](../README.md) · [Written deliverables](../../deliverables/README.md)
+
+Portal downloads require sign-in and current organization eligibility. These public repository files are authored documentation and synthetic examples. Diagrams are authored in the single top-level diagrams folder; the copies under the backend are generated application download assets.
 
 ## Guides
 
@@ -38,21 +40,6 @@ Authored documentation and fictional examples. Portal downloads require sign-in.
 - [Halden report example](../../backend/kestrel/data/resource_library/Halden_Due_Diligence_Sample.docx) — Client-format action summary using fictional facts; no source material or application release.
 - [Castlegate commercial report example](../../backend/kestrel/data/resource_library/Castlegate_Commercial_Report_Sample.docx) — Commercial-format status update with explicit missing financial impact and no privileged legal analysis.
 
-## Diagrams
-
-- [From a VDR document to a report](../../backend/kestrel/data/resource_library/Document_to_Report.svg) — Implemented workflow overview. Each stage retains its source and version. Search answers a question over permitted evidence. It does not prove that every document was reviewed. This diagram describes the code workflow; it does not prove acceptance on the Azure VM.
-- [From a VDR document to a report editable source](../../backend/kestrel/data/resource_library/Document_to_Report.mmd) — Implemented workflow overview. Each stage retains its source and version.
-- [How access and release are checked](../../backend/kestrel/data/resource_library/Access_and_Release.svg) — The hostname chooses the screen. The server decides whether the person may act. Root Admin has no blanket legal or source-reading privilege. Notification read is not approval. The Resource library contains authored examples only; it does not expose live matter exports.
-- [How access and release are checked editable source](../../backend/kestrel/data/resource_library/Access_and_Release.mmd) — The hostname chooses the screen. The server decides whether the person may act.
-- [Azure portal deployment](../../backend/kestrel/data/resource_library/Azure_Deployment.svg) — DNS configured on 24 November 2026. HTTPS and application activation have separate acceptance gates. Configured hostnames are not evidence of a live public application. Do not bypass the CLOSED gate. Linux requires replacements for DPAPI, Windows service control and the owner approval boundary.
-- [Azure portal deployment editable source](../../backend/kestrel/data/resource_library/Azure_Deployment.mmd) — DNS configured on 24 November 2026. HTTPS and application activation have separate acceptance gates.
-- [The schema follows the review](../../backend/kestrel/data/resource_library/Schema_Story.svg) — Use implemented dictionaries for model structure and proposed dictionaries for target design. The proposed dictionary contains 809 fields. Its group column is a documentation domain, not an access grant. The implemented model export reads structure only; applied database migrations need separate verification.
-- [The schema follows the review editable source](../../backend/kestrel/data/resource_library/Schema_Story.mmd) — Use implemented dictionaries for model structure and proposed dictionaries for target design.
-- [How the API connects the application](../../backend/kestrel/data/resource_library/API_Architecture.svg) — One typed API supports the portals. Calling an endpoint never creates permission. OpenAPI describes current request and response contracts. Model CSVs describe the code-declared structure. The proposed 809-field design is separate. Enterprise integrations remain design or mock adapters where stated.
-- [How the API connects the application editable source](../../backend/kestrel/data/resource_library/API_Architecture.mmd) — One typed API supports the portals. Calling an endpoint never creates permission.
-- [How a cited question is answered](../../backend/kestrel/data/resource_library/Search_Architecture.svg) — Search uses the evidence the signed-in person may currently read. A ranked answer does not establish complete diligence or lawyer approval. Missing evidence stays unknown. Provider-backed semantic search remains subject to processing policy and the shared cost cap.
-- [How a cited question is answered editable source](../../backend/kestrel/data/resource_library/Search_Architecture.mmd) — Search uses the evidence the signed-in person may currently read.
-
 ## Forms and trackers
 
 - [Project Kestrel DDR Checklist](../../backend/kestrel/data/resource_library/Project_Kestrel_DDR_Checklist.csv) — Authored synthetic checklist or associate review tracker. Not an original Freshfields form.
@@ -60,3 +47,7 @@ Authored documentation and fictional examples. Portal downloads require sign-in.
 - [Project Kestrel DDR Checklist](../../backend/kestrel/data/resource_library/Project_Kestrel_DDR_Checklist.xlsx) — Authored synthetic checklist or associate review tracker. Not an original Freshfields form.
 - [Associate VDR Review Guide](../../backend/kestrel/data/resource_library/Associate_VDR_Review_Guide.pdf) — Authored synthetic checklist or associate review tracker. Not an original Freshfields form.
 - [Project Kestrel Associate VDR Tracker](../../backend/kestrel/data/resource_library/Project_Kestrel_Associate_VDR_Tracker.xlsx) — Authored synthetic checklist or associate review tracker. Not an original Freshfields form.
+
+## Diagrams
+
+[Browse all architecture and data diagrams together](../../diagrams/README.md). Use SVG for a scalable picture, PNG for slides and Mermaid for editing.

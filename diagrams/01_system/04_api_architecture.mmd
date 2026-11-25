@@ -1,0 +1,13 @@
+flowchart LR
+  N1["Organization portal<br/>Same-origin browser requests<br/>Server session identifies person<br/>CSRF protects state changes"]
+  N2["FastAPI routers<br/>Pydantic request contracts<br/>Account and organization checks<br/>OpenAPI grouped by capability"]
+  N3["Shared services and policy<br/>Matter, wall, label and source<br/>Independent approval rules<br/>Current audience entitlements"]
+  N4["Evidence and review APIs<br/>Intake, reader and findings<br/>Checklists and review tasks<br/>Financial evidence and disclosures"]
+  N5["Governance and report APIs<br/>Playbooks, impacts and registry<br/>DDR runs and report versions<br/>Separate release and audit"]
+  N6["Persistence and adapters<br/>SQLAlchemy and PostgreSQL<br/>Private file and provider ports<br/>Workers enforce fresh authority"]
+  N1 --> N2
+  N2 --> N3
+  N3 -->|"permitted"| N4
+  N3 -->|"permitted"| N5
+  N4 --> N6
+  N5 --> N6

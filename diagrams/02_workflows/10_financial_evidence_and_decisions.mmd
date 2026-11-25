@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Read a permitted source<br/>Original or approved transcript<br/>Retain literal amount and anchor<br/>Do not execute spreadsheet formulas"]
+  N2["Capture exact dimensions<br/>Entity, metric, period and currency<br/>Scale and accounting context<br/>Unknown dimensions stay unknown"]
+  N3["Independent verification<br/>Different cleared lawyer checks<br/>Verify the number and dimensions<br/>Original evidence remains retained"]
+  N4["Compare eligible facts<br/>Require matching dimensions<br/>Use exact decimal arithmetic<br/>No inferred FX conversion"]
+  N5["Retain a conflict decision<br/>Keep both conflicting facts<br/>Independent source-cleared decision<br/>Prefer a source or stay unresolved"]
+  N6["Release selected facts<br/>Approved sanitized source required<br/>Independent fact release decision<br/>Bank feature and item gates both apply"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470" role="img" aria-labelledby="title desc">
+<title id="title">How the API connects the application</title><desc id="desc">One typed API supports the portals. Calling an endpoint never creates permission. OpenAPI describes current request and response contracts. Model CSVs describe the code-declared structure.
+The proposed 809-field design is separate. Enterprise integrations remain design or mock adapters where stated.</desc>
+<rect width="1280" height="470" fill="#FFFFFF"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#567083"/></marker></defs>
+<text x="42" y="52" font-family="Arial,sans-serif" font-size="29" fill="#15384D" font-weight="700">How the API connects the application</text>
+<text x="42" y="86" font-family="Arial,sans-serif" font-size="17" fill="#4C6373">One typed API supports the portals. Calling an endpoint never creates permission.</text>
+<rect x="42" y="127" width="278" height="228" rx="10" fill="#E8F2F7" stroke="#AEC1CE"/>
+<text x="61" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">1  Portal and account</text>
+<text x="61" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">React and TypeScript screens</text>
+<text x="61" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Current organization session</text>
+<text x="61" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Same-origin API requests</text>
+<text x="61" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">CSRF token for state changes</text>
+<path d="M323,241 L343,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="347" y="127" width="278" height="228" rx="10" fill="#EEF1FA" stroke="#AEC1CE"/>
+<text x="366" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">2  FastAPI boundary</text>
+<text x="366" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Pydantic request validation</text>
+<text x="366" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Current identity dependency</text>
+<text x="366" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Audience and route checks</text>
+<text x="366" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Grouped OpenAPI explorer</text>
+<path d="M628,241 L648,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="127" width="278" height="228" rx="10" fill="#FFF4DE" stroke="#AEC1CE"/>
+<text x="671" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">3  Policy and services</text>
+<text x="671" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Shared source access policy</text>
+<text x="671" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Evidence and review rules</text>
+<text x="671" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Independent approval rules</text>
+<text x="671" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Controlled worker operations</text>
+<path d="M933,241 L953,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="957" y="127" width="278" height="228" rx="10" fill="#E6F4EC" stroke="#AEC1CE"/>
+<text x="976" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">4  Retained records</text>
+<text x="976" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">PostgreSQL and migrations</text>
+<text x="976" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Exact document versions</text>
+<text x="976" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Private source artifacts</text>
+<text x="976" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Durable decisions and audit</text>
+<text x="42" y="398" font-family="Arial,sans-serif" font-size="16" fill="#344F60">OpenAPI describes current request and response contracts. Model CSVs describe the code-declared structure.</text>
+<text x="42" y="423" font-family="Arial,sans-serif" font-size="16" fill="#344F60">The proposed 809-field design is separate. Enterprise integrations remain design or mock adapters where stated.</text>
+</svg>

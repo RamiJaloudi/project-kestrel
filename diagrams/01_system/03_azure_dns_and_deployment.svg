@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Azure DNS and deployment</title><desc id="desc">DNS records are configured. This is the intended deployment and acceptance sequence, not a claim that public HTTPS or application activation is complete.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Azure DNS and deployment</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CONFIGURED DNS / GATED DEPLOYMENT  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">GoDaddy DNS</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">portal.ramijaloudi.com</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">firm, halden, castlegate and admin</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Five exact A records; TTL 600</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Azure public address</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">52.162.140.174</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Windows VM network boundary</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">TCP ingress requires approval</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Shared Caddy gateway</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Exact SNI and Host checks</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Kestrel loopback upstream</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Preserve existing RPlus route</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Private application services</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">FastAPI, worker and PostgreSQL</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Separate service accounts</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Protected local configuration</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">TLS validation window</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Verify public certificate chain</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Check all five names and redirects</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Application can remain CLOSED</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Public application acceptance</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Genuine eight-check evidence</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Independent owner approval</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Explicit controlled activation</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">DNS records are configured. This is the intended deployment and acceptance sequence, not a claim that public HTTPS or application activation</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">is complete.</text>
+</svg>

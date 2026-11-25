@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Authenticated request sequence</title><desc id="desc">Specific services use their own transaction and recheck boundaries. This diagram describes the shared pattern, not a claim of one identical implementation on every endpoint.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Authenticated request sequence</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Browser sends request</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">HTTPS on the expected host</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Session cookie with the request</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">CSRF token for a state change</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Boundary verifies request</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Check host and original client</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Authenticate the current session</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Reject invalid origin or token</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Service checks the object</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Recheck current source policy</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Apply matter and audience limits</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Require exact version authority</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Prepare the result</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Read or commit permitted records</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Bind the result to exact content</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Keep confidential data out of logs</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Check before returning</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Recheck authority for guarded output</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Deny changed or revoked scope</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Do not reuse old approval blindly</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Return and retain audit</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">No-store protected responses</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Only permitted content returned</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Retain scoped audit metadata</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">Specific services use their own transaction and recheck boundaries. This diagram describes the shared pattern, not a claim of one identical</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">implementation on every endpoint.</text>
+</svg>

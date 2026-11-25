@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Authorize the corpus<br/>Current identity and organization<br/>Matter, walls and source labels<br/>External corpus is released content"]
+  N2["Choose a supported mode<br/>Automatic defaults to lexical BM25<br/>Internal semantic or hybrid is explicit<br/>Financial mode uses typed facts"]
+  N3["Check provider permission<br/>No default model call for lexical<br/>Semantic needs permitted processing<br/>Apply shared provider cost limits"]
+  N4["Rank eligible evidence<br/>Search only permitted passages<br/>Keep exact source-version anchors<br/>Verify financial fact dimensions"]
+  N5["Present cited results<br/>Open only permitted citations<br/>Mark missing or unknown evidence<br/>AI prose remains unreviewed output"]
+  N6["Recheck retained answers<br/>Old answers do not preserve access<br/>Revocation can deny stored results<br/>Search is not complete diligence"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

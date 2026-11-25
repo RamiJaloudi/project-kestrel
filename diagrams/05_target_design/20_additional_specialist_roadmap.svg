@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Additional specialist roadmap</title><desc id="desc">This replaces the old parallel-specialist image as a roadmap. Registering a role does not make it executable; only the implemented contracts specialist is claimed today.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Additional specialist roadmap</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">TARGET DESIGN / FUTURE SPECIALISTS  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Current governed baseline</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Coordinator and contracts specialist</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Drafter, quality and citation checks</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Human review and separate release</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Proposed specialist</text>
+<text x="503" y="205" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">workstreams</text>
+<text x="503" y="233" font-family="Arial,sans-serif" font-size="16" fill="#294958">Corporate, employment and IP</text>
+<text x="503" y="255" font-family="Arial,sans-serif" font-size="16" fill="#294958">Privacy and regulatory specialists</text>
+<text x="503" y="277" font-family="Arial,sans-serif" font-size="16" fill="#294958">A financial analyst specialist</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Required implementation work</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Build real typed nodes and tools</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Source permission and evidence checks</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Budgets, deadlines and failure states</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Required quality evidence</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Counsel-labelled test evidence</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Exact citation verification</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Measure each specialist separately</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Governed synthesis proposal</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Preserve conflicting conclusions</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Retain source and version lineage</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">No assumed automatic correction loop</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Independent adoption decision</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Legal and security acceptance</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Versioned approved configurations</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Human and audience gates still apply</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">This replaces the old parallel-specialist image as a roadmap. Registering a role does not make it executable; only the implemented contracts</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">specialist is claimed today.</text>
+</svg>

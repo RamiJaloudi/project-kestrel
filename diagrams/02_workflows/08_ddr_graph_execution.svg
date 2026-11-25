@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="1187" viewBox="0 0 1340 1187" role="img" aria-labelledby="title desc">
+<title id="title">DDR graph execution</title><desc id="desc">The graph has coordinator, contracts, draft, quality, citations, join, review_task and human_gate nodes. A registry entry does not implement another specialist. Ambiguous live provider completion is not automatically resent.</desc>
+<rect width="1340" height="1187" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">DDR graph execution</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1090.0" y="356.0" width="50.0" height="16" fill="white"/>
+<text x="1115" y="367.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">parallel</text>
+<path d="M1105,335 L1105,367.0 L670,367.0 L670,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="862.5" y="349.0" width="50.0" height="16" fill="white"/>
+<text x="887.5" y="360.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">parallel</text>
+<path d="M1105,581 L1105,613.0 L670,613.0 L670,645" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M670,581 L670,645" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,736 L420,736" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="424.75" y="713" width="55.5" height="16" fill="white"/>
+<text x="452.5" y="724" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">pass only</text>
+<path d="M235,827 L235,891" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="220.0" y="848.0" width="50.0" height="16" fill="white"/>
+<text x="245" y="859.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">decision</text>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Coordinator</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Validate the retained run snapshot</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Check source and profile authority</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Apply deadline and call limits</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Contracts specialist</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Sole implemented specialist</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Use authorized reviewed evidence</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Retain typed output and usage</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Draft report stage</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Use retained specialist output</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Keep exact source citations</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Retain an unapproved version</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Citation validator</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Validate exact draft evidence</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Runs alongside quality checking</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Produces a retained result</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Quality review stage</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Independent AI quality result</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Runs alongside citation checking</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">No authority to approve a report</text>
+<rect x="485" y="645" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Join the check results</text>
+<text x="503" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">Both required checks must pass</text>
+<text x="503" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">Failure creates follow-up work</text>
+<text x="503" y="746" font-family="Arial,sans-serif" font-size="16" fill="#294958">No automatic revision loop</text>
+<rect x="50" y="645" width="370" height="182" rx="9" fill="#FFF5DF" stroke="#A8BFCD"/>
+<text x="68" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Independent human review</text>
+<text x="68" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">Retained task and human interrupt</text>
+<text x="68" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">Different cleared reviewer decides</text>
+<text x="68" y="746" font-family="Arial,sans-serif" font-size="16" fill="#294958">Decision binds exact report hashes</text>
+<rect x="50" y="891" width="370" height="182" rx="9" fill="#FFF5DF" stroke="#A8BFCD"/>
+<text x="68" y="920" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Internal completion</text>
+<text x="68" y="948" font-family="Arial,sans-serif" font-size="16" fill="#294958">Revalidate decision before resume</text>
+<text x="68" y="970" font-family="Arial,sans-serif" font-size="16" fill="#294958">Approve or reject internally</text>
+<text x="68" y="992" font-family="Arial,sans-serif" font-size="16" fill="#294958">Audience release remains separate</text>
+<text x="50" y="1116" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">The graph has coordinator, contracts, draft, quality, citations, join, review_task and human_gate nodes. A registry entry does not implement</text>
+<text x="50" y="1138" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">another specialist. Ambiguous live provider completion is not automatically resent.</text>
+</svg>

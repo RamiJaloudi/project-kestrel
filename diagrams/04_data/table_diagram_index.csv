@@ -1,0 +1,154 @@
+﻿table,domain,diagram,fields
+account_role_grants,Identity And Access,areas/01_identity_and_access.md,3
+accounts,Identity And Access,areas/01_identity_and_access.md,10
+administration_decisions,Identity And Access,areas/01_identity_and_access.md,8
+classification_requests,Identity And Access,areas/01_identity_and_access.md,11
+clean_team_memberships,Identity And Access,areas/01_identity_and_access.md,8
+clients,Identity And Access,areas/01_identity_and_access.md,4
+ethical_walls,Identity And Access,areas/01_identity_and_access.md,4
+login_throttles,Identity And Access,areas/01_identity_and_access.md,3
+matter_assignments,Identity And Access,areas/01_identity_and_access.md,6
+matter_validations,Identity And Access,areas/01_identity_and_access.md,5
+matters,Identity And Access,areas/01_identity_and_access.md,2
+organizations,Identity And Access,areas/01_identity_and_access.md,2
+question_answers,Identity And Access,areas/01_identity_and_access.md,6
+roles,Identity And Access,areas/01_identity_and_access.md,2
+server_sessions,Identity And Access,areas/01_identity_and_access.md,7
+service_clients,Identity And Access,areas/01_identity_and_access.md,6
+service_tokens,Identity And Access,areas/01_identity_and_access.md,5
+source_access_grants,Identity And Access,areas/01_identity_and_access.md,14
+wall_check_records,Identity And Access,areas/01_identity_and_access.md,7
+wall_control_decisions,Identity And Access,areas/01_identity_and_access.md,5
+wall_controls,Identity And Access,areas/01_identity_and_access.md,13
+content_impact_tasks,Document Evidence,areas/02_document_evidence.md,9
+content_label_assertions,Document Evidence,areas/02_document_evidence.md,23
+content_label_decisions,Document Evidence,areas/02_document_evidence.md,12
+content_label_impacts,Document Evidence,areas/02_document_evidence.md,9
+custodian_link_retirements,Document Evidence,areas/02_document_evidence.md,9
+document_custodians,Document Evidence,areas/02_document_evidence.md,15
+document_parties,Document Evidence,areas/02_document_evidence.md,13
+document_policy_versions,Document Evidence,areas/02_document_evidence.md,18
+document_review_versions,Document Evidence,areas/02_document_evidence.md,11
+document_sources,Document Evidence,areas/02_document_evidence.md,10
+document_version_links,Document Evidence,areas/02_document_evidence.md,4
+documents,Document Evidence,areas/02_document_evidence.md,4
+ocr_jobs,Document Evidence,areas/02_document_evidence.md,8
+ocr_verifications,Document Evidence,areas/02_document_evidence.md,5
+record_custodians,Document Evidence,areas/02_document_evidence.md,10
+source_embeddings,Document Evidence,areas/02_document_evidence.md,16
+source_versions,Document Evidence,areas/02_document_evidence.md,19
+finding_reconciliations,Findings,areas/03_findings.md,7
+finding_reviews,Findings,areas/03_findings.md,6
+legal_finding_revisions,Findings,areas/03_findings.md,21
+reconciliation_decisions,Findings,areas/03_findings.md,6
+source_findings,Findings,areas/03_findings.md,12
+review_notification_reads,Review Work,areas/04_review_work.md,4
+review_session_leases,Review Work,areas/04_review_work.md,3
+review_session_receipts,Review Work,areas/04_review_work.md,17
+review_sessions,Review Work,areas/04_review_work.md,12
+review_sla_alert_cursor,Review Work,areas/04_review_work.md,2
+review_sla_alert_dispositions,Review Work,areas/04_review_work.md,11
+review_sla_alert_reads,Review Work,areas/04_review_work.md,4
+review_sla_alert_recipients,Review Work,areas/04_review_work.md,4
+review_sla_alerts,Review Work,areas/04_review_work.md,11
+review_sla_bindings,Review Work,areas/04_review_work.md,10
+review_sla_decisions,Review Work,areas/04_review_work.md,9
+review_sla_escalation_plans,Review Work,areas/04_review_work.md,16
+review_sla_plan_decisions,Review Work,areas/04_review_work.md,11
+review_sla_plan_recipients,Review Work,areas/04_review_work.md,4
+review_sla_policies,Review Work,areas/04_review_work.md,12
+review_task_events,Review Work,areas/04_review_work.md,17
+review_task_notifications,Review Work,areas/04_review_work.md,6
+review_tasks,Review Work,areas/04_review_work.md,12
+sla_calendars,Review Work,areas/04_review_work.md,13
+checklist_coverage_decisions,Checklists,areas/05_checklists.md,15
+checklist_coverage_versions,Checklists,areas/05_checklists.md,9
+checklist_finding_links,Checklists,areas/05_checklists.md,7
+checklist_items,Checklists,areas/05_checklists.md,8
+checklist_request_events,Checklists,areas/05_checklists.md,17
+checklist_request_evidence,Checklists,areas/05_checklists.md,6
+checklist_sections,Checklists,areas/05_checklists.md,7
+checklist_version_decisions,Checklists,areas/05_checklists.md,8
+checklist_versions,Checklists,areas/05_checklists.md,10
+document_checklist_links,Checklists,areas/05_checklists.md,6
+disclosure_artifacts,Sanitized Disclosures,areas/06_sanitized_disclosures.md,16
+disclosure_decisions,Sanitized Disclosures,areas/06_sanitized_disclosures.md,11
+disclosure_plan_reviews,Sanitized Disclosures,areas/06_sanitized_disclosures.md,11
+disclosure_plans,Sanitized Disclosures,areas/06_sanitized_disclosures.md,17
+disclosure_validations,Sanitized Disclosures,areas/06_sanitized_disclosures.md,11
+agent_profile_events,Agent Registry,areas/07_agent_registry.md,9
+agent_profile_impact_decisions,Agent Registry,areas/07_agent_registry.md,9
+agent_profile_impact_items,Agent Registry,areas/07_agent_registry.md,8
+agent_profile_impact_notifications,Agent Registry,areas/07_agent_registry.md,7
+agent_profile_impact_tasks,Agent Registry,areas/07_agent_registry.md,7
+agent_profile_impacts,Agent Registry,areas/07_agent_registry.md,9
+agent_profile_replacements,Agent Registry,areas/07_agent_registry.md,6
+agent_profile_versions,Agent Registry,areas/07_agent_registry.md,13
+agent_profiles,Agent Registry,areas/07_agent_registry.md,5
+ddr_artifacts,Ddr Execution,areas/08_ddr_execution.md,7
+ddr_attempts,Ddr Execution,areas/08_ddr_execution.md,7
+ddr_decisions,Ddr Execution,areas/08_ddr_execution.md,11
+ddr_events,Ddr Execution,areas/08_ddr_execution.md,8
+ddr_evidence,Ddr Execution,areas/08_ddr_execution.md,10
+ddr_executions,Ddr Execution,areas/08_ddr_execution.md,8
+ddr_node_results,Ddr Execution,areas/08_ddr_execution.md,8
+ddr_report_links,Ddr Execution,areas/08_ddr_execution.md,7
+ddr_runs,Ddr Execution,areas/08_ddr_execution.md,18
+ddr_tasks,Ddr Execution,areas/08_ddr_execution.md,6
+financial_access_gates,Financial Evidence,areas/09_financial_evidence.md,7
+financial_context_decisions,Financial Evidence,areas/09_financial_evidence.md,12
+financial_context_evidence,Financial Evidence,areas/09_financial_evidence.md,12
+financial_extraction_candidates,Financial Evidence,areas/09_financial_evidence.md,31
+financial_fact_contexts,Financial Evidence,areas/09_financial_evidence.md,20
+financial_fact_decisions,Financial Evidence,areas/09_financial_evidence.md,11
+financial_facts,Financial Evidence,areas/09_financial_evidence.md,23
+financial_organization_gates,Financial Evidence,areas/09_financial_evidence.md,7
+financial_reconciliations,Financial Evidence,areas/09_financial_evidence.md,8
+financial_resolutions,Financial Evidence,areas/09_financial_evidence.md,8
+intelligence_alert_dispositions,Review Intelligence,areas/10_review_intelligence.md,11
+intelligence_alert_reads,Review Intelligence,areas/10_review_intelligence.md,4
+intelligence_alert_recipients,Review Intelligence,areas/10_review_intelligence.md,7
+intelligence_alerts,Review Intelligence,areas/10_review_intelligence.md,13
+intelligence_override_decisions,Review Intelligence,areas/10_review_intelligence.md,11
+intelligence_overrides,Review Intelligence,areas/10_review_intelligence.md,17
+intelligence_profile_decisions,Review Intelligence,areas/10_review_intelligence.md,8
+intelligence_profiles,Review Intelligence,areas/10_review_intelligence.md,11
+table_view_evidence,Saved Views,areas/11_saved_views.md,9
+table_view_share_decisions,Saved Views,areas/11_saved_views.md,9
+table_view_share_recipients,Saved Views,areas/11_saved_views.md,4
+table_view_shares,Saved Views,areas/11_saved_views.md,11
+table_view_versions,Saved Views,areas/11_saved_views.md,14
+table_views,Saved Views,areas/11_saved_views.md,6
+tracker_exports,Tracker Exchange,areas/12_tracker_exchange.md,7
+tracker_import_applications,Tracker Exchange,areas/12_tracker_exchange.md,8
+tracker_imports,Tracker Exchange,areas/12_tracker_exchange.md,9
+vdr_import_batches,Vdr Intake,areas/13_vdr_intake.md,11
+vdr_import_rows,Vdr Intake,areas/13_vdr_intake.md,7
+vdr_mapping_profiles,Vdr Intake,areas/13_vdr_intake.md,10
+client_submissions,Collaboration,areas/14_collaboration.md,9
+collaboration_approvals,Collaboration,areas/14_collaboration.md,6
+collaboration_messages,Collaboration,areas/14_collaboration.md,10
+submission_acceptances,Collaboration,areas/14_collaboration.md,5
+ai_budget_periods,Governance And Analysis,areas/15_governance_and_analysis.md,3
+ai_operations,Governance And Analysis,areas/15_governance_and_analysis.md,9
+ai_reservations,Governance And Analysis,areas/15_governance_and_analysis.md,6
+analysis_jobs,Governance And Analysis,areas/15_governance_and_analysis.md,19
+governance_tasks,Governance And Analysis,areas/15_governance_and_analysis.md,8
+governance_versions,Governance And Analysis,areas/15_governance_and_analysis.md,14
+impact_decisions,Governance And Analysis,areas/15_governance_and_analysis.md,9
+impact_publications,Governance And Analysis,areas/15_governance_and_analysis.md,6
+impact_snapshots,Governance And Analysis,areas/15_governance_and_analysis.md,9
+operation_reservations,Governance And Analysis,areas/15_governance_and_analysis.md,6
+processing_replacements,Governance And Analysis,areas/15_governance_and_analysis.md,9
+task_closures,Governance And Analysis,areas/15_governance_and_analysis.md,6
+task_notifications,Governance And Analysis,areas/15_governance_and_analysis.md,6
+policy_recipients,Reports And Releases,areas/16_reports_and_releases.md,3
+policy_sources,Reports And Releases,areas/16_reports_and_releases.md,3
+release_approvals,Reports And Releases,areas/16_reports_and_releases.md,8
+release_packages,Reports And Releases,areas/16_reports_and_releases.md,8
+report_checklist_snapshots,Reports And Releases,areas/16_reports_and_releases.md,4
+report_versions,Reports And Releases,areas/16_reports_and_releases.md,8
+audit_events,Lifecycle And Audit,areas/17_lifecycle_and_audit.md,10
+lifecycle_decisions,Lifecycle And Audit,areas/17_lifecycle_and_audit.md,11
+matter_lifecycle,Lifecycle And Audit,areas/17_lifecycle_and_audit.md,5
+source_archives,Lifecycle And Audit,areas/17_lifecycle_and_audit.md,8

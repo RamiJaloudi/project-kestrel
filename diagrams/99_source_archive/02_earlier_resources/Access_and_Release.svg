@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470" role="img" aria-labelledby="title desc">
+<title id="title">How access and release are checked</title><desc id="desc">The hostname chooses the screen. The server decides whether the person may act. Root Admin has no blanket legal or source-reading privilege. Notification read is not approval.
+The Resource library contains authored examples only; it does not expose live matter exports.</desc>
+<rect width="1280" height="470" fill="#FFFFFF"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#567083"/></marker></defs>
+<text x="42" y="52" font-family="Arial,sans-serif" font-size="29" fill="#15384D" font-weight="700">How access and release are checked</text>
+<text x="42" y="86" font-family="Arial,sans-serif" font-size="17" fill="#4C6373">The hostname chooses the screen. The server decides whether the person may act.</text>
+<rect x="42" y="127" width="278" height="228" rx="10" fill="#E8F2F7" stroke="#AEC1CE"/>
+<text x="61" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">1  Verify the person</text>
+<text x="61" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Signed-in server session</text>
+<text x="61" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Correct organization portal</text>
+<text x="61" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Active account and roles</text>
+<text x="61" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">No role from request headers</text>
+<path d="M323,241 L343,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="347" y="127" width="278" height="228" rx="10" fill="#EEF1FA" stroke="#AEC1CE"/>
+<text x="366" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">2  Check the scope</text>
+<text x="366" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Matter assignment</text>
+<text x="366" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Ethical walls and labels</text>
+<text x="366" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Named clean-team scope</text>
+<text x="366" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Expiry and source limits</text>
+<path d="M628,241 L648,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="127" width="278" height="228" rx="10" fill="#FFF4DE" stroke="#AEC1CE"/>
+<text x="671" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">3  Check the output</text>
+<text x="671" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Lawyer-reviewed finding</text>
+<text x="671" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Independent report decision</text>
+<text x="671" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Audience release decision</text>
+<text x="671" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Antitrust decision if required</text>
+<path d="M933,241 L953,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="957" y="127" width="278" height="228" rx="10" fill="#E6F4EC" stroke="#AEC1CE"/>
+<text x="976" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">4  Serve allowed content</text>
+<text x="976" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Check again on each request</text>
+<text x="976" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Keep client and bank separate</text>
+<text x="976" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Record permitted audit data</text>
+<text x="976" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Deny when a gate is missing</text>
+<text x="42" y="398" font-family="Arial,sans-serif" font-size="16" fill="#344F60">Root Admin has no blanket legal or source-reading privilege. Notification read is not approval.</text>
+<text x="42" y="423" font-family="Arial,sans-serif" font-size="16" fill="#344F60">The Resource library contains authored examples only; it does not expose live matter exports.</text>
+</svg>

@@ -1,0 +1,17 @@
+* text=auto
+
+# Retained inputs and checksum-protected downloads must keep exact bytes.
+backend/kestrel/data/resource_library/** -text whitespace=cr-at-eol
+data/** -text whitespace=cr-at-eol
+synthetic/** -text whitespace=cr-at-eol
+fixtures/** -text whitespace=cr-at-eol
+deliverables/** -text whitespace=cr-at-eol
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.zip binary

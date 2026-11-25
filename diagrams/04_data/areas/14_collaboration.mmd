@@ -1,0 +1,49 @@
+erDiagram
+  accounts {
+    string id PK
+  }
+  client_submissions {
+    string policy_id FK
+    string matter_id FK
+    string uploaded_by FK
+    string id PK
+  }
+  collaboration_approvals {
+    string message_id PK, FK
+    string kind PK
+    string actor_id FK
+  }
+  collaboration_messages {
+    string release_id FK
+    string parent_id FK
+    string author_id FK
+    string id PK
+  }
+  document_policy_versions {
+    string id PK
+  }
+  matters {
+    string id PK
+  }
+  release_packages {
+    string id PK
+  }
+  source_versions {
+    string id PK
+  }
+  submission_acceptances {
+    string submission_id PK, FK
+    string source_id FK
+    string actor_id FK
+  }
+  document_policy_versions ||..o| client_submissions : "policy_id"
+  matters ||..o{ client_submissions : "matter_id"
+  accounts ||..o{ client_submissions : "uploaded_by"
+  collaboration_messages ||--o{ collaboration_approvals : "message_id"
+  accounts ||..o{ collaboration_approvals : "actor_id"
+  release_packages ||..o{ collaboration_messages : "release_id"
+  collaboration_messages |o..o{ collaboration_messages : "parent_id"
+  accounts ||..o{ collaboration_messages : "author_id"
+  client_submissions ||--o| submission_acceptances : "submission_id"
+  source_versions ||..o| submission_acceptances : "source_id"
+  accounts ||..o{ submission_acceptances : "actor_id"

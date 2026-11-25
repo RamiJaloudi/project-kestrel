@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">The data story</title><desc id="desc">These arrows describe the business lifecycle, not a foreign key for every step. The next core entity diagram and 17 detailed model views show declared database relationships. The proposed 809-field design is separate.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">The data story</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">People and matters</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">organizations and accounts</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">matters and matter_assignments</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">wall and clean-team records</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Documents and evidence</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">documents and document_sources</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">source_versions retain exact versions</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Policy and evidence anchors persist</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Analysis and lawyer review</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">source_findings are candidates</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">legal_finding_revisions retain review</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Playbook and run versions bind results</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Reports and release</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">report_versions retain body_json</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">release_packages retain references_json</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">release_approvals record decisions</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Operations and governance</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">DDR attempts, artifacts and tasks</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Impacts, notifications and reruns</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Immutable decision histories</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Audit and lifecycle</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">audit_events and source_archives</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Signing snapshots and holds</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Controlled eligible-copy deletion</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">These arrows describe the business lifecycle, not a foreign key for every step. The next core entity diagram and 17 detailed model views</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">show declared database relationships. The proposed 809-field design is separate.</text>
+</svg>

@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Seller data room<br/>Seller-hosted source system<br/>Authorized CSV and folder intake<br/>Originals remain source evidence"]
+  N2["Firm legal team<br/>Associates receive documents<br/>Lawyers verify exact passages<br/>Legal SMEs decide independently"]
+  N3["Kestrel review platform<br/>Versioned evidence and workflow<br/>Review, reporting and audit<br/>Shared permission checks"]
+  N4["Halden deal team<br/>Only released client packages<br/>Named source grants are separate<br/>Can ask questions and upload"]
+  N5["Castlegate advisers<br/>Only released commercial subset<br/>No privileged internal advice<br/>No general source access"]
+  N6["Technical administration<br/>Accounts and system settings<br/>No blanket source privilege<br/>No legal self-approval"]
+  N1 -->|"intake"| N3
+  N2 -->|"review"| N3
+  N3 -->|"released only"| N4
+  N3 -->|"released only"| N5
+  N6 -->|"technical scope"| N3

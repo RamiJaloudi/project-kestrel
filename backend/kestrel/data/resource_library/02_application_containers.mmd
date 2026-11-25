@@ -1,0 +1,13 @@
+flowchart LR
+  N1["React browser application<br/>One TypeScript codebase<br/>Host selects organization shell<br/>Session cookies stay host-only"]
+  N2["Caddy reverse proxy<br/>Exact configured HTTPS hosts<br/>Forward only to loopback API<br/>Private proxy proof in public mode"]
+  N3["FastAPI application<br/>Typed request validation<br/>Authenticated identity and CSRF<br/>Shared policy and service layer"]
+  N4["PostgreSQL database<br/>Versioned business records<br/>Durable jobs and decisions<br/>Alembic schema migrations"]
+  N5["Background worker<br/>Scoped OCR and analysis jobs<br/>Bounded DDR graph execution<br/>Recheck authority for each stage"]
+  N6["Private retained artifacts<br/>Original versions and derivatives<br/>Encrypted archive bindings<br/>Opaque DDR checkpoints"]
+  N1 -->|"HTTPS"| N2
+  N2 -->|"loopback"| N3
+  N3 -->|"records"| N4
+  N4 -->|"durable work"| N5
+  N3 -->|"authorized I/O"| N6
+  N5 -->|"scoped artifacts"| N6

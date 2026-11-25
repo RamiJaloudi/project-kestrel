@@ -1,0 +1,41 @@
+flowchart TB
+    M[Current matter identity wall and processing authority]
+    V[LogicalDocument and immutable SourceVersion]
+    V --> C[Custody party checklist and review records]
+    V --> L[LegalFindingRevision and exact evidence]
+    V --> F[FinancialFact and decisions]
+    F --> FC[Applied 0038 internal context evidence decisions and staging]
+    V --> DP[DisclosurePlan review artifact validation decisions]
+    L --> DR[DDRRun evidence attempts artifacts task and decision]
+    DR --> RP[DDRReportLink and ReportVersion]
+    RP --> RA[ReleasePackage and independent release approvals]
+    DP --> RA
+    RA --> PR[Audience-specific projection with current reauthorization]
+
+    C --> U[All contributing retained source scopes]
+    L --> U
+    F --> U
+    FC --> U
+    DP --> U
+    DR --> U
+    M --> K{Current authority AND every required retained restriction}
+    U --> K
+    K -. internal work access .-> C
+    K -. internal work access .-> FC
+    K -. internal work access .-> DR
+    M -. explicit derivative authorization without original disclosure .-> PR
+
+    C --> S[Signing manifest hashes and scoped retained audit]
+    F --> S
+    FC --> S
+    DP --> S
+    DR --> S
+    RA --> S
+    S --> H[Hold retention and controlled eligible client-copy disposal]
+
+    classDef pending fill:#eeeeee,color:#111111,stroke:#111111,stroke-dasharray:5 5;
+    classDef record fill:#ffffff,color:#111111,stroke:#111111;
+    classDef gate fill:#111111,color:#ffffff,stroke:#111111;
+    class FC record;
+    class V,C,L,F,DP,DR,RP,RA,PR,U,S,H record;
+    class M,K gate;

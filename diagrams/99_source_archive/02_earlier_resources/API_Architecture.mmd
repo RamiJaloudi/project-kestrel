@@ -1,0 +1,8 @@
+flowchart LR
+  S0["Portal and account<br/>React and TypeScript screens<br/>Current organization session<br/>Same-origin API requests<br/>CSRF token for state changes"]
+  S1["FastAPI boundary<br/>Pydantic request validation<br/>Current identity dependency<br/>Audience and route checks<br/>Grouped OpenAPI explorer"]
+  S0 --> S1
+  S2["Policy and services<br/>Shared source access policy<br/>Evidence and review rules<br/>Independent approval rules<br/>Controlled worker operations"]
+  S1 --> S2
+  S3["Retained records<br/>PostgreSQL and migrations<br/>Exact document versions<br/>Private source artifacts<br/>Durable decisions and audit"]
+  S2 --> S3

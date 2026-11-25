@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="673" viewBox="0 0 1340 673" role="img" aria-labelledby="title desc">
+<title id="title">Durable work and failure handling</title><desc id="desc">The database supplies durable work records. Azure Service Bus, Redis or a managed orchestrator are not silently substituted into this demo.</desc>
+<rect width="1340" height="673" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Durable work and failure handling</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Authorize and queue</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Exact immutable source and config</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Idempotent request identity</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">No approval from queue membership</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Claim a bounded attempt</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Worker token and finite lease</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Retain an attempt before producer</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Recheck cancellation and expiry</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Run within the limits</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">OCR or analysis or DDR stage</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Fresh authority for source access</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Provider budget and deadline checks</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Retain outcomes</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Typed result and content digest</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Durable usage and state records</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Private checkpoint references</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Pause an uncertain outcome</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Do not automatically resend paid work</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Record safe failure and follow-up</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Manual bounded recovery where allowed</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Complete through human gates</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Independent review where required</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Release remains a separate workflow</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Monitor and shut down explicitly</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">The database supplies durable work records. Azure Service Bus, Redis or a managed orchestrator are not silently substituted into this demo.</text>
+</svg>

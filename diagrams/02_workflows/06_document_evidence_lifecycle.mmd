@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Receive and identify<br/>Associate checks the VDR batch<br/>Retain document and source identity<br/>Record version and content hash"]
+  N2["Extract and verify<br/>Retain exact original-language text<br/>Use OCR for eligible scans<br/>Verify transcripts before analysis"]
+  N3["Apply handling rules<br/>Source and passage labels<br/>Matter, walls and clean-team scope<br/>Custodian and party provenance"]
+  N4["Review and record findings<br/>Only authorized processing<br/>AI candidates need lawyer review<br/>Exact versions and citations retained"]
+  N5["Create audience products<br/>Draft reports from reviewed findings<br/>Sanitized disclosures are separate<br/>Independent approvals and release"]
+  N6["Retain the history<br/>Preserve prior versions and decisions<br/>Signing snapshot and legal holds<br/>Governed eligible-copy deletion"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

@@ -1,0 +1,36 @@
+flowchart TB
+    P[EXISTING local organization portals and firm admin shell]
+    P --> API[EXISTING one shared FastAPI identity and enforcement boundary]
+    subgraph B[Logical responsibilities inside the shared backend]
+        D1[EXISTING identity matter walls and policy]
+        D2[EXISTING bounded intake and source intelligence]
+        D3[EXISTING work management and legal quality]
+        D4[EXISTING permitted retrieval and exact finance]
+        D5[EXISTING bounded DDR graph and human tasks]
+        D6[EXISTING reader comparison and text disclosure]
+        D7[EXISTING reporting lifecycle and protected audit]
+        D8[EXISTING adapter ports and local operations]
+    end
+    API --> D1
+    API --> D2
+    API --> D3
+    API --> D4
+    API --> D5
+    API --> D6
+    API --> D7
+    API --> D8
+    B --> DB[EXISTING local PostgreSQL and retained artifacts]
+    B --> W[EXISTING bounded workers and durable job records]
+    D8 -.-> F[ASSUMED INTEGRATION real VDR iManage Intapp M365 Entra and approved EU AI]
+    F -.-> A[REQUIRES APPROVAL actual rights configuration security and legal acceptance]
+    T[TARGET DESIGN public TLS proxy and production operational integration] -.-> API
+    T -.-> A
+    S[TARGET DESIGN complete specialist coverage and production search scale] -.-> D4
+    S -.-> D5
+
+    classDef existing fill:#ffffff,color:#111111,stroke:#111111;
+    classDef target fill:#eeeeee,color:#111111,stroke:#777777,stroke-dasharray:5 5;
+    classDef approval fill:#111111,color:#ffffff,stroke:#111111;
+    class P,API,D1,D2,D3,D4,D5,D6,D7,D8,DB,W existing;
+    class F,T,S target;
+    class A approval;

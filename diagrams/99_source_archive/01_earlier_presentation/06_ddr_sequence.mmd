@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant U as EXISTING authenticated lawyer
+    participant A as EXISTING shared API and policy
+    participant D as EXISTING durable application records
+    participant W as EXISTING bounded graph worker
+    participant P as EXISTING provider port
+    participant H as REQUIRES APPROVAL independent cleared reviewer
+    U->>A: POST matter DDR run with reviewed finding references and request_key
+    A->>A: Validate source processing playbook profiles and current requester
+    A->>D: Persist immutable run snapshot config and queued execution
+    A-->>U: 201 current run representation
+    W->>D: CAS claim and bounded lease
+    W->>A: Fresh authority before each stage
+    W->>D: Commit attempt before producer
+    W->>P: Bounded contracts draft and quality calls
+    Note over W,P: Offline graph and real-SDK mock HTTP controls verified; actual paid processing unverified
+    P-->>W: Typed artifact and usage or ambiguous failure
+    W->>A: Recheck authority and exact input snapshot
+    W->>D: Retain result artifact usage and checkpoint references
+    W->>D: Independent review task and internal unapproved report
+    Note over W,D: Actual LangGraph human interrupt; no automatic publication
+    H->>A: Authenticated exact task decision and rationale
+    A->>A: Reviewer independence source clearance and exact hashes
+    A->>D: Persist decision
+    W->>A: Revalidate current receipt and resume authority
+    W->>D: Internal completion only
+    Note over A,H: Separate audience release and antitrust decision still required

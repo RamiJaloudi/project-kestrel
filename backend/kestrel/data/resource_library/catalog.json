@@ -210,210 +210,6 @@
       "updated": "2026-11-24"
     },
     {
-      "id": "document-to-report-svg",
-      "filename": "Document_to_Report.svg",
-      "title": "From a VDR document to a report",
-      "description": "Implemented workflow overview. Each stage retains its source and version. Search answers a question over permitted evidence. It does not prove that every document was reviewed. This diagram describes the code workflow; it does not prove acceptance on the Azure VM.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Current code and explicit deployment limits",
-      "media_type": "image/svg+xml",
-      "bytes": 4395,
-      "sha256": "a7303225ecbf4dfbfe15304d16fa17eadaf31cbda07e6d493d225c351cf0f16a",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "document-to-report-mmd",
-      "filename": "Document_to_Report.mmd",
-      "title": "From a VDR document to a report editable source",
-      "description": "Implemented workflow overview. Each stage retains its source and version.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Editable Mermaid source",
-      "media_type": "text/plain",
-      "bytes": 662,
-      "sha256": "0b25656afd718144567530358745ceab2dc965da9a7550399b22987bc76a6498",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "access-and-release-svg",
-      "filename": "Access_and_Release.svg",
-      "title": "How access and release are checked",
-      "description": "The hostname chooses the screen. The server decides whether the person may act. Root Admin has no blanket legal or source-reading privilege. Notification read is not approval. The Resource library contains authored examples only; it does not expose live matter exports.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Current code and explicit deployment limits",
-      "media_type": "image/svg+xml",
-      "bytes": 4394,
-      "sha256": "06ff2d8e038508cc5b39663734e1a48259206ced6107caef3b6317d7d543ed9c",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "access-and-release-mmd",
-      "filename": "Access_and_Release.mmd",
-      "title": "How access and release are checked editable source",
-      "description": "The hostname chooses the screen. The server decides whether the person may act.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Editable Mermaid source",
-      "media_type": "text/plain",
-      "bytes": 645,
-      "sha256": "6cfaf25f6c8e32a54d0585c5682dd3a603026644f04fcaf9dd7463061fcbee7e",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "azure-deployment-svg",
-      "filename": "Azure_Deployment.svg",
-      "title": "Azure portal deployment",
-      "description": "DNS configured on 24 November 2026. HTTPS and application activation have separate acceptance gates. Configured hostnames are not evidence of a live public application. Do not bypass the CLOSED gate. Linux requires replacements for DPAPI, Windows service control and the owner approval boundary.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Current code and explicit deployment limits",
-      "media_type": "image/svg+xml",
-      "bytes": 4432,
-      "sha256": "fe10d01cddcf59ac1fb14ba0882d65c548283186c2cfa48f9ba8338c22fb0246",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "azure-deployment-mmd",
-      "filename": "Azure_Deployment.mmd",
-      "title": "Azure portal deployment editable source",
-      "description": "DNS configured on 24 November 2026. HTTPS and application activation have separate acceptance gates.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Editable Mermaid source",
-      "media_type": "text/plain",
-      "bytes": 653,
-      "sha256": "ef3c577e8c6eb71cd2f0891a10dcbe0f550aa4cad1f24e48f4e83a14bbc9d85b",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "schema-story-svg",
-      "filename": "Schema_Story.svg",
-      "title": "The schema follows the review",
-      "description": "Use implemented dictionaries for model structure and proposed dictionaries for target design. The proposed dictionary contains 809 fields. Its group column is a documentation domain, not an access grant. The implemented model export reads structure only; applied database migrations need separate verification.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Current code and explicit deployment limits",
-      "media_type": "image/svg+xml",
-      "bytes": 4470,
-      "sha256": "c4dc0bb09d740d6a9dc254359620d36249fd4c3619cdd364074f7a4f35eebdcc",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "schema-story-mmd",
-      "filename": "Schema_Story.mmd",
-      "title": "The schema follows the review editable source",
-      "description": "Use implemented dictionaries for model structure and proposed dictionaries for target design.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Editable Mermaid source",
-      "media_type": "text/plain",
-      "bytes": 649,
-      "sha256": "7790bd24213caaa1ce7b6a97dfc88c452f64eebf874e1f1bea27e6c9c765d10f",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "api-architecture-svg",
-      "filename": "API_Architecture.svg",
-      "title": "How the API connects the application",
-      "description": "One typed API supports the portals. Calling an endpoint never creates permission. OpenAPI describes current request and response contracts. Model CSVs describe the code-declared structure. The proposed 809-field design is separate. Enterprise integrations remain design or mock adapters where stated.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Current code and explicit deployment limits",
-      "media_type": "image/svg+xml",
-      "bytes": 4471,
-      "sha256": "4b10634eb0298216ce57a0c7cb34e3aa76eb19a2e6a87b01e1dd5dddc039f7fa",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "api-architecture-mmd",
-      "filename": "API_Architecture.mmd",
-      "title": "How the API connects the application editable source",
-      "description": "One typed API supports the portals. Calling an endpoint never creates permission.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Editable Mermaid source",
-      "media_type": "text/plain",
-      "bytes": 656,
-      "sha256": "c7ccf3a666b341d5e288acddba13721506708eb371b76f2a84e80bcce26939f3",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "search-architecture-svg",
-      "filename": "Search_Architecture.svg",
-      "title": "How a cited question is answered",
-      "description": "Search uses the evidence the signed-in person may currently read. A ranked answer does not establish complete diligence or lawyer approval. Missing evidence stays unknown. Provider-backed semantic search remains subject to processing policy and the shared cost cap.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Current code and explicit deployment limits",
-      "media_type": "image/svg+xml",
-      "bytes": 4396,
-      "sha256": "73e855fd71ad848df5b2ee521fde42c3108adde3ea470fde129660cc27bb34b0",
-      "updated": "2026-11-24"
-    },
-    {
-      "id": "search-architecture-mmd",
-      "filename": "Search_Architecture.mmd",
-      "title": "How a cited question is answered editable source",
-      "description": "Search uses the evidence the signed-in person may currently read.",
-      "category": "Diagrams",
-      "audiences": [
-        "firm",
-        "halden",
-        "castlegate"
-      ],
-      "status": "Editable Mermaid source",
-      "media_type": "text/plain",
-      "bytes": 659,
-      "sha256": "f8dafd9e3340bf26bed14a37805b62ef4b480b5f4d6c99d01c22445efe709a05",
-      "updated": "2026-11-24"
-    },
-    {
       "id": "implemented-schema-fields",
       "filename": "Implemented_Schema_Fields.csv",
       "title": "Implemented schema fields",
@@ -651,6 +447,1026 @@
       "media_type": "application/pdf",
       "bytes": 4149,
       "sha256": "e1fe81d5437ac4ba24db080f8a6bd337e8d8d834891ef3849017dc7630a18efd",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "01-system-context-svg",
+      "filename": "01_system_context.svg",
+      "title": "System context",
+      "description": "The platform is an independent synthetic demonstration. Enterprise VDR, identity, document-management and wall connections need firm-approved integrations.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 6774,
+      "sha256": "81b418dd8e2d667a0e6efb8f1aaf50d0aa9ae2e29be5e7f9fafd55e6cfdb6f3a",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "01-system-context-mmd",
+      "filename": "01_system_context.mmd",
+      "title": "System context editable source",
+      "description": "The platform is an independent synthetic demonstration. Enterprise VDR, identity, document-management and wall connections need firm-approved integrations.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 926,
+      "sha256": "e2d942c8dcc4f6f34c6d4a9c64090f30de966c76fcc873e5ee231dbf0b16de23",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "01-system-context-png",
+      "filename": "01_system_context.png",
+      "title": "System context image",
+      "description": "The platform is an independent synthetic demonstration. Enterprise VDR, identity, document-management and wall connections need firm-approved integrations.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 127086,
+      "sha256": "fb5f65e9a3b8c4cf1bcf310a6ddafd1d32dadf8d293d3cb775078cb35e846f48",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "02-application-containers-svg",
+      "filename": "02_application_containers.svg",
+      "title": "Application containers",
+      "description": "These are logical runtime components. The Azure deployment requires separate real-service, HTTPS and owner acceptance. Windows DPAPI and service identities need reviewed Linux replacements.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 7086,
+      "sha256": "9a31ed92ef8cef2893903d7ae86c17ad0531a5b6d09cf1e1e3be72c4ad842445",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "02-application-containers-mmd",
+      "filename": "02_application_containers.mmd",
+      "title": "Application containers editable source",
+      "description": "These are logical runtime components. The Azure deployment requires separate real-service, HTTPS and owner acceptance. Windows DPAPI and service identities need reviewed Linux replacements.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 958,
+      "sha256": "534217ee943a39d222bc952ea8b3990ee43ad4601ae195c63152500a12b78032",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "02-application-containers-png",
+      "filename": "02_application_containers.png",
+      "title": "Application containers image",
+      "description": "These are logical runtime components. The Azure deployment requires separate real-service, HTTPS and owner acceptance. Windows DPAPI and service identities need reviewed Linux replacements.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 122452,
+      "sha256": "34b70d4b31a6d6f6b9ccdddb9f2554222cc26e7de621d643fa37bf6d6c326f69",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "azure-deployment-svg",
+      "filename": "Azure_Deployment.svg",
+      "title": "Azure DNS and deployment",
+      "description": "DNS records are configured. This is the intended deployment and acceptance sequence, not a claim that public HTTPS or application activation is complete.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CONFIGURED DNS / GATED DEPLOYMENT",
+      "media_type": "image/svg+xml",
+      "bytes": 5392,
+      "sha256": "cd3da191229b20d1d9ec91a889ff71e198bb8e9ef1d291416422bf7239391013",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "azure-deployment-mmd",
+      "filename": "Azure_Deployment.mmd",
+      "title": "Azure DNS and deployment editable source",
+      "description": "DNS records are configured. This is the intended deployment and acceptance sequence, not a claim that public HTTPS or application activation is complete.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CONFIGURED DNS / GATED DEPLOYMENT",
+      "media_type": "text/plain",
+      "bytes": 854,
+      "sha256": "b57ba2bb6f4e65f595a9022402903d352b3b78ec1e6f93337b66c4e1deedbdb4",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "azure-deployment-png",
+      "filename": "Azure_Deployment.png",
+      "title": "Azure DNS and deployment image",
+      "description": "DNS records are configured. This is the intended deployment and acceptance sequence, not a claim that public HTTPS or application activation is complete.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CONFIGURED DNS / GATED DEPLOYMENT",
+      "media_type": "image/png",
+      "bytes": 113688,
+      "sha256": "5497b542085122ce591e10b806cb698bd7dd9b78f24fcbb552ddb7606b51347a",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "api-architecture-svg",
+      "filename": "API_Architecture.svg",
+      "title": "API architecture",
+      "description": "A known endpoint or visible API schema does not grant an operation. See the implemented model dictionaries for structure and the current OpenAPI contract for requests.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5948,
+      "sha256": "4e5655278505adba65c3806eb81f1890905834fdc7550c42d1e4c6f1995b7b10",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "api-architecture-mmd",
+      "filename": "API_Architecture.mmd",
+      "title": "API architecture editable source",
+      "description": "A known endpoint or visible API schema does not grant an operation. See the implemented model dictionaries for structure and the current OpenAPI contract for requests.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 920,
+      "sha256": "da550d9b6bcf6ffec6a83e13912c6a980ae65f7a56969ee379354f13eeebd35f",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "api-architecture-png",
+      "filename": "API_Architecture.png",
+      "title": "API architecture image",
+      "description": "A known endpoint or visible API schema does not grant an operation. See the implemented model dictionaries for structure and the current OpenAPI contract for requests.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 115833,
+      "sha256": "c3810ff25d491d310cea66c5dc6bd050633e32b32fe81b2ce29562a1d38520d0",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "05-authenticated-request-sequence-svg",
+      "filename": "05_authenticated_request_sequence.svg",
+      "title": "Authenticated request sequence",
+      "description": "Specific services use their own transaction and recheck boundaries. This diagram describes the shared pattern, not a claim of one identical implementation on every endpoint.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5485,
+      "sha256": "33aeb8ff5516a9c233653333c4d08da4c69a625ebe6609811dcfbdf7ed3f8f39",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "05-authenticated-request-sequence-mmd",
+      "filename": "05_authenticated_request_sequence.mmd",
+      "title": "Authenticated request sequence editable source",
+      "description": "Specific services use their own transaction and recheck boundaries. This diagram describes the shared pattern, not a claim of one identical implementation on every endpoint.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 916,
+      "sha256": "f7605aef7189b3c9c5fc15feb93b5510cd812a52f531762a604429fe2cd0c752",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "05-authenticated-request-sequence-png",
+      "filename": "05_authenticated_request_sequence.png",
+      "title": "Authenticated request sequence image",
+      "description": "Specific services use their own transaction and recheck boundaries. This diagram describes the shared pattern, not a claim of one identical implementation on every endpoint.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 116606,
+      "sha256": "59490726032c4a67dc9afbe5d244cc88a13e897bb0b472bffb475e8af9bb2916",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "document-to-report-svg",
+      "filename": "Document_to_Report.svg",
+      "title": "Document evidence lifecycle",
+      "description": "A document is more than extracted data: its original bytes, provenance, access restrictions, evidence anchors and review history all matter. Receipt is separate from completed review.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5516,
+      "sha256": "b1219f8939ae010756f469b8b90ff3a6e5e8c36730968317c1f1138308e369ad",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "document-to-report-mmd",
+      "filename": "Document_to_Report.mmd",
+      "title": "Document evidence lifecycle editable source",
+      "description": "A document is more than extracted data: its original bytes, provenance, access restrictions, evidence anchors and review history all matter. Receipt is separate from completed review.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 933,
+      "sha256": "22d2a5938bb346189e2d9b74501f76ffd64e467d40811b2c97885e5b7957a281",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "document-to-report-png",
+      "filename": "Document_to_Report.png",
+      "title": "Document evidence lifecycle image",
+      "description": "A document is more than extracted data: its original bytes, provenance, access restrictions, evidence anchors and review history all matter. Receipt is separate from completed review.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 120201,
+      "sha256": "035624283b442cae92038efcbc02bdf04e081487ba2bcc01d13096b0b824b970",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "search-architecture-svg",
+      "filename": "Search_Architecture.svg",
+      "title": "Permission first search",
+      "description": "There is no general automatic four-engine fusion or universal reranking stage. Metadata grids and verified-financial filters are distinct supported paths. External semantic indexing is not enabled.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5561,
+      "sha256": "24ca065a3289e2f345bf4d90f18e92646792f6245965258244802677d30d821e",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "search-architecture-mmd",
+      "filename": "Search_Architecture.mmd",
+      "title": "Permission first search editable source",
+      "description": "There is no general automatic four-engine fusion or universal reranking stage. Metadata grids and verified-financial filters are distinct supported paths. External semantic indexing is not enabled.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 958,
+      "sha256": "93d2c6032cbb5a9b1a7c57afc8e5464dbbd689747140c4c46a2eff9f31c0dc7f",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "search-architecture-png",
+      "filename": "Search_Architecture.png",
+      "title": "Permission first search image",
+      "description": "There is no general automatic four-engine fusion or universal reranking stage. Metadata grids and verified-financial filters are distinct supported paths. External semantic indexing is not enabled.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 119721,
+      "sha256": "105667933a9e642b605d298cf3474d4089ee02b37e9927a699ee1a8ef1c292c3",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "08-ddr-graph-execution-svg",
+      "filename": "08_ddr_graph_execution.svg",
+      "title": "DDR graph execution",
+      "description": "The graph has coordinator, contracts, draft, quality, citations, join, review_task and human_gate nodes. A registry entry does not implement another specialist. Ambiguous live provider completion is not automatically resent.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 7837,
+      "sha256": "35bd1bd3aa4140395d51413d5ed0dd3bcff2b1cbf738229c60609fe3febb49e2",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "08-ddr-graph-execution-mmd",
+      "filename": "08_ddr_graph_execution.mmd",
+      "title": "DDR graph execution editable source",
+      "description": "The graph has coordinator, contracts, draft, quality, citations, join, review_task and human_gate nodes. A registry entry does not implement another specialist. Ambiguous live provider completion is not automatically resent.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 1250,
+      "sha256": "411394f4435c0c9b8bf77d9baf635a9aefe6be629850b9fd23140ca02376d9b0",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "08-ddr-graph-execution-png",
+      "filename": "08_ddr_graph_execution.png",
+      "title": "DDR graph execution image",
+      "description": "The graph has coordinator, contracts, draft, quality, citations, join, review_task and human_gate nodes. A registry entry does not implement another specialist. Ambiguous live provider completion is not automatically resent.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 158552,
+      "sha256": "da7cd32b97542bf2e5564d316ed1e6282c35ce037fd788838007d8efe2bcf9ad",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "09-report-review-and-release-svg",
+      "filename": "09_report_review_and_release.svg",
+      "title": "Report review and release",
+      "description": "The former generic agent chain is replaced by the actual report and approval boundaries. AI checks do not replace lawyer or audience decisions.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5451,
+      "sha256": "b1a657e8aa50096eaa6820f0561c9ec042f4b617e34bdf255021d092c1d7f22e",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "09-report-review-and-release-mmd",
+      "filename": "09_report_review_and_release.mmd",
+      "title": "Report review and release editable source",
+      "description": "The former generic agent chain is replaced by the actual report and approval boundaries. AI checks do not replace lawyer or audience decisions.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 952,
+      "sha256": "34bcff7d878ec366f6b5e947e24587d409ae6cc66b6508ce9ea1d672cb5c892d",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "09-report-review-and-release-png",
+      "filename": "09_report_review_and_release.png",
+      "title": "Report review and release image",
+      "description": "The former generic agent chain is replaced by the actual report and approval boundaries. AI checks do not replace lawyer or audience decisions.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 117388,
+      "sha256": "24615b35e022a2bc6be479bb07ecac298b775d4edcd945b9dba958112fd6773c",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "10-financial-evidence-and-decisions-svg",
+      "filename": "10_financial_evidence_and_decisions.svg",
+      "title": "Financial evidence and decisions",
+      "description": "This baseline does not implement a general financial analyst agent, broad automatic table recognition, or a valuation/materiality engine.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5351,
+      "sha256": "a5066b13d95bdaa1eece5452f0a61eb9a7c2dd99fb0f219745941421385ef977",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "10-financial-evidence-and-decisions-mmd",
+      "filename": "10_financial_evidence_and_decisions.mmd",
+      "title": "Financial evidence and decisions editable source",
+      "description": "This baseline does not implement a general financial analyst agent, broad automatic table recognition, or a valuation/materiality engine.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 940,
+      "sha256": "6435bc6aa5f696ff90ce4e3ef8bba9b8f18bb31f838751417c3778b412973165",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "10-financial-evidence-and-decisions-png",
+      "filename": "10_financial_evidence_and_decisions.png",
+      "title": "Financial evidence and decisions image",
+      "description": "This baseline does not implement a general financial analyst agent, broad automatic table recognition, or a valuation/materiality engine.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 114749,
+      "sha256": "238671d35b988649c2509dd54cdefca6b851b9db5bd2d7c773fba1f7f3ef445b",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "11-playbook-change-and-approved-rerun-svg",
+      "filename": "11_playbook_change_and_approved_rerun.svg",
+      "title": "Playbook change and approved rerun",
+      "description": "Publication does not silently rerun historic material, replace a reviewed finding or republish a client package.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5308,
+      "sha256": "2fb67220050b56f35e35c35c4ad7e28b95415519f6fd61977b1e38f2f2f4b98f",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "11-playbook-change-and-approved-rerun-mmd",
+      "filename": "11_playbook_change_and_approved_rerun.mmd",
+      "title": "Playbook change and approved rerun editable source",
+      "description": "Publication does not silently rerun historic material, replace a reviewed finding or republish a client package.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 943,
+      "sha256": "87b8ac7240084c8ac0db49b89231b6ac16e1480af8e9e672ea64404ac84ed9b9",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "11-playbook-change-and-approved-rerun-png",
+      "filename": "11_playbook_change_and_approved_rerun.png",
+      "title": "Playbook change and approved rerun image",
+      "description": "Publication does not silently rerun historic material, replace a reviewed finding or republish a client package.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 115062,
+      "sha256": "5604d1c8dd4df37589338fa91308657cf2588659862ffd9b298fd54f20dba62e",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "access-and-release-svg",
+      "filename": "Access_and_Release.svg",
+      "title": "Access and audience boundaries",
+      "description": "Each source or output retains its restrictions. The shared policy engine applies current access rather than trusting the portal, an old link, a cached result or an administrator title.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5515,
+      "sha256": "97af553465a3628d5860a47c324cebeba9cfc65eb14f67506a9028dbc3f96e23",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "access-and-release-mmd",
+      "filename": "Access_and_Release.mmd",
+      "title": "Access and audience boundaries editable source",
+      "description": "Each source or output retains its restrictions. The shared policy engine applies current access rather than trusting the portal, an old link, a cached result or an administrator title.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 924,
+      "sha256": "8bd7e286d9fdd70c26d279e05740d4035e00dcd8023c683b785f337ea5c90e80",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "access-and-release-png",
+      "filename": "Access_and_Release.png",
+      "title": "Access and audience boundaries image",
+      "description": "Each source or output retains its restrictions. The shared policy engine applies current access rather than trusting the portal, an old link, a cached result or an administrator title.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 117881,
+      "sha256": "902bcd848c0764cb258c758c970aad9aea98b03f16d53654088f2df73427a28c",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "13-sanitized-source-disclosure-svg",
+      "filename": "13_sanitized_source_disclosure.svg",
+      "title": "Sanitized source disclosure",
+      "description": "This is a new text-only artifact workflow, not a claim that the original PDF, Word or spreadsheet has been safely redacted in place.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5341,
+      "sha256": "572faf67b71c3234ef1adc73f5ebec200e6d84c94f7567a38a0f9d22a0ac9db0",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "13-sanitized-source-disclosure-mmd",
+      "filename": "13_sanitized_source_disclosure.mmd",
+      "title": "Sanitized source disclosure editable source",
+      "description": "This is a new text-only artifact workflow, not a claim that the original PDF, Word or spreadsheet has been safely redacted in place.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 950,
+      "sha256": "ec288b4c44bd48554cbb1366faa47b157f19b13b26844a52e1fefd6c4b4faf02",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "13-sanitized-source-disclosure-png",
+      "filename": "13_sanitized_source_disclosure.png",
+      "title": "Sanitized source disclosure image",
+      "description": "This is a new text-only artifact workflow, not a claim that the original PDF, Word or spreadsheet has been safely redacted in place.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 115642,
+      "sha256": "a89782b699ce8a29a83af6c505ff35914196ea9a1c91a20f67623588b22f89bf",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "14-durable-work-and-failure-handling-svg",
+      "filename": "14_durable_work_and_failure_handling.svg",
+      "title": "Durable work and failure handling",
+      "description": "The database supplies durable work records. Azure Service Bus, Redis or a managed orchestrator are not silently substituted into this demo.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5358,
+      "sha256": "9d248432904546865efe00a4f5193dab868c07449497d9fae4c63fb9c95a3f4a",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "14-durable-work-and-failure-handling-mmd",
+      "filename": "14_durable_work_and_failure_handling.mmd",
+      "title": "Durable work and failure handling editable source",
+      "description": "The database supplies durable work records. Azure Service Bus, Redis or a managed orchestrator are not silently substituted into this demo.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 941,
+      "sha256": "29749ae4cea8f8c28523f57872d6db8816e84cc09883d34c9dcdacbbbd1d08d9",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "14-durable-work-and-failure-handling-png",
+      "filename": "14_durable_work_and_failure_handling.png",
+      "title": "Durable work and failure handling image",
+      "description": "The database supplies durable work records. Azure Service Bus, Redis or a managed orchestrator are not silently substituted into this demo.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 116518,
+      "sha256": "7a7d80fb544378436064358020f19119d3570c55c6221d3f1efff8799e80dd41",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "15-audit-backup-and-retention-svg",
+      "filename": "15_audit_backup_and_retention.svg",
+      "title": "Audit backup and retention",
+      "description": "Local integrity evidence is not external WORM storage or proven disaster recovery. The Azure restore and service acceptance are separate live operations.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5482,
+      "sha256": "62e56bde01d870c1e2df17388867a98830c01d5df376981d90ce0e6bf451b6fc",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "15-audit-backup-and-retention-mmd",
+      "filename": "15_audit_backup_and_retention.mmd",
+      "title": "Audit backup and retention editable source",
+      "description": "Local integrity evidence is not external WORM storage or proven disaster recovery. The Azure restore and service acceptance are separate live operations.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 961,
+      "sha256": "feb75b71976d8a78a1e974246d2119bc01ff85910677df915c14186102e47ab8",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "15-audit-backup-and-retention-png",
+      "filename": "15_audit_backup_and_retention.png",
+      "title": "Audit backup and retention image",
+      "description": "Local integrity evidence is not external WORM storage or proven disaster recovery. The Azure restore and service acceptance are separate live operations.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 119112,
+      "sha256": "ba2adadf5dc6265adc4758547f80a7ce4681a878c314b140437d66cb75b72fd3",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "schema-story-svg",
+      "filename": "Schema_Story.svg",
+      "title": "The data story",
+      "description": "These arrows describe the business lifecycle, not a foreign key for every step. The next core entity diagram and 17 detailed model views show declared database relationships. The proposed 809-field design is separate.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 5564,
+      "sha256": "910ed0f02825ec67da66f9e605f7689efd55758dd7f0bdc15681fc4eac2a8356",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "schema-story-mmd",
+      "filename": "Schema_Story.mmd",
+      "title": "The data story editable source",
+      "description": "These arrows describe the business lifecycle, not a foreign key for every step. The next core entity diagram and 17 detailed model views show declared database relationships. The proposed 809-field design is separate.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 939,
+      "sha256": "f3bb3df2279e7d92dc86f46c083593d744b21b59d6eaf05b296564b546170e90",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "schema-story-png",
+      "filename": "Schema_Story.png",
+      "title": "The data story image",
+      "description": "These arrows describe the business lifecycle, not a foreign key for every step. The next core entity diagram and 17 detailed model views show declared database relationships. The proposed 809-field design is separate.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 121019,
+      "sha256": "8366a3eda12a8a3902a96646015879d64112e46e8d00b5469e40f001794ba82c",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "17-implemented-core-erd-svg",
+      "filename": "17_implemented_core_erd.svg",
+      "title": "Implemented core ERD",
+      "description": "This visual ERD shows selected real foreign keys. Each arrow points from the child record to its referenced parent. Additional keys, optional links and all 153 tables are documented in the 17 area views and complete relationship CSV.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 8880,
+      "sha256": "b49ef82fe07a76d978ba77f267b5f73eede8ddb1de08cb1ee1bea8b84696ae24",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "17-implemented-core-erd-mmd",
+      "filename": "17_implemented_core_erd.mmd",
+      "title": "Implemented core ERD editable source",
+      "description": "This visual ERD shows selected real foreign keys. Each arrow points from the child record to its referenced parent. Additional keys, optional links and all 153 tables are documented in the 17 area views and complete relationship CSV.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 1762,
+      "sha256": "7667769d3b792c513d159351c0a0f152d0bdf8cf83a7d0b8ede55a482a187a2a",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "17-implemented-core-erd-png",
+      "filename": "17_implemented_core_erd.png",
+      "title": "Implemented core ERD image",
+      "description": "This visual ERD shows selected real foreign keys. Each arrow points from the child record to its referenced parent. Additional keys, optional links and all 153 tables are documented in the 17 area views and complete relationship CSV.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 127540,
+      "sha256": "0241c96c2c841755428e40d13574866b53d4a7855dff22336b246927fe3a6c34",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "18-core-entity-relationships-svg",
+      "filename": "18_core_entity_relationships.svg",
+      "title": "Core entity relationships",
+      "description": "Solid arrows are declared foreign keys from child to parent. This is a selected core view; the 17 detailed area views cover every table. Report body_json and release references_json retain additional provenance that is not a declared foreign key.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/svg+xml",
+      "bytes": 10261,
+      "sha256": "fe177029babcd201592fc5b09795ab5f380676d65113e266b857544ddee11234",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "18-core-entity-relationships-mmd",
+      "filename": "18_core_entity_relationships.mmd",
+      "title": "Core entity relationships editable source",
+      "description": "Solid arrows are declared foreign keys from child to parent. This is a selected core view; the 17 detailed area views cover every table. Report body_json and release references_json retain additional provenance that is not a declared foreign key.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "text/plain",
+      "bytes": 2778,
+      "sha256": "584a9a49a31805c6bde16eaa034ebf6d9de1c55c9d1368fc9ef77e8a784d1395",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "18-core-entity-relationships-png",
+      "filename": "18_core_entity_relationships.png",
+      "title": "Core entity relationships image",
+      "description": "Solid arrows are declared foreign keys from child to parent. This is a selected core view; the 17 detailed area views cover every table. Report body_json and release references_json retain additional provenance that is not a declared foreign key.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "CURRENT CODE",
+      "media_type": "image/png",
+      "bytes": 177740,
+      "sha256": "3a44a95e66274018d9440ea1b11e957331bf4a83708e52d5168da22cdca70a36",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "19-enterprise-integration-boundaries-svg",
+      "filename": "19_enterprise_integration_boundaries.svg",
+      "title": "Enterprise integration boundaries",
+      "description": "The enterprise services shown are target integrations. The candidate does not claim working firm Entra, Intapp, iManage, M365 or enterprise AI connectivity.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "TARGET DESIGN / NOT IMPLEMENTED CONNECTIONS",
+      "media_type": "image/svg+xml",
+      "bytes": 5557,
+      "sha256": "34f2c7815bbf666be492df56621eab7440e2b71e01c722b871181383488f9884",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "19-enterprise-integration-boundaries-mmd",
+      "filename": "19_enterprise_integration_boundaries.mmd",
+      "title": "Enterprise integration boundaries editable source",
+      "description": "The enterprise services shown are target integrations. The candidate does not claim working firm Entra, Intapp, iManage, M365 or enterprise AI connectivity.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "TARGET DESIGN / NOT IMPLEMENTED CONNECTIONS",
+      "media_type": "text/plain",
+      "bytes": 985,
+      "sha256": "535b929cd13b50c77f20f983087eb5f76b5a91a54a8eccba44570d0076e90081",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "19-enterprise-integration-boundaries-png",
+      "filename": "19_enterprise_integration_boundaries.png",
+      "title": "Enterprise integration boundaries image",
+      "description": "The enterprise services shown are target integrations. The candidate does not claim working firm Entra, Intapp, iManage, M365 or enterprise AI connectivity.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "TARGET DESIGN / NOT IMPLEMENTED CONNECTIONS",
+      "media_type": "image/png",
+      "bytes": 121173,
+      "sha256": "b00c8bf301484b861b4e2c7bdc7a54a7ffd060f055da0ae4c71421cdfd1df1f9",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "20-additional-specialist-roadmap-svg",
+      "filename": "20_additional_specialist_roadmap.svg",
+      "title": "Additional specialist roadmap",
+      "description": "This replaces the old parallel-specialist image as a roadmap. Registering a role does not make it executable; only the implemented contracts specialist is claimed today.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "TARGET DESIGN / FUTURE SPECIALISTS",
+      "media_type": "image/svg+xml",
+      "bytes": 5677,
+      "sha256": "908185a7f9bef907b3ac6c7535e32fa8cb5d47a42d77171f6b29cefd5d4d5d83",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "20-additional-specialist-roadmap-mmd",
+      "filename": "20_additional_specialist_roadmap.mmd",
+      "title": "Additional specialist roadmap editable source",
+      "description": "This replaces the old parallel-specialist image as a roadmap. Registering a role does not make it executable; only the implemented contracts specialist is claimed today.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "TARGET DESIGN / FUTURE SPECIALISTS",
+      "media_type": "text/plain",
+      "bytes": 987,
+      "sha256": "60cfaacf6b00111757d8d89fb69cd1d96dcb7c441de6b4ea8f492a6c0fd4f8e5",
+      "updated": "2026-11-24"
+    },
+    {
+      "id": "20-additional-specialist-roadmap-png",
+      "filename": "20_additional_specialist_roadmap.png",
+      "title": "Additional specialist roadmap image",
+      "description": "This replaces the old parallel-specialist image as a roadmap. Registering a role does not make it executable; only the implemented contracts specialist is claimed today.",
+      "category": "Diagrams",
+      "audiences": [
+        "firm",
+        "halden",
+        "castlegate"
+      ],
+      "status": "TARGET DESIGN / FUTURE SPECIALISTS",
+      "media_type": "image/png",
+      "bytes": 126088,
+      "sha256": "6a0167851015d42c1f0c56ac126acb1b2e7a97f35702a3f8ed95f35d0c07e676",
       "updated": "2026-11-24"
     }
   ]

@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant UI as EXISTING signed-in portal
+    participant API as EXISTING shared FastAPI
+    participant AUTH as EXISTING in-process identity
+    participant PDP as EXISTING policy and table service
+    participant DB as EXISTING repository and PostgreSQL
+    UI->>API: POST inventory table query with host cookie Origin and CSRF
+    API->>AUTH: Authenticate current account session host and organization
+    AUTH->>DB: Read session account and current principal inputs
+    DB-->>AUTH: Current server-owned identity and scope
+    AUTH-->>API: Authenticated principal or 401/403
+    API->>PDP: Begin fresh matter and authorization-input check
+    PDP->>DB: Bounded allowlisted source metadata query
+    DB-->>PDP: Candidate metadata and policy state
+    PDP->>PDP: Per-record policy then permitted counts sort and page
+    PDP->>AUTH: Authenticate again before returning prepared content
+    PDP->>DB: Refresh relevant current authorization inputs
+    alt Authority and exact saved configuration remain valid
+        PDP-->>API: draw recordsTotal recordsFiltered data count_basis
+        API-->>UI: 200 with X-Correlation-ID and no-store
+    else Session scope or configuration changed
+        PDP-->>API: 401 403 or 409 with no prepared rows or counts
+        API-->>UI: Safe error and correlation header
+        UI->>UI: Clear protected rows selection and evidence panes
+    end
+    Note over API,DB: Participants are in-process responsibilities, not deployed auth or policy microservices
+    Note over UI,API: General table response has no universal policy revision field

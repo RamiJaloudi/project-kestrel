@@ -1,0 +1,29 @@
+flowchart LR
+    O[SYNTHETIC original contract workbook version 1]
+    O --> T[Terms and annual fee evidence]
+    O --> N[Counsel-labelled privileged paragraph]
+    O --> P[Clean-team pricing worksheet]
+    O --> W[Cleared internal review and retained work]
+    W --> L[Reviewed legal revision and internal DDR]
+    W --> F[Internal exact financial fact]
+
+    T --> M[Exact permitted removal plan]
+    N --> M
+    P --> M
+    M --> G{Whole-source prohibition or unsafe scope}
+    G -->|yes| STOP[No bank artifact]
+    G -->|no and independently reviewed| B[Rebuild text-only PDF and validate omitted material]
+    B --> A[Independent exact senior legal and antitrust decisions]
+    A --> D[Bank-approved derivative with its own identity and anchors]
+    D --> DF[Separate derivative-backed fact capture verification and release]
+    DF --> BG{Organization and matter gates plus current fact and artifact authority}
+    BG --> BANK[Bank view and derivative-only citation]
+    N -. no original advice in output .-> STOP
+    P -. no original pricing worksheet in output .-> STOP
+
+    classDef restricted fill:#111111,color:#ffffff,stroke:#111111;
+    classDef ordinary fill:#ffffff,color:#111111,stroke:#111111;
+    classDef check fill:#eeeeee,color:#111111,stroke:#777777;
+    class O,N,P,W,L,F restricted;
+    class T,B,D,DF,BANK ordinary;
+    class M,G,STOP,A,BG check;

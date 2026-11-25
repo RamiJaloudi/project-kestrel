@@ -3,10 +3,10 @@
 You are the lead architect and implementation engineer for Project Kestrel. **This folder is standalone**. Do not ask for earlier exports or invent requirements from them.
 
 ## Read in this order
-1. This public snapshot intentionally omits supplied third-party original briefs and forms. Read `docs/00_SOURCE_AND_SCOPE.md` for the recorded scope; obtain authorized originals separately if required for source verification.
-2. `docs/00_SOURCE_AND_SCOPE.md`, `docs/01_REQUIREMENTS_AND_DECISIONS.md`, `docs/02_CONFLICTS_ROLLOUT.md`.
-3. `docs/03_HLD.md` through `docs/16_DELIVERY_AND_PRESENTATION.md`.
-4. `prompts/01_MASTER_PROMPT.md` and current sprint prompt.
+1. This public snapshot intentionally omits supplied third-party original briefs and forms. Read `docs/01_design/00_SOURCE_AND_SCOPE.md` for the recorded scope; obtain authorized originals separately if required for source verification.
+2. `docs/01_design/00_SOURCE_AND_SCOPE.md`, `docs/01_design/01_REQUIREMENTS_AND_DECISIONS.md`, `docs/01_design/02_CONFLICTS_ROLLOUT.md`.
+3. Read `docs/README.md` and `diagrams/README.md`. The numbered design, workflow, security and operations sections retain their original document identifiers.
+4. `docs/08_development/prompts/01_MASTER_PROMPT.md` and current sprint prompt.
 
 ## Task hierarchy
 - Ship the **design assessment** (4–6 hours suggested in the brief) and a **focused optional demo**. Do not sacrifice the legal/technical presentation to an enormous codebase.
@@ -30,3 +30,7 @@ Windows-friendly Python 3.11+, FastAPI/Pydantic, SQLAlchemy + Alembic, PostgreSQ
 
 ## Reporting
 At the start of each sprint: print chosen scope, files to change, acceptance tests, assumptions and safe rollback. After: show tests actually run, results, remaining limitations and next sprint. Do not claim functionality exists until implemented and verified. All demo interfaces and screenshots should clearly identify fictional data.
+
+## Repository organization
+
+Use `diagrams/` as the canonical architecture and data diagram source. Generated copies in the resource library support authenticated downloads. Documentation is grouped under numbered topic folders; consult `docs/DOCUMENT_PATH_MAP.csv` for earlier locations. Keep executable backend/frontend/deployment paths stable. Archive older diagram inputs rather than presenting them as current implementation.

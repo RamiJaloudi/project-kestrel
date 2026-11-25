@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Permission first search</title><desc id="desc">There is no general automatic four-engine fusion or universal reranking stage. Metadata grids and verified-financial filters are distinct supported paths. External semantic indexing is not enabled.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Permission first search</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Authorize the corpus</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Current identity and organization</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Matter, walls and source labels</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">External corpus is released content</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Choose a supported mode</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Automatic defaults to lexical BM25</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Internal semantic or hybrid is explicit</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Financial mode uses typed facts</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Check provider permission</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">No default model call for lexical</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Semantic needs permitted processing</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Apply shared provider cost limits</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Rank eligible evidence</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Search only permitted passages</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Keep exact source-version anchors</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Verify financial fact dimensions</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Present cited results</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Open only permitted citations</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Mark missing or unknown evidence</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">AI prose remains unreviewed output</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Recheck retained answers</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Old answers do not preserve access</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Revocation can deny stored results</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Search is not complete diligence</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">There is no general automatic four-engine fusion or universal reranking stage. Metadata grids and verified-financial filters are distinct</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">supported paths. External semantic indexing is not enabled.</text>
+</svg>

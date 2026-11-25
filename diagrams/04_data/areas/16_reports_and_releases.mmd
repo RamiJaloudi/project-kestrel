@@ -1,0 +1,57 @@
+erDiagram
+  accounts {
+    string id PK
+  }
+  checklist_coverage_decisions {
+    string id PK
+  }
+  document_policy_versions {
+    string id PK
+  }
+  matters {
+    string id PK
+  }
+  policy_recipients {
+    string policy_id FK
+    string account_id FK
+    string id PK
+  }
+  policy_sources {
+    string artifact_id FK
+    string source_id FK
+    string id PK
+  }
+  release_approvals {
+    string release_id FK
+    string actor_id FK
+    string id PK
+  }
+  release_packages {
+    string policy_id FK
+    string created_by FK
+    string id PK
+  }
+  report_checklist_snapshots {
+    string matter_id FK
+    string report_id FK
+    string coverage_event_id FK
+    string id PK
+  }
+  report_versions {
+    string previous_id FK
+    string release_id FK
+    string id PK
+  }
+  document_policy_versions ||..o{ policy_recipients : "policy_id"
+  accounts ||..o{ policy_recipients : "account_id"
+  document_policy_versions ||..o{ policy_sources : "artifact_id"
+  document_policy_versions ||..o{ policy_sources : "source_id"
+  release_packages ||..o{ release_approvals : "release_id"
+  accounts ||..o{ release_approvals : "actor_id"
+  document_policy_versions ||..o| release_packages : "policy_id"
+  accounts ||..o{ release_packages : "created_by"
+  matters ||..o{ report_checklist_snapshots : "matter_id"
+  report_versions ||..o{ report_checklist_snapshots : "report_id"
+  checklist_coverage_decisions ||..o{ report_checklist_snapshots : "coverage_event_id"
+  report_versions |o..o| report_versions : "previous_id"
+  release_packages ||..o| report_versions : "release_id"

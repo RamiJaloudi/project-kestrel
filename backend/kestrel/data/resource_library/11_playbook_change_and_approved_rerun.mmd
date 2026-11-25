@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Author a replacement draft<br/>Version the playbook or profile<br/>Retain exact change and tests<br/>Technical author cannot self-approve"]
+  N2["Independent legal decision<br/>Authorized Legal SME reviews<br/>Approve the exact revision<br/>Publication is its own action"]
+  N3["Retain a material impact<br/>Identify affected source versions<br/>Preserve prior findings and releases<br/>Create protected tasks and notices"]
+  N4["Authorize an exact scope<br/>Independent cleared SME decides<br/>Rationale and impact hash required<br/>Reading a notice is not approval"]
+  N5["Queue the approved rerun<br/>Explicit idempotent queue action<br/>Workers recheck current authority<br/>New candidates or new draft run"]
+  N6["Review and release again<br/>Keep historical approved versions<br/>Lawyers review new results<br/>Separate audience decision again"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

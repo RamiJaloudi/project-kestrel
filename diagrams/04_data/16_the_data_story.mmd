@@ -1,0 +1,12 @@
+flowchart LR
+  N1["People and matters<br/>organizations and accounts<br/>matters and matter_assignments<br/>wall and clean-team records"]
+  N2["Documents and evidence<br/>documents and document_sources<br/>source_versions retain exact versions<br/>Policy and evidence anchors persist"]
+  N3["Analysis and lawyer review<br/>source_findings are candidates<br/>legal_finding_revisions retain review<br/>Playbook and run versions bind results"]
+  N4["Reports and release<br/>report_versions retain body_json<br/>release_packages retain references_json<br/>release_approvals record decisions"]
+  N5["Operations and governance<br/>DDR attempts, artifacts and tasks<br/>Impacts, notifications and reruns<br/>Immutable decision histories"]
+  N6["Audit and lifecycle<br/>audit_events and source_archives<br/>Signing snapshots and holds<br/>Controlled eligible-copy deletion"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

@@ -1,0 +1,63 @@
+erDiagram
+    matters ||--o{ documents : scope
+    matters ||--o{ source_versions : scope
+    documents ||--o{ document_version_links : versions
+    source_versions ||--o| document_version_links : accepted_projection
+    source_versions ||--o{ document_custodians : captured_scope
+    record_custodians ||--o{ document_custodians : custodian
+    documents ||--o{ document_custodians : logical_identity
+    source_versions ||--o{ review_tasks : source
+    review_tasks ||--o{ review_task_events : revisions
+    accounts ||--o{ review_task_events : actor_and_assignee
+    review_tasks ||--o{ review_sessions : observation_sessions
+    review_sessions ||--o{ review_session_receipts : immutable_observations
+    review_tasks ||--o{ review_sla_bindings : explicit_cycle_binding
+    review_sla_policies ||--o{ review_sla_bindings : pinned_policy
+    sla_calendars ||--o{ review_sla_policies : pinned_calendar
+
+    document_policy_versions ||--o| source_versions : original_policy
+    document_policy_versions ||--o{ policy_sources : artifact_or_parent
+    source_versions ||--o{ content_label_assertions : source_ranges
+    content_label_assertions ||--o{ content_label_decisions : decisions
+    source_versions ||--o{ source_findings : candidates
+    governance_versions ||--o{ source_findings : playbook
+    source_findings o|--o{ legal_finding_revisions : optional_candidate_origin
+    source_versions ||--o{ legal_finding_revisions : source
+    accounts ||--o{ legal_finding_revisions : reviewer
+
+    source_versions ||--o{ financial_facts : retained_source
+    financial_facts ||--o{ financial_fact_decisions : exact_decisions
+    financial_facts ||--o{ financial_fact_contexts : internal_revisions
+    financial_fact_contexts ||--o{ financial_context_evidence : exact_spans
+    financial_fact_contexts ||--o{ financial_context_decisions : independent_decisions
+    source_versions ||--o{ financial_extraction_candidates : unapproved_staging
+    financial_facts ||--o{ financial_reconciliations : left_or_right
+    financial_reconciliations ||--o{ financial_resolutions : decisions
+
+    source_versions ||--o{ disclosure_plans : retained_source
+    disclosure_plans ||--o| disclosure_plan_reviews : independent_plan_review
+    disclosure_plans ||--o| disclosure_artifacts : rebuilt_output
+    disclosure_artifacts ||--o| disclosure_validations : exact_container_check
+    disclosure_artifacts ||--o{ disclosure_decisions : exact_bundle_decisions
+    disclosure_artifacts ||..o{ financial_facts : derivative_reference_when_selected
+
+    matters ||--o{ ddr_runs : scope
+    governance_versions ||--o{ ddr_runs : legal_playbook
+    ddr_runs ||--o{ ddr_evidence : frozen_sources
+    legal_finding_revisions ||..o{ ddr_evidence : service_validated_revision_reference
+    ddr_runs ||--o{ ddr_artifacts : retained_results
+    ddr_runs ||--o{ ddr_tasks : human_review
+    ddr_artifacts ||--o{ ddr_tasks : draft_and_validation
+    ddr_tasks ||--o{ ddr_decisions : independent_exact_decisions
+    ddr_runs ||--o{ ddr_report_links : run_report_lineage
+    ddr_tasks ||--o{ ddr_report_links : reviewed_draft
+    report_versions ||--o| ddr_report_links : optional_graph_origin
+    release_packages ||--o| report_versions : version_body
+    release_packages ||--o{ release_approvals : audience_decisions
+    accounts ||--o{ release_approvals : decision_actor
+    legal_finding_revisions }o..o{ report_versions : validated_content_references
+
+    matters ||--o| matter_lifecycle : controlled_current_state
+    matters ||--o{ lifecycle_decisions : signing_closing_hold
+    matters ||--o{ audit_events : protected_event_scope
+    accounts o|..o{ audit_events : historical_actor_reference_if_present

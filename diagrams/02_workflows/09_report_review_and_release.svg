@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Report review and release</title><desc id="desc">The former generic agent chain is replaced by the actual report and approval boundaries. AI checks do not replace lawyer or audience decisions.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Report review and release</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Select reviewed evidence</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Permitted lawyer-reviewed findings</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Exact source and finding revisions</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Coverage and open items retained</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Create a report version</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Draft prose and annex snapshots</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Word draft for internal review</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Keep report and content hashes</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Check quality and citations</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Verify the retained evidence</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Fix through an explicit new version</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Changed drafts need new review</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Independent internal decision</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Clearance and independence checked</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Approve or reject the exact version</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Record rationale and history</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Separate audience release</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Halden and Castlegate differ</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Apply antitrust gate when required</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">No unreviewed external publication</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Download permitted package</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Recheck source and audience scope</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Keep prior approved versions</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Revocation cannot recall copies</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">The former generic agent chain is replaced by the actual report and approval boundaries. AI checks do not replace lawyer or audience</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">decisions.</text>
+</svg>

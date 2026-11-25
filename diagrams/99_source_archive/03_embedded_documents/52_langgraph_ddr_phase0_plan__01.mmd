@@ -1,0 +1,25 @@
+flowchart TD
+    UI[Reports: New DDR] --> API[Authenticated run API + CSRF + idempotency]
+    API --> PLAN[Coordinator: scope, budget, versions, policy]
+    PLAN --> COVER[Checklist coverage and permitted inventory]
+    COVER --> RETRIEVE[Snapshot of eligible reviewed findings]
+    RETRIEVE --> SPEC[Contracts specialist first; bounded Send fan-out later]
+    SPEC --> SYN[Synthesis: preserve reviewed severity and uncertainty]
+    SYN --> DRAFT[Persist an internal unapproved report version]
+    DRAFT --> QUALITY[Independent AI quality review]
+    DRAFT --> VERIFY[Deterministic source, span and claim-reference verification]
+    QUALITY --> JOIN{Bounded validation decision}
+    VERIFY --> JOIN
+    JOIN -->|missing evidence| GAP[Draft gap/request task for a lawyer]
+    JOIN -->|one permitted revision| SPEC
+    JOIN -->|ready| WAIT[LangGraph attorney-review interrupt]
+    WAIT --> HUMAN[Authenticated internal review decision in database]
+    HUMAN --> RESUME[Reauthorize and revalidate snapshot on resume]
+    RESUME --> APPROVED[Internally approved exact report version]
+    APPROVED --> RELEASE[Existing independent audience release + antitrust gates]
+    RELEASE --> EXPORT[Existing permission-checked exports and audience portals]
+    POLICY[Canonical ABAC, source lineage and processing policy] -. every tool and transition .-> RETRIEVE
+    POLICY -.-> RESUME
+    POLICY -.-> EXPORT
+    CHECKPOINT[(Local durable checkpoints: opaque references only)] -.-> WAIT
+    AUDIT[(Scoped events, jobs, cost ledger and SME tasks)] -.-> HUMAN

@@ -1,0 +1,37 @@
+flowchart LR
+    V[Seller VDR and metadata] --> C[Capture identity and version hashes]
+    C --> X[Extract evidence and retain context]
+    X --> P{Current policy and permitted processing}
+
+    subgraph R[Parallel source-cleared review]
+        direction TB
+        L[Legal candidates and exact citations] --> H[Lawyer confirm correct or reject]
+        F[Financial evidence and exact dimensions] --> Q[Independent verification and reconciliation]
+    end
+
+    P --> L
+    P --> F
+    H --> D[DDR draft from reviewed findings]
+    D --> I[Independent exact internal report decision]
+    Q --> S[Separate disclosure plan and validated text artifact]
+    I --> A{Exact audience approval and antitrust when required}
+    S --> A
+    A --> O[Authorized reports derivatives and facts]
+    O --> Z[Signing snapshot then retention and controlled disposal]
+
+    G[Current identity plus retained restriction checks at every stage]
+    G -.-> C
+    G -.-> X
+    G -.-> R
+    G -.-> D
+    G -.-> S
+    G -.-> A
+    G -.-> O
+    G -.-> Z
+
+    classDef gate fill:#111111,color:#ffffff,stroke:#111111;
+    classDef record fill:#ffffff,color:#111111,stroke:#111111;
+    classDef control fill:#eeeeee,color:#111111,stroke:#777777,stroke-dasharray:5 5;
+    class P,A gate;
+    class V,C,X,L,H,F,Q,D,I,S,O,Z record;
+    class G control;

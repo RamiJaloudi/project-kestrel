@@ -1,6 +1,6 @@
 ## Updated local launcher
 
-Use the project-root START_KESTREL.bat / STOP_KESTREL.bat / CREATE_ACCOUNT.bat. See ../docs/21_LOCAL_PREVIEW_AND_CONTROLS.md for three portals, grouped Swagger, HTTP preview and HTTPS login. These controls use .runtime/kestrel-local.db; manual commands below use the configured working-directory database unless overridden.
+Use the project-root START_KESTREL.bat / STOP_KESTREL.bat / CREATE_ACCOUNT.bat. See ../docs/04_operations/21_LOCAL_PREVIEW_AND_CONTROLS.md for three portals, grouped Swagger, HTTP preview and HTTPS login. These controls use .runtime/kestrel-local.db; manual commands below use the configured working-directory database unless overridden.
 
 # S1 local authentication and policy foundation
 

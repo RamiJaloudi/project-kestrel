@@ -1,0 +1,187 @@
+# Document Evidence
+
+Implemented model snapshot. This area owns 17 tables. Key-only parent tables provide cross-area context.
+
+```mermaid
+erDiagram
+  accounts {
+    string id PK
+  }
+  ai_operations {
+    string id PK
+  }
+  content_impact_tasks {
+    string impact_id FK
+    string task_id FK
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  content_label_assertions {
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  content_label_decisions {
+    string assertion_id FK
+    string actor_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  content_label_impacts {
+    string assertion_id FK
+    string policy_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  custodian_link_retirements {
+    string link_id FK
+    string actor_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  document_custodians {
+    string document_id FK
+    string custodian_id FK
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  document_parties {
+    string document_id FK
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  document_policy_versions {
+    string matter_id FK
+    string id PK
+  }
+  document_review_versions {
+    string source_id FK
+    string previous_id FK
+    string reviewer_id FK
+    string id PK
+  }
+  document_sources {
+    string matter_id FK
+    string document_id FK
+    string source_id FK
+    string import_row_id FK
+    string id PK
+  }
+  document_version_links {
+    string source_id PK, FK
+    string document_id FK
+    string matter_id FK
+  }
+  documents {
+    string matter_id FK
+    string id PK
+  }
+  matters {
+    string id PK
+  }
+  ocr_jobs {
+    string source_id FK
+    string requested_by FK
+    string result_source_id FK
+    string id PK
+  }
+  ocr_verifications {
+    string source_id PK, FK
+    string actor_id FK
+  }
+  record_custodians {
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  review_tasks {
+    string id PK
+  }
+  source_embeddings {
+    string created_by FK
+    string operation_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  source_versions {
+    string policy_id FK
+    string matter_id FK
+    string previous_id FK
+    string uploaded_by FK
+    string id PK
+  }
+  vdr_import_rows {
+    string id PK
+  }
+  content_label_impacts ||..o| content_impact_tasks : "impact_id"
+  review_tasks ||..o| content_impact_tasks : "task_id"
+  accounts ||..o{ content_impact_tasks : "created_by"
+  matters ||..o{ content_impact_tasks : "matter_id"
+  source_versions ||..o{ content_impact_tasks : "source_id"
+  accounts ||..o{ content_label_assertions : "created_by"
+  matters ||..o{ content_label_assertions : "matter_id"
+  source_versions ||..o{ content_label_assertions : "source_id"
+  content_label_assertions ||..o{ content_label_decisions : "assertion_id"
+  accounts ||..o{ content_label_decisions : "actor_id"
+  matters ||..o{ content_label_decisions : "matter_id"
+  source_versions ||..o{ content_label_decisions : "source_id"
+  content_label_assertions ||..o{ content_label_impacts : "assertion_id"
+  document_policy_versions ||..o{ content_label_impacts : "policy_id"
+  matters ||..o{ content_label_impacts : "matter_id"
+  source_versions ||..o{ content_label_impacts : "source_id"
+  document_custodians ||..o| custodian_link_retirements : "link_id"
+  accounts ||..o{ custodian_link_retirements : "actor_id"
+  matters ||..o{ custodian_link_retirements : "matter_id"
+  source_versions ||..o{ custodian_link_retirements : "source_id"
+  documents ||..o{ document_custodians : "document_id"
+  record_custodians ||..o{ document_custodians : "custodian_id"
+  accounts ||..o{ document_custodians : "created_by"
+  matters ||..o{ document_custodians : "matter_id"
+  source_versions ||..o{ document_custodians : "source_id"
+  documents ||..o{ document_parties : "document_id"
+  accounts ||..o{ document_parties : "created_by"
+  matters ||..o{ document_parties : "matter_id"
+  source_versions ||..o{ document_parties : "source_id"
+  matters ||..o{ document_policy_versions : "matter_id"
+  source_versions ||..o{ document_review_versions : "source_id"
+  document_review_versions |o..o| document_review_versions : "previous_id"
+  accounts ||..o{ document_review_versions : "reviewer_id"
+  matters ||..o{ document_sources : "matter_id"
+  documents ||..o{ document_sources : "document_id"
+  source_versions ||..o{ document_sources : "source_id"
+  vdr_import_rows ||..o{ document_sources : "import_row_id"
+  source_versions ||--o| document_version_links : "source_id"
+  documents ||..o{ document_version_links : "document_id"
+  matters ||..o{ document_version_links : "matter_id"
+  matters ||..o{ documents : "matter_id"
+  source_versions ||..o| ocr_jobs : "source_id"
+  accounts ||..o{ ocr_jobs : "requested_by"
+  source_versions |o..o{ ocr_jobs : "result_source_id"
+  source_versions ||--o| ocr_verifications : "source_id"
+  accounts ||..o{ ocr_verifications : "actor_id"
+  accounts ||..o{ record_custodians : "created_by"
+  matters ||..o{ record_custodians : "matter_id"
+  source_versions ||..o{ record_custodians : "source_id"
+  accounts ||..o{ source_embeddings : "created_by"
+  ai_operations ||..o{ source_embeddings : "operation_id"
+  matters ||..o{ source_embeddings : "matter_id"
+  source_versions ||..o{ source_embeddings : "source_id"
+  document_policy_versions ||..o| source_versions : "policy_id"
+  matters ||..o{ source_versions : "matter_id"
+  source_versions |o..o{ source_versions : "previous_id"
+  accounts ||..o{ source_versions : "uploaded_by"
+```
+
+[Editable Mermaid](02_document_evidence.mmd) · [All data views](../README.md)

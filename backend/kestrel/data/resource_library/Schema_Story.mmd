@@ -1,8 +1,12 @@
 flowchart LR
-  S0["People and sources<br/>Accounts and organizations<br/>Matter and access grants<br/>Document identity and version<br/>Exact evidence location"]
-  S1["Analysis and review<br/>Playbook and model version<br/>Run and candidate finding<br/>Lawyer review and correction<br/>Independent governance"]
-  S0 --> S1
-  S2["Reports and audiences<br/>Report and annex version<br/>Internal review decision<br/>Named audience release<br/>Expiry and revoked access"]
-  S1 --> S2
-  S3["History and retention<br/>Audit event and correlation<br/>Immutable version bindings<br/>Signing snapshot and holds<br/>Eligible copy deletion"]
-  S2 --> S3
+  N1["People and matters<br/>organizations and accounts<br/>matters and matter_assignments<br/>wall and clean-team records"]
+  N2["Documents and evidence<br/>documents and document_sources<br/>source_versions retain exact versions<br/>Policy and evidence anchors persist"]
+  N3["Analysis and lawyer review<br/>source_findings are candidates<br/>legal_finding_revisions retain review<br/>Playbook and run versions bind results"]
+  N4["Reports and release<br/>report_versions retain body_json<br/>release_packages retain references_json<br/>release_approvals record decisions"]
+  N5["Operations and governance<br/>DDR attempts, artifacts and tasks<br/>Impacts, notifications and reruns<br/>Immutable decision histories"]
+  N6["Audit and lifecycle<br/>audit_events and source_archives<br/>Signing snapshots and holds<br/>Controlled eligible-copy deletion"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

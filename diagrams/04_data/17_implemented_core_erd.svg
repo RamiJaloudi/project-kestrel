@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="1187" viewBox="0 0 1340 1187" role="img" aria-labelledby="title desc">
+<title id="title">Implemented core ERD</title><desc id="desc">This visual ERD shows selected real foreign keys. Each arrow points from the child record to its referenced parent. Additional keys, optional links and all 153 tables are documented in the 17 area views and complete relationship CSV.</desc>
+<rect width="1340" height="1187" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Implemented core ERD</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows point from a child foreign key to its parent table. Selected keys are shown; full detail is in the area ER views.</text>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,490 L920,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M235,399 L235,335" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M420,736 L485,736" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,244 L855,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,153 L1105,139 L235,139 L235,153" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,982 L855,982" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M670,891 L670,859.0 L1105,859.0 L1105,827" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M420,982 L485,982" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,736 L920,736" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M670,645 L670,613.0 L1105,613.0 L1105,581" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">matters</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">accounts</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">organization_id FK</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">matter_assignments</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">account_id FK</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">matter_id FK</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">documents</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">matter_id FK</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">document_sources</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">matter_id FK</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">document_id FK</text>
+<text x="503" y="522" font-family="Arial,sans-serif" font-size="16" fill="#294958">source_id FK</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">source_versions</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">policy_id FK</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">matter_id FK</text>
+<text x="938" y="522" font-family="Arial,sans-serif" font-size="16" fill="#294958">previous_id FK</text>
+<rect x="50" y="645" width="370" height="182" rx="9" fill="#FFF5DF" stroke="#A8BFCD"/>
+<text x="68" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">legal_finding_revisions</text>
+<text x="68" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="68" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">previous_id FK</text>
+<text x="68" y="746" font-family="Arial,sans-serif" font-size="16" fill="#294958">candidate_id FK</text>
+<text x="68" y="768" font-family="Arial,sans-serif" font-size="16" fill="#294958">source_id FK</text>
+<rect x="485" y="645" width="370" height="182" rx="9" fill="#FFF5DF" stroke="#A8BFCD"/>
+<text x="503" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">source_findings</text>
+<text x="503" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="503" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">policy_id FK</text>
+<text x="503" y="746" font-family="Arial,sans-serif" font-size="16" fill="#294958">source_id FK</text>
+<text x="503" y="768" font-family="Arial,sans-serif" font-size="16" fill="#294958">job_id FK</text>
+<rect x="920" y="645" width="370" height="182" rx="9" fill="#FFF5DF" stroke="#A8BFCD"/>
+<text x="938" y="674" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">document_policy_versions</text>
+<text x="938" y="702" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="938" y="724" font-family="Arial,sans-serif" font-size="16" fill="#294958">matter_id FK</text>
+<rect x="50" y="891" width="370" height="182" rx="9" fill="#EAF5ED" stroke="#A8BFCD"/>
+<text x="68" y="920" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">report_versions</text>
+<text x="68" y="948" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="68" y="970" font-family="Arial,sans-serif" font-size="16" fill="#294958">previous_id FK</text>
+<text x="68" y="992" font-family="Arial,sans-serif" font-size="16" fill="#294958">release_id FK</text>
+<rect x="485" y="891" width="370" height="182" rx="9" fill="#EAF5ED" stroke="#A8BFCD"/>
+<text x="503" y="920" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">release_packages</text>
+<text x="503" y="948" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="503" y="970" font-family="Arial,sans-serif" font-size="16" fill="#294958">policy_id FK</text>
+<text x="503" y="992" font-family="Arial,sans-serif" font-size="16" fill="#294958">created_by FK</text>
+<rect x="920" y="891" width="370" height="182" rx="9" fill="#EAF5ED" stroke="#A8BFCD"/>
+<text x="938" y="920" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">release_approvals</text>
+<text x="938" y="948" font-family="Arial,sans-serif" font-size="16" fill="#294958">id PK</text>
+<text x="938" y="970" font-family="Arial,sans-serif" font-size="16" fill="#294958">release_id FK</text>
+<text x="938" y="992" font-family="Arial,sans-serif" font-size="16" fill="#294958">actor_id FK</text>
+<text x="50" y="1116" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">This visual ERD shows selected real foreign keys. Each arrow points from the child record to its referenced parent. Additional keys,</text>
+<text x="50" y="1138" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">optional links and all 153 tables are documented in the 17 area views and complete relationship CSV.</text>
+</svg>

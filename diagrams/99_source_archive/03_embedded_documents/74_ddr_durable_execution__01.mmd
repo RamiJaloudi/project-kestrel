@@ -1,0 +1,14 @@
+flowchart TD
+  Q[Authorized queued run] --> C[CAS claim and 180 second lease]
+  C --> A[Fresh identity source and configuration authority]
+  A --> G[Actual bounded LangGraph]
+  G --> L[Immutable attempt artifact and usage ledgers]
+  G --> K[Private SQLite opaque checkpoint]
+  G --> V{Quality and citations pass}
+  V -->|No| F[Durable source-bound lawyer follow-up]
+  V -->|Yes| T[Root review task and internal unapproved report]
+  T --> H[Human interrupt]
+  H --> D[Independent authenticated full-package decision]
+  D --> R[Fresh authority and checkpoint resume]
+  R --> I[Internally approved state]
+  I -. separate existing controls .-> P[Audience release and antitrust gates]

@@ -1,0 +1,9 @@
+{
+  "tables": 153,
+  "fields": 1412,
+  "foreign_keys": 442,
+  "domains": 17,
+  "owned_tables": 153,
+  "model_sha256": "a5653d0289d60226d4601bf702067d125cac8f2335546d78b273cf13ab6972fb",
+  "model_hash_encoding": "UTF-8 source with normalized LF line endings"
+}

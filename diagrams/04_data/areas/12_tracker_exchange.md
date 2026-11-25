@@ -1,0 +1,37 @@
+# Tracker Exchange
+
+Implemented model snapshot. This area owns 3 tables. Key-only parent tables provide cross-area context.
+
+```mermaid
+erDiagram
+  accounts {
+    string id PK
+  }
+  matters {
+    string id PK
+  }
+  release_packages {
+    string id PK
+  }
+  tracker_exports {
+    string release_id FK
+    string id PK
+  }
+  tracker_import_applications {
+    string import_id FK
+    string actor_id FK
+    string id PK
+  }
+  tracker_imports {
+    string matter_id FK
+    string uploaded_by FK
+    string id PK
+  }
+  release_packages ||..o| tracker_exports : "release_id"
+  tracker_imports ||..o| tracker_import_applications : "import_id"
+  accounts ||..o{ tracker_import_applications : "actor_id"
+  matters ||..o{ tracker_imports : "matter_id"
+  accounts ||..o{ tracker_imports : "uploaded_by"
+```
+
+[Editable Mermaid](12_tracker_exchange.mmd) · [All data views](../README.md)

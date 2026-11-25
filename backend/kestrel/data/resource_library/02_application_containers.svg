@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Application containers</title><desc id="desc">These are logical runtime components. The Azure deployment requires separate real-service, HTTPS and owner acceptance. Windows DPAPI and service identities need reviewed Linux replacements.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Application containers</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">CURRENT CODE  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="435.75" y="221" width="33.5" height="16" fill="white"/>
+<text x="452.5" y="232" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">HTTPS</text>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="862.5" y="221" width="50.0" height="16" fill="white"/>
+<text x="887.5" y="232" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">loopback</text>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1092.75" y="356.0" width="44.5" height="16" fill="white"/>
+<text x="1115" y="367.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">records</text>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="865.25" y="454" width="44.5" height="29" fill="white"/>
+<text x="887.5" y="465" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">durable</text>
+<text x="887.5" y="478" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">work</text>
+<path d="M1105,335 L1105,367.0 L235,367.0 L235,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="639.5" y="336.0" width="61.0" height="29" fill="white"/>
+<text x="670.0" y="347.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">authorized</text>
+<text x="670.0" y="360.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">I/O</text>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="424.75" y="454" width="55.5" height="29" fill="white"/>
+<text x="452.5" y="465" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">scoped</text>
+<text x="452.5" y="478" text-anchor="middle" font-family="Arial,sans-serif" font-size="10.5" fill="#365568">artifacts</text>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">React browser application</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">One TypeScript codebase</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Host selects organization shell</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Session cookies stay host-only</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Caddy reverse proxy</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Exact configured HTTPS hosts</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Forward only to loopback API</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Private proxy proof in public mode</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#E8F2F7" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">FastAPI application</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Typed request validation</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Authenticated identity and CSRF</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Shared policy and service layer</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">PostgreSQL database</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Versioned business records</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Durable jobs and decisions</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Alembic schema migrations</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Background worker</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Scoped OCR and analysis jobs</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Bounded DDR graph execution</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Recheck authority for each stage</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#EEF2FA" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Private retained artifacts</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Original versions and derivatives</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Encrypted archive bindings</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Opaque DDR checkpoints</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">These are logical runtime components. The Azure deployment requires separate real-service, HTTPS and owner acceptance. Windows DPAPI and</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">service identities need reviewed Linux replacements.</text>
+</svg>

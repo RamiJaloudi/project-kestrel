@@ -1,0 +1,74 @@
+erDiagram
+    matters ||--o{ documents : scopes
+    matters ||--o{ source_versions : scopes
+    documents ||..o{ source_versions : via_document_version_links
+    source_versions ||--o{ review_tasks : source
+    review_tasks ||--o{ review_task_events : history
+    accounts ||--o{ review_task_events : actor_and_assignee
+    source_versions ||--o{ legal_finding_revisions : evidence
+    accounts ||--o{ legal_finding_revisions : reviewer
+    source_versions ||--o{ financial_facts : retained_source
+    source_versions ||--o{ disclosure_artifacts : derived_from
+    release_packages ||--o| report_versions : report_body
+    release_packages ||--o{ release_approvals : exact_decisions
+    accounts ||--o{ release_approvals : approver
+    legal_finding_revisions }o..o{ report_versions : validated_content_references
+    disclosure_artifacts ||..o{ financial_facts : derivative_reference_when_selected
+
+    matters {
+        string id PK
+    }
+    documents {
+        string id PK
+        string matter_id FK
+        string logical_key
+    }
+    source_versions {
+        string id PK
+        string matter_id FK
+        string bytes_hash
+    }
+    accounts {
+        string id PK
+        string username
+        string display_name
+    }
+    review_tasks {
+        string id PK
+        string source_id FK
+        string stage
+    }
+    review_task_events {
+        string id PK
+        string task_id FK
+        string assignee_id FK
+    }
+    legal_finding_revisions {
+        string id PK
+        string source_id FK
+        string reviewer_id FK
+    }
+    financial_facts {
+        string id PK
+        string source_id FK
+        decimal amount
+    }
+    disclosure_artifacts {
+        string id PK
+        string source_id FK
+        string bundle_hash
+    }
+    report_versions {
+        string id PK
+        string release_id FK
+    }
+    release_packages {
+        string id PK
+        string policy_id FK
+        string content_hash
+    }
+    release_approvals {
+        string id PK
+        string release_id FK
+        string actor_id FK
+    }

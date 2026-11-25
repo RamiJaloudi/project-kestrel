@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470" role="img" aria-labelledby="title desc">
+<title id="title">How a cited question is answered</title><desc id="desc">Search uses the evidence the signed-in person may currently read. A ranked answer does not establish complete diligence or lawyer approval. Missing evidence stays unknown.
+Provider-backed semantic search remains subject to processing policy and the shared cost cap.</desc>
+<rect width="1280" height="470" fill="#FFFFFF"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#567083"/></marker></defs>
+<text x="42" y="52" font-family="Arial,sans-serif" font-size="29" fill="#15384D" font-weight="700">How a cited question is answered</text>
+<text x="42" y="86" font-family="Arial,sans-serif" font-size="17" fill="#4C6373">Search uses the evidence the signed-in person may currently read.</text>
+<rect x="42" y="127" width="278" height="228" rx="10" fill="#E8F2F7" stroke="#AEC1CE"/>
+<text x="61" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">1  Select eligible evidence</text>
+<text x="61" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Check organization and matter</text>
+<text x="61" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Apply walls and source labels</text>
+<text x="61" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Check release and expiry</text>
+<text x="61" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Exclude unauthorized text</text>
+<path d="M323,241 L343,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="347" y="127" width="278" height="228" rx="10" fill="#EEF1FA" stroke="#AEC1CE"/>
+<text x="366" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">2  Choose search mode</text>
+<text x="366" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Default is lexical BM25</text>
+<text x="366" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">No default provider call</text>
+<text x="366" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Internal semantic or hybrid</text>
+<text x="366" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Needs approved provider use</text>
+<path d="M628,241 L648,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="127" width="278" height="228" rx="10" fill="#FFF4DE" stroke="#AEC1CE"/>
+<text x="671" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">3  Retrieve and cite</text>
+<text x="671" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Rank permitted passages</text>
+<text x="671" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Keep exact version anchors</text>
+<text x="671" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Show uncertainty and gaps</text>
+<text x="671" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Recheck old stored answers</text>
+<path d="M933,241 L953,241" stroke="#567083" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="957" y="127" width="278" height="228" rx="10" fill="#E6F4EC" stroke="#AEC1CE"/>
+<text x="976" y="163" font-family="Arial,sans-serif" font-size="19" fill="#173E58" font-weight="700">4  Review the answer</text>
+<text x="976" y="202" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Open permitted citations</text>
+<text x="976" y="230" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Verify the source passage</text>
+<text x="976" y="258" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">Record a legal finding apart</text>
+<text x="976" y="286" font-family="Arial,sans-serif" font-size="16" fill="#263F4F">External corpus is released</text>
+<text x="42" y="398" font-family="Arial,sans-serif" font-size="16" fill="#344F60">A ranked answer does not establish complete diligence or lawyer approval. Missing evidence stays unknown.</text>
+<text x="42" y="423" font-family="Arial,sans-serif" font-size="16" fill="#344F60">Provider-backed semantic search remains subject to processing policy and the shared cost cap.</text>
+</svg>

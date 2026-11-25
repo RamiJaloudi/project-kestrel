@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="1362" viewBox="0 0 1340 1362"><title>Core entity relationships</title>
+<rect width="1340" height="1362" fill="white"/>
+<text x="45" y="47" font-family="Arial" font-size="28" font-weight="700" fill="#173F56">Core entity relationships</text>
+<text x="45" y="80" font-family="Arial" font-size="16" fill="#536C7B">Declared database links. Read each row from a child field to its parent key.</text>
+<text x="45" y="126" font-family="Arial" font-size="17" font-weight="700">Child table and foreign key</text>
+<text x="815" y="126" font-family="Arial" font-size="17" font-weight="700">Parent table and key</text>
+<rect x="35" y="131" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="153" font-family="Arial" font-size="16" fill="#25495E">accounts.organization_id</text>
+<text x="727" y="153" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="153" font-family="Arial" font-size="16" fill="#25495E">organizations.id</text>
+<rect x="35" y="173" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="195" font-family="Arial" font-size="16" fill="#25495E">document_policy_versions.matter_id</text>
+<text x="727" y="195" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="195" font-family="Arial" font-size="16" fill="#25495E">matters.id</text>
+<rect x="35" y="215" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="237" font-family="Arial" font-size="16" fill="#25495E">document_sources.matter_id</text>
+<text x="727" y="237" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="237" font-family="Arial" font-size="16" fill="#25495E">matters.id</text>
+<rect x="35" y="257" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="279" font-family="Arial" font-size="16" fill="#25495E">document_sources.document_id</text>
+<text x="727" y="279" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="279" font-family="Arial" font-size="16" fill="#25495E">documents.id</text>
+<rect x="35" y="299" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="321" font-family="Arial" font-size="16" fill="#25495E">document_sources.source_id</text>
+<text x="727" y="321" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="321" font-family="Arial" font-size="16" fill="#25495E">source_versions.id</text>
+<rect x="35" y="341" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="363" font-family="Arial" font-size="16" fill="#25495E">documents.matter_id</text>
+<text x="727" y="363" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="363" font-family="Arial" font-size="16" fill="#25495E">matters.id</text>
+<rect x="35" y="383" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="405" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.previous_id</text>
+<text x="727" y="405" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="405" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.id</text>
+<rect x="35" y="425" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="447" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.candidate_id</text>
+<text x="727" y="447" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="447" font-family="Arial" font-size="16" fill="#25495E">source_findings.id</text>
+<rect x="35" y="467" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="489" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.source_id</text>
+<text x="727" y="489" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="489" font-family="Arial" font-size="16" fill="#25495E">source_versions.id</text>
+<rect x="35" y="509" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="531" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.policy_id</text>
+<text x="727" y="531" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="531" font-family="Arial" font-size="16" fill="#25495E">document_policy_versions.id</text>
+<rect x="35" y="551" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="573" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.owner_id</text>
+<text x="727" y="573" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="573" font-family="Arial" font-size="16" fill="#25495E">accounts.id</text>
+<rect x="35" y="593" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="615" font-family="Arial" font-size="16" fill="#25495E">legal_finding_revisions.reviewer_id</text>
+<text x="727" y="615" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="615" font-family="Arial" font-size="16" fill="#25495E">accounts.id</text>
+<rect x="35" y="635" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="657" font-family="Arial" font-size="16" fill="#25495E">matter_assignments.account_id</text>
+<text x="727" y="657" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="657" font-family="Arial" font-size="16" fill="#25495E">accounts.id</text>
+<rect x="35" y="677" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="699" font-family="Arial" font-size="16" fill="#25495E">matter_assignments.matter_id</text>
+<text x="727" y="699" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="699" font-family="Arial" font-size="16" fill="#25495E">matters.id</text>
+<rect x="35" y="719" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="741" font-family="Arial" font-size="16" fill="#25495E">release_approvals.release_id</text>
+<text x="727" y="741" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="741" font-family="Arial" font-size="16" fill="#25495E">release_packages.id</text>
+<rect x="35" y="761" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="783" font-family="Arial" font-size="16" fill="#25495E">release_approvals.actor_id</text>
+<text x="727" y="783" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="783" font-family="Arial" font-size="16" fill="#25495E">accounts.id</text>
+<rect x="35" y="803" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="825" font-family="Arial" font-size="16" fill="#25495E">release_packages.policy_id</text>
+<text x="727" y="825" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="825" font-family="Arial" font-size="16" fill="#25495E">document_policy_versions.id</text>
+<rect x="35" y="845" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="867" font-family="Arial" font-size="16" fill="#25495E">release_packages.created_by</text>
+<text x="727" y="867" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="867" font-family="Arial" font-size="16" fill="#25495E">accounts.id</text>
+<rect x="35" y="887" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="909" font-family="Arial" font-size="16" fill="#25495E">report_versions.previous_id</text>
+<text x="727" y="909" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="909" font-family="Arial" font-size="16" fill="#25495E">report_versions.id</text>
+<rect x="35" y="929" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="951" font-family="Arial" font-size="16" fill="#25495E">report_versions.release_id</text>
+<text x="727" y="951" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="951" font-family="Arial" font-size="16" fill="#25495E">release_packages.id</text>
+<rect x="35" y="971" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="993" font-family="Arial" font-size="16" fill="#25495E">source_findings.policy_id</text>
+<text x="727" y="993" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="993" font-family="Arial" font-size="16" fill="#25495E">document_policy_versions.id</text>
+<rect x="35" y="1013" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="1035" font-family="Arial" font-size="16" fill="#25495E">source_findings.source_id</text>
+<text x="727" y="1035" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="1035" font-family="Arial" font-size="16" fill="#25495E">source_versions.id</text>
+<rect x="35" y="1055" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="1077" font-family="Arial" font-size="16" fill="#25495E">source_versions.policy_id</text>
+<text x="727" y="1077" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="1077" font-family="Arial" font-size="16" fill="#25495E">document_policy_versions.id</text>
+<rect x="35" y="1097" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="1119" font-family="Arial" font-size="16" fill="#25495E">source_versions.matter_id</text>
+<text x="727" y="1119" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="1119" font-family="Arial" font-size="16" fill="#25495E">matters.id</text>
+<rect x="35" y="1139" width="1270" height="37" rx="3" fill="#EDF4F8"/>
+<text x="45" y="1161" font-family="Arial" font-size="16" fill="#25495E">source_versions.previous_id</text>
+<text x="727" y="1161" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="1161" font-family="Arial" font-size="16" fill="#25495E">source_versions.id</text>
+<rect x="35" y="1181" width="1270" height="37" rx="3" fill="#F8FAFC"/>
+<text x="45" y="1203" font-family="Arial" font-size="16" fill="#25495E">source_versions.uploaded_by</text>
+<text x="727" y="1203" font-family="Arial" font-size="20" fill="#25495E">→</text>
+<text x="815" y="1203" font-family="Arial" font-size="16" fill="#25495E">accounts.id</text>
+<text x="45" y="1318" font-family="Arial" font-size="15" fill="#536C7B">Complete model: 153 tables and 442 foreign keys. Area ER diagrams and the relationship CSV provide full detail.</text></svg>

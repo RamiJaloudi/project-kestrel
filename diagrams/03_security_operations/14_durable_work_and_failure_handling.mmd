@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Authorize and queue<br/>Exact immutable source and config<br/>Idempotent request identity<br/>No approval from queue membership"]
+  N2["Claim a bounded attempt<br/>Worker token and finite lease<br/>Retain an attempt before producer<br/>Recheck cancellation and expiry"]
+  N3["Run within the limits<br/>OCR or analysis or DDR stage<br/>Fresh authority for source access<br/>Provider budget and deadline checks"]
+  N4["Retain outcomes<br/>Typed result and content digest<br/>Durable usage and state records<br/>Private checkpoint references"]
+  N5["Pause an uncertain outcome<br/>Do not automatically resend paid work<br/>Record safe failure and follow-up<br/>Manual bounded recovery where allowed"]
+  N6["Complete through human gates<br/>Independent review where required<br/>Release remains a separate workflow<br/>Monitor and shut down explicitly"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

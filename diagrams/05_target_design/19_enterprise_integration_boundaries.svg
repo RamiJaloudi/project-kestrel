@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="695" viewBox="0 0 1340 695" role="img" aria-labelledby="title desc">
+<title id="title">Enterprise integration boundaries</title><desc id="desc">The enterprise services shown are target integrations. The candidate does not claim working firm Entra, Intapp, iManage, M365 or enterprise AI connectivity.</desc>
+<rect width="1340" height="695" fill="white"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8Z" fill="#59778A"/></marker></defs>
+<text x="50" y="47" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153C52">Enterprise integration boundaries</text>
+<text x="50" y="79" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">TARGET DESIGN / NOT IMPLEMENTED CONNECTIONS  |  Project Kestrel  |  Model and code snapshot 24 November 2026</text>
+<text x="50" y="112" font-family="Arial,sans-serif" font-size="15" fill="#536C7B">Arrows show the labelled workflow or dependency. Source code status is separate from deployment acceptance.</text>
+<path d="M420,244 L485,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M855,244 L920,244" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1105,335 L1105,399" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M920,490 L855,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M485,490 L420,490" fill="none" stroke="#59778A" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="153" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="68" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Current synthetic application</text>
+<text x="68" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Local real accounts and policy</text>
+<text x="68" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Authorized folder and CSV intake</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Configured OpenAI path is governed</text>
+<rect x="485" y="153" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="503" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Firm identity and walls</text>
+<text x="503" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Target Entra and Intapp integration</text>
+<text x="503" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Firm-approved authoritative grants</text>
+<text x="503" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Replace mock mappings with controls</text>
+<rect x="920" y="153" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="938" y="182" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Firm document systems</text>
+<text x="938" y="210" font-family="Arial,sans-serif" font-size="16" fill="#294958">Target iManage and approved VDR</text>
+<text x="938" y="232" font-family="Arial,sans-serif" font-size="16" fill="#294958">Confirm export and processing rights</text>
+<text x="938" y="254" font-family="Arial,sans-serif" font-size="16" fill="#294958">Bind evidence to retained versions</text>
+<rect x="920" y="399" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="938" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Approved collaboration</text>
+<text x="938" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Use existing approved channels first</text>
+<text x="938" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">External portal needs security review</text>
+<text x="938" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">No new client login promise on day one</text>
+<rect x="485" y="399" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="503" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Approved AI and search</text>
+<text x="503" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Enterprise region and processing rules</text>
+<text x="503" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Provider quality and cost acceptance</text>
+<text x="503" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">No inherited vendor entitlement</text>
+<rect x="50" y="399" width="370" height="182" rx="9" fill="#FFF4DF" stroke="#A8BFCD"/>
+<text x="68" y="428" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173F56">Production operations</text>
+<text x="68" y="456" font-family="Arial,sans-serif" font-size="16" fill="#294958">Managed secrets, queue and storage</text>
+<text x="68" y="478" font-family="Arial,sans-serif" font-size="16" fill="#294958">Independent security acceptance</text>
+<text x="68" y="500" font-family="Arial,sans-serif" font-size="16" fill="#294958">Measured scale and recovery evidence</text>
+<text x="50" y="624" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">The enterprise services shown are target integrations. The candidate does not claim working firm Entra, Intapp, iManage, M365 or enterprise</text>
+<text x="50" y="646" font-family="Arial,sans-serif" font-size="15" fill="#3C596B">AI connectivity.</text>
+</svg>

@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Retain scoped audit<br/>Actor, action, time and object<br/>Avoid confidential source passages<br/>Export only permitted event scope"]
+  N2["Protect source archives<br/>Encrypted retained source bytes<br/>Separate protected key bindings<br/>Verify integrity before reading"]
+  N3["Test recovery separately<br/>Restore an isolated database<br/>Check source and archive access<br/>Keep actual recovery evidence"]
+  N4["Freeze the signing record<br/>Exact manifest and version bindings<br/>Independent authorized decision<br/>Operational history remains separate"]
+  N5["Apply holds and instructions<br/>Confirm retention obligations<br/>Hold can block eligible copy deletion<br/>No blanket client deletion promise"]
+  N6["Record authorized disposal<br/>Independent closing/security controls<br/>Retain firm records where required<br/>Do not delete audit history silently"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

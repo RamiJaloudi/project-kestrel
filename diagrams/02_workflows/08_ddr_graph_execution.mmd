@@ -1,0 +1,17 @@
+flowchart LR
+  N1["Coordinator<br/>Validate the retained run snapshot<br/>Check source and profile authority<br/>Apply deadline and call limits"]
+  N2["Contracts specialist<br/>Sole implemented specialist<br/>Use authorized reviewed evidence<br/>Retain typed output and usage"]
+  N3["Draft report stage<br/>Use retained specialist output<br/>Keep exact source citations<br/>Retain an unapproved version"]
+  N4["Citation validator<br/>Validate exact draft evidence<br/>Runs alongside quality checking<br/>Produces a retained result"]
+  N5["Quality review stage<br/>Independent AI quality result<br/>Runs alongside citation checking<br/>No authority to approve a report"]
+  N6["Join the check results<br/>Both required checks must pass<br/>Failure creates follow-up work<br/>No automatic revision loop"]
+  N7["Independent human review<br/>Retained task and human interrupt<br/>Different cleared reviewer decides<br/>Decision binds exact report hashes"]
+  N8["Internal completion<br/>Revalidate decision before resume<br/>Approve or reject internally<br/>Audience release remains separate"]
+  N1 --> N2
+  N2 --> N3
+  N3 -->|"parallel"| N4
+  N3 -->|"parallel"| N5
+  N4 --> N6
+  N5 --> N6
+  N6 -->|"pass only"| N7
+  N7 -->|"decision"| N8

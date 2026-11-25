@@ -1,0 +1,12 @@
+flowchart LR
+  N1["Browser sends request<br/>HTTPS on the expected host<br/>Session cookie with the request<br/>CSRF token for a state change"]
+  N2["Boundary verifies request<br/>Check host and original client<br/>Authenticate the current session<br/>Reject invalid origin or token"]
+  N3["Service checks the object<br/>Recheck current source policy<br/>Apply matter and audience limits<br/>Require exact version authority"]
+  N4["Prepare the result<br/>Read or commit permitted records<br/>Bind the result to exact content<br/>Keep confidential data out of logs"]
+  N5["Check before returning<br/>Recheck authority for guarded output<br/>Deny changed or revoked scope<br/>Do not reuse old approval blindly"]
+  N6["Return and retain audit<br/>No-store protected responses<br/>Only permitted content returned<br/>Retain scoped audit metadata"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

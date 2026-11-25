@@ -1,0 +1,107 @@
+erDiagram
+  accounts {
+    string id PK
+  }
+  financial_access_gates {
+    string matter_id FK
+    string actor_id FK
+    string id PK
+  }
+  financial_context_decisions {
+    string context_id FK
+    string actor_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  financial_context_evidence {
+    string context_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  financial_extraction_candidates {
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  financial_fact_contexts {
+    string fact_id FK
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  financial_fact_decisions {
+    string fact_id FK
+    string actor_id FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  financial_facts {
+    string created_by FK
+    string id PK
+    string matter_id FK
+    string source_id FK
+  }
+  financial_organization_gates {
+    string organization_id FK
+    string actor_id FK
+    string id PK
+  }
+  financial_reconciliations {
+    string matter_id FK
+    string left_id FK
+    string right_id FK
+    string created_by FK
+    string id PK
+  }
+  financial_resolutions {
+    string matter_id FK
+    string reconciliation_id FK
+    string actor_id FK
+    string id PK
+  }
+  matters {
+    string id PK
+  }
+  organizations {
+    string id PK
+  }
+  source_versions {
+    string id PK
+  }
+  matters ||..o{ financial_access_gates : "matter_id"
+  accounts ||..o{ financial_access_gates : "actor_id"
+  financial_fact_contexts ||..o{ financial_context_decisions : "context_id"
+  accounts ||..o{ financial_context_decisions : "actor_id"
+  matters ||..o{ financial_context_decisions : "matter_id"
+  source_versions ||..o{ financial_context_decisions : "source_id"
+  financial_fact_contexts ||..o{ financial_context_evidence : "context_id"
+  matters ||..o{ financial_context_evidence : "matter_id"
+  source_versions ||..o{ financial_context_evidence : "source_id"
+  accounts ||..o{ financial_extraction_candidates : "created_by"
+  matters ||..o{ financial_extraction_candidates : "matter_id"
+  source_versions ||..o{ financial_extraction_candidates : "source_id"
+  financial_facts ||..o{ financial_fact_contexts : "fact_id"
+  accounts ||..o{ financial_fact_contexts : "created_by"
+  matters ||..o{ financial_fact_contexts : "matter_id"
+  source_versions ||..o{ financial_fact_contexts : "source_id"
+  financial_facts ||..o{ financial_fact_decisions : "fact_id"
+  accounts ||..o{ financial_fact_decisions : "actor_id"
+  matters ||..o{ financial_fact_decisions : "matter_id"
+  source_versions ||..o{ financial_fact_decisions : "source_id"
+  accounts ||..o{ financial_facts : "created_by"
+  matters ||..o{ financial_facts : "matter_id"
+  source_versions ||..o{ financial_facts : "source_id"
+  organizations ||..o{ financial_organization_gates : "organization_id"
+  accounts ||..o{ financial_organization_gates : "actor_id"
+  matters ||..o{ financial_reconciliations : "matter_id"
+  financial_facts ||..o{ financial_reconciliations : "left_id"
+  financial_facts ||..o{ financial_reconciliations : "right_id"
+  accounts ||..o{ financial_reconciliations : "created_by"
+  matters ||..o{ financial_resolutions : "matter_id"
+  financial_reconciliations ||..o| financial_resolutions : "reconciliation_id"
+  accounts ||..o{ financial_resolutions : "actor_id"

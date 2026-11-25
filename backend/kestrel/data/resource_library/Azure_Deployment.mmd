@@ -1,8 +1,12 @@
 flowchart LR
-  S0["Five portal names<br/>portal.ramijaloudi.com<br/>firm / halden / castlegate<br/>admin under portal domain<br/>GoDaddy A records; TTL 600"]
-  S1["Azure Windows VM<br/>Static IP 52.162.140.174<br/>Windows Server runtime<br/>Shared proxy is controlled<br/>Existing RPlus route preserved"]
-  S0 --> S1
-  S2["Private app services<br/>Caddy to loopback FastAPI<br/>React screens and OpenAPI<br/>PostgreSQL and worker<br/>Separate service identities"]
-  S1 --> S2
-  S3["Activation still gated<br/>Check real restore and backup<br/>Validate exact HTTPS names<br/>Review effective access rules<br/>Obtain public acceptance"]
-  S2 --> S3
+  N1["GoDaddy DNS<br/>portal.ramijaloudi.com<br/>firm, halden, castlegate and admin<br/>Five exact A records; TTL 600"]
+  N2["Azure public address<br/>52.162.140.174<br/>Windows VM network boundary<br/>TCP ingress requires approval"]
+  N3["Shared Caddy gateway<br/>Exact SNI and Host checks<br/>Kestrel loopback upstream<br/>Preserve existing RPlus route"]
+  N4["Private application services<br/>FastAPI, worker and PostgreSQL<br/>Separate service accounts<br/>Protected local configuration"]
+  N5["TLS validation window<br/>Verify public certificate chain<br/>Check all five names and redirects<br/>Application can remain CLOSED"]
+  N6["Public application acceptance<br/>Genuine eight-check evidence<br/>Independent owner approval<br/>Explicit controlled activation"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

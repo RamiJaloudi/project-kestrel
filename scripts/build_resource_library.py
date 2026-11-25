@@ -306,7 +306,9 @@ Use Documents for ingestion, Risk Review for lawyer findings, Financial Evidence
         links += [f"- [{a['title']}](../../backend/kestrel/data/resource_library/{a['filename']}) — {a['description']}" for a in CATALOG if a['category']==category]
         links += ['']
     (docs/'README.md').write_text('\n'.join(links),encoding='utf-8')
-    print(json.dumps({'assets':len(CATALOG),'categories':list(dict.fromkeys(a['category'] for a in CATALOG))}))
+    from sync_diagram_resources import sync
+    synchronized=sync(ROOT)
+    print(json.dumps({'assets':synchronized or len(CATALOG),'categories':list(dict.fromkeys(a['category'] for a in CATALOG))}))
 
 
 if __name__=='__main__':main()

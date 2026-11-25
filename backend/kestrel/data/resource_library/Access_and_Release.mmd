@@ -1,8 +1,12 @@
 flowchart LR
-  S0["Verify the person<br/>Signed-in server session<br/>Correct organization portal<br/>Active account and roles<br/>No role from request headers"]
-  S1["Check the scope<br/>Matter assignment<br/>Ethical walls and labels<br/>Named clean-team scope<br/>Expiry and source limits"]
-  S0 --> S1
-  S2["Check the output<br/>Lawyer-reviewed finding<br/>Independent report decision<br/>Audience release decision<br/>Antitrust decision if required"]
-  S1 --> S2
-  S3["Serve allowed content<br/>Check again on each request<br/>Keep client and bank separate<br/>Record permitted audit data<br/>Deny when a gate is missing"]
-  S2 --> S3
+  N1["Verify the person<br/>Active account and server session<br/>Correct organization on the host<br/>Roles are not supplied by headers"]
+  N2["Check current matter scope<br/>Assigned and permitted action<br/>Ethical wall denial overrides<br/>Named clean-team scope and expiry"]
+  N3["Check the exact source<br/>Document and passage restrictions<br/>Processing permission when relevant<br/>Current source-version entitlement"]
+  N4["Check the output decision<br/>Lawyer and report review<br/>Audience-specific release<br/>Separate antitrust gate if required"]
+  N5["Serve only allowed content<br/>Recheck guarded output<br/>No-store downloads and responses<br/>Safe denials and scoped audit"]
+  N6["Keep duties separate<br/>Admin has no blanket content right<br/>Halden release is not bank release<br/>Membership alone grants no source"]
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 --> N6

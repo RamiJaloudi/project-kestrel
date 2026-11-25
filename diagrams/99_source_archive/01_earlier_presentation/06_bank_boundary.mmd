@@ -1,0 +1,21 @@
+flowchart LR
+    O[EXISTING restricted mixed source and provenance]
+    O --> L[EXISTING exact source or segment labels]
+    L --> P[EXISTING explicit removal plan]
+    P --> R[REQUIRES APPROVAL independent source-cleared plan review]
+    R --> V[EXISTING rebuilt text-only PDF and container validation]
+    V --> A[REQUIRES APPROVAL exact senior legal and antitrust decisions when required]
+    A --> D[EXISTING separate audience derivative and own anchors]
+    D --> F[REQUIRES APPROVAL derivative-backed fact verification and release]
+    F --> G[EXISTING organization plus matter gates and current product authority]
+    G --> Q[EXISTING bank financial query and derivative-only citation]
+    Q --> X[EXISTING protected audit and future revocation]
+    L --> STOP[EXISTING deny whole-source legal-advice or prohibited scope]
+    N[TARGET DESIGN native Office and layout-preserving redaction] -.-> V
+    O -. no original-source corpus access .-> STOP
+    classDef existing fill:#ffffff,color:#111111,stroke:#111111;
+    classDef target fill:#eeeeee,color:#111111,stroke:#777777,stroke-dasharray:5 5;
+    classDef approval fill:#111111,color:#ffffff,stroke:#111111;
+    class O,L,P,V,D,G,Q,X,STOP existing;
+    class N target;
+    class R,A,F approval;
